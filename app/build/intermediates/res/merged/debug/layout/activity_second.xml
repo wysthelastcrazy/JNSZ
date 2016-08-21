@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+     android:background="@color/common_white">
+
+    <com.DCHZ.TYLINCN.component.GongShiHeaderView
+        android:id="@+id/gongshiHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+         android:background="@color/common_grey">
+    </com.DCHZ.TYLINCN.component.GongShiHeaderView>
+<LinearLayout 
+    android:id="@+id/layout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:layout_alignParentBottom="true"
+    android:paddingTop="12.5dp"
+    android:paddingBottom="12.5dp"
+    android:background="@color/common_grey"
+    android:orientation="horizontal">
+    <Button 
+        android:id="@+id/btn_cancel"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:background="@drawable/bg_btn_selecter"
+        android:textSize="14sp"
+        android:textColor="@color/common_white"
+        android:text="退回"/>
+    <Button 
+        android:id="@+id/btn_ok"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:background="@drawable/bg_btn_selecter"
+        android:layout_marginLeft="100dp"
+         android:textSize="14sp"
+        android:textColor="@color/common_white"
+        android:text="同意"/>
+</LinearLayout>
+    <com.DCHZ.TYLINCN.msglist.MsgPage
+        android:id="@+id/mMsgPage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/gongshiHeader"
+        android:layout_above="@id/layout"
+        android:divider="@color/common_orange" >
+    </com.DCHZ.TYLINCN.msglist.MsgPage>
+
+</RelativeLayout>

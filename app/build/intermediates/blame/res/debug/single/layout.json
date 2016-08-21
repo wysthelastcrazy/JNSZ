@@ -1,0 +1,134 @@
+[
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_loading.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\dialog_loading.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_tijiao_type.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\activity_tijiao_type.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\jieshouren_list_item.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\jieshouren_list_item.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\jieshouren_item.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\jieshouren_item.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_wendang.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\activity_wendang.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_inc.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\notification_inc.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_bottom_item.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\list_bottom_item.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\refresh_top_item.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\refresh_top_item.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\header_detail.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\header_detail.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gongshi_headerview.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\gongshi_headerview.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\msgitem_view_bottom_grey.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\msgitem_view_bottom_grey.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_help.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\activity_help.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\third_listview_item.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\third_listview_item.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_setting.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\activity_setting.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_detail.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\activity_detail.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_first.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\activity_first.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\daiban_list_item.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\daiban_list_item.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_empty.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\list_empty.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_jieshouren.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\activity_jieshouren.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\msg_page.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\msg_page.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\check_list_item.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\check_list_item.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_second.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\activity_second.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_three.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\activity_three.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_xiugai_ip.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\activity_xiugai_ip.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_top_item.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\list_top_item.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\getui_notification.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\getui_notification.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_test.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\activity_test.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\baobiao_list_topview.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\baobiao_list_topview.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\increment_popup_dialog.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\increment_popup_dialog.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\list_item.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_open_word.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\list_open_word.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\layout\\activity_main.xml"
+    }
+]

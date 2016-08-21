@@ -1,0 +1,539 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:2:1-285:12
+	xmlns:android
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:2:11-69
+	package
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:3:5-31
+		INJECTED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml
+		INJECTED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:5:5-30
+		INJECTED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml
+		INJECTED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml
+	android:versionCode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:4:5-29
+		INJECTED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml
+		INJECTED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml
+uses-sdk
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:6:5-8:41
+	android:targetSdkVersion
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:8:9-38
+		INJECTED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml
+		INJECTED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:7:9-35
+		INJECTED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml
+		INJECTED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:10:5-79
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:10:22-76
+uses-permission#android.permission.INTERNET
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:11:22-64
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:12:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:13:5-80
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:13:22-77
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:17:2-97
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:17:19-78
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:23:1-71
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:23:18-68
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:25:1-72
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:25:18-69
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:26:1-72
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:26:18-69
+uses-permission#android.permission.WAKE_LOCK
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:27:1-64
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:27:18-61
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:28:1-77
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:28:18-74
+uses-permission#android.permission.VIBRATE
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:30:1-62
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:30:18-59
+uses-permission#android.permission.GET_TASKS
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:31:1-64
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:31:18-61
+uses-permission#android.permission.BLUETOOTH
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:33:1-63
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:33:18-61
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:34:1-69
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:34:18-67
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:36:1-75
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:36:18-72
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:37:1-77
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:37:18-74
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:39:1-73
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:39:18-71
+uses-permission#getui.permission.GetuiService.com.DCHZ.TYLINCN
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:41:1-82
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:41:18-79
+permission#getui.permission.GetuiService.com.DCHZ.TYLINCN
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:42:1-45:14
+	android:protectionLevel
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:44:5-37
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:43:5-66
+application
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:47:5-283:19
+	android:label
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:51:9-41
+	android:allowBackup
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:49:9-35
+	android:icon
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:50:9-38
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:52:9-40
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:48:9-48
+activity#com.DCHZ.TYLINCN.activity.MainActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:53:9-58:20
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:56:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:57:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:54:13-66
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:55:13-43
+activity#com.DCHZ.TYLINCN.activity.LoginActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:59:9-69:20
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:62:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:63:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:60:13-67
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:61:13-43
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:64:13-68:29
+action#android.intent.action.MAIN
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:65:17-69
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:65:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:67:17-77
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:67:27-74
+activity#com.DCHZ.TYLINCN.activity.FirstActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:70:9-74:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:73:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:74:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:71:13-67
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:72:13-43
+activity#com.DCHZ.TYLINCN.activity.FirstActivity1
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:75:10-79:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:78:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:79:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:76:13-68
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:77:13-43
+activity#com.DCHZ.TYLINCN.activity.SecondActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:80:9-84:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:83:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:84:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:81:13-68
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:82:13-43
+activity#com.DCHZ.TYLINCN.activity.ThreeActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:85:9-89:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:88:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:89:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:86:13-67
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:87:13-43
+activity#com.DCHZ.TYLINCN.activity.TouBiaoDetailActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:90:9-94:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:93:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:94:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:91:13-75
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:92:13-43
+activity#com.DCHZ.TYLINCN.activity.FeiYongDetailActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:95:9-99:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:98:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:99:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:96:13-75
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:97:13-43
+activity#com.DCHZ.TYLINCN.activity.JieKuangDetailActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:100:9-104:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:103:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:104:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:101:13-76
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:102:13-43
+activity#com.DCHZ.TYLINCN.activity.QingJiaDetailActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:105:9-109:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:108:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:109:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:106:13-75
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:107:13-43
+activity#com.DCHZ.TYLINCN.activity.FaPiaoDetailActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:110:9-114:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:113:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:114:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:111:13-74
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:112:13-43
+activity#com.DCHZ.TYLINCN.activity.YingFuHTDetailActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:115:9-119:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:118:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:119:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:116:13-76
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:117:13-43
+activity#com.DCHZ.TYLINCN.activity.YingShouHTDetailActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:120:9-124:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:123:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:124:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:121:13-78
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:122:13-43
+activity#com.DCHZ.TYLINCN.activity.FenBaoFangDetailActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:125:9-129:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:128:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:129:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:126:13-78
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:127:13-43
+activity#com.DCHZ.TYLINCN.activity.TiJiaoTypeActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:130:11-134:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:133:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:134:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:131:13-72
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:132:13-43
+activity#com.DCHZ.TYLINCN.activity.JieShouRenActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:135:11-139:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:138:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:139:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:136:13-72
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:137:13-43
+activity#com.DCHZ.TYLINCN.activity.SettingActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:140:11-144:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:143:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:144:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:141:13-69
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:142:13-43
+activity#com.DCHZ.TYLINCN.activity.XiuGaiIPActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:145:12-149:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:148:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:149:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:146:13-70
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:147:13-43
+activity#com.DCHZ.TYLINCN.activity.HelpActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:150:12-154:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:153:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:154:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:151:13-66
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:152:13-43
+activity#com.DCHZ.TYLINCN.activity.HelpWenDangActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:155:13-159:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:158:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:159:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:156:13-73
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:157:13-43
+activity#com.DCHZ.TYLINCN.activity.GaiZhangDetailActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:160:14-164:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:163:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:164:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:161:13-76
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:162:13-43
+activity#com.DCHZ.TYLINCN.activity.FaRenDetailActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:165:15-169:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:168:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:169:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:166:13-73
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:167:13-43
+activity#com.DCHZ.TYLINCN.activity.XiangMuDetailActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:170:15-174:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:173:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:174:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:171:13-75
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:172:13-43
+activity#com.DCHZ.TYLINCN.activity.GongChengDetailActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:175:16-179:49
+	android:screenOrientation
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:178:13-49
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:179:13-46
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:176:13-77
+	android:launchMode
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:177:13-43
+meta-data#PUSH_APPID
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:184:5-186:50
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:185:9-34
+	android:value
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:186:9-47
+meta-data#PUSH_APPKEY
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:187:5-189:50
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:188:9-35
+	android:value
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:189:9-47
+meta-data#PUSH_APPSECRET
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:190:5-192:50
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:191:9-38
+	android:value
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:192:9-47
+receiver#com.DCHZ.TYLINCN.getui.PushDemoReceiver
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:194:5-200:16
+	android:exported
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:196:9-33
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:195:9-63
+intent-filter#com.igexin.sdk.action.7MMO4JqKYO9OFYuk36jhR3
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:197:9-199:25
+action#com.igexin.sdk.action.7MMO4JqKYO9OFYuk36jhR3
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:198:13-83
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:198:21-80
+service#com.igexin.sdk.PushService
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:202:5-206:42
+	android:label
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:205:9-43
+	android:process
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:206:9-39
+	android:exported
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:204:9-32
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:203:9-50
+service#com.igexin.sdk.PushServiceUser
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:207:5-210:50
+	android:label
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:210:9-47
+	android:exported
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:209:9-32
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:208:9-54
+receiver#com.igexin.sdk.PushReceiver
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:211:5-222:16
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:211:15-57
+intent-filter#android.intent.action.ACTION_POWER_CONNECTED+android.intent.action.ACTION_POWER_DISCONNECTED+android.intent.action.BOOT_COMPLETED+android.intent.action.MEDIA_MOUNTED+android.intent.action.USER_PRESENT+android.net.conn.CONNECTIVITY_CHANGE+com.igexin.sdk.action.refreshls
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:212:9-221:25
+action#android.intent.action.BOOT_COMPLETED
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:213:13-75
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:213:21-72
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:214:13-75
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:214:21-72
+action#android.intent.action.USER_PRESENT
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:215:13-73
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:215:21-70
+action#com.igexin.sdk.action.refreshls
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:216:13-70
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:216:21-67
+action#android.intent.action.MEDIA_MOUNTED
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:218:13-74
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:218:21-71
+action#android.intent.action.ACTION_POWER_CONNECTED
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:219:13-83
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:219:21-80
+action#android.intent.action.ACTION_POWER_DISCONNECTED
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:220:13-86
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:220:21-83
+receiver#com.igexin.sdk.PushManagerReceiver
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:224:5-230:16
+	android:exported
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:226:9-33
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:225:9-58
+intent-filter#com.igexin.sdk.action.pushmanager
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:227:9-229:25
+action#com.igexin.sdk.action.pushmanager
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:228:13-72
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:228:21-69
+activity#com.igexin.sdk.PushActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:231:5-237:71
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:237:9-68
+	android:process
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:235:9-39
+	android:exported
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:234:9-33
+	android:excludeFromRecents
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:233:9-42
+	android:taskAffinity
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:236:9-63
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:232:9-51
+activity#com.igexin.sdk.GActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:238:5-244:70
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:244:9-68
+	android:process
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:242:9-39
+	android:exported
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:241:9-32
+	android:excludeFromRecents
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:240:9-42
+	android:taskAffinity
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:243:9-63
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:239:9-48
+service#com.igexin.download.DownloadService
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:246:5-248:42
+	android:process
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:248:9-39
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:247:9-59
+receiver#com.igexin.download.DownloadReceiver
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:250:5-254:16
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:250:15-66
+intent-filter#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:251:9-253:25
+provider#com.igexin.download.DownloadProvider
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:256:5-260:42
+	android:process
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:260:9-39
+	android:exported
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:258:9-32
+	android:authorities
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:259:9-57
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:257:9-60
+activity#com.igexin.getuiext.activity.GetuiExtActivity
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:262:5-269:71
+	android:configChanges
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:264:9-68
+	android:theme
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:269:9-68
+	android:process
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:267:9-39
+	android:exported
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:266:9-33
+	android:excludeFromRecents
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:265:9-42
+	android:taskAffinity
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:268:9-58
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:263:9-69
+receiver#com.igexin.getuiext.service.PayloadReceiver
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:271:5-277:16
+	android:exported
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:273:9-33
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:272:9-67
+service#com.igexin.getuiext.service.GetuiExtService
+ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:278:5-280:42
+	android:process
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:280:9-39
+	android:name
+		ADDED from E:\myWork\JNSZ\app\src\main\AndroidManifest.xml:279:9-67

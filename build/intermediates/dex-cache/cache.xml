@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\myWork\JNSZ\app\libs\GetuiSDK2.7.0.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="01f2d7d09e2d69798bed5cded920398061c6d77f">
+        <dex dex="E:\myWork\JNSZ\app\build\intermediates\pre-dexed\debug\GetuiSDK2.7.0.0_269f415c7a8c538667e8891f3688027153e1a55a.jar" />
+    </item>
+    <item
+        jar="E:\myWork\JNSZ\app\libs\GetuiExt-2.0.3.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="7825bfa9135d693e2046eab96fd94e724e0f9eda">
+        <dex dex="E:\myWork\JNSZ\app\build\intermediates\pre-dexed\debug\GetuiExt-2.0.3_f1fd7f16baa4dfca344de8047a1bb33c38aa2727.jar" />
+    </item>
+    <item
+        jar="E:\Android\sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="E:\myWork\JNSZ\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0_f0ab625e2aa242d01aa2cd3c4d39a3cf5323d1f8.jar" />
+    </item>
+    <item
+        jar="E:\myWork\JNSZ\app\libs\httpmime-4.1.1.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="d34b163e52a9727101aced60775d51c5085390a1">
+        <dex dex="E:\myWork\JNSZ\app\build\intermediates\pre-dexed\debug\httpmime-4.1.1_021dd003a3953645ed5a61817b2fba59a76101d9.jar" />
+    </item>
+    <item
+        jar="E:\myWork\JNSZ\app\libs\fastjson_android_1.2.4.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="2cfeccf58172f536ba01881fce03590180e27e14">
+        <dex dex="E:\myWork\JNSZ\app\build\intermediates\pre-dexed\debug\fastjson_android_1.2.4_ca23da3c2874ebe758e5f6fc528e562dda43ce5f.jar" />
+    </item>
+
+</items>

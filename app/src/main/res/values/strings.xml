@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">济南市政</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- 下拉刷新相关 -->
+	<string name="pull_headerview_txt_down">下拉刷新</string>
+	<string name="pull_headerview_txt_up">释放立即刷新</string>
+	<string name="pull_headerview_refresh_succ">刷新成功</string>
+	<string name="pull_headerview_refresh_error">刷新失败</string>
+	<string name="pull_headerview_refresh_no_refresh">石器时代</string>
+    <string name="msgitem_bottom_nomore">没有更多消息</string>
+    <string name="msgitem_bottom_init">点击加载更多消息</string>
+	<string name="msgitem_bottom_loading">加载中.....</string>
+	<string name="msgitem_bottom_error_tips">加载失败，点击重新加载</string>
+</resources>

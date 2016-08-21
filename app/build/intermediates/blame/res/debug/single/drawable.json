@@ -1,0 +1,66 @@
+[
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tab_main_first.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\drawable\\tab_main_first.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\textcolor_details.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\drawable\\textcolor_details.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_third_list.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\drawable\\bg_third_list.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tab_main_forth.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\drawable\\tab_main_forth.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_textview2.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\drawable\\bg_textview2.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ablum_progress.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\drawable\\ablum_progress.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tab_main_third.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\drawable\\tab_main_third.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_check.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\drawable\\bg_check.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_btn_selecter.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\drawable\\bg_btn_selecter.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\more_setting_bg_selector.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\drawable\\more_setting_bg_selector.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_readpwd.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\drawable\\bg_readpwd.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_edittext.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\drawable\\bg_edittext.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_myfocus.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\drawable\\bg_myfocus.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\textcolor_main.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\drawable\\textcolor_main.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tab_main_second.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\drawable\\tab_main_second.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_textview.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\drawable\\bg_textview.xml"
+    }
+]

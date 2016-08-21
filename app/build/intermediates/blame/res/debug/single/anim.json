@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\anim\\activity_right_out.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\anim\\activity_right_out.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\anim\\activity_right_in.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\anim\\activity_right_in.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\anim\\activity_left_in.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\anim\\activity_left_in.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\anim\\activity_left_out.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\anim\\activity_left_out.xml"
+    },
+    {
+        "merged": "E:\\myWork\\JNSZ\\app\\build\\intermediates\\res\\merged\\debug\\anim\\loading_anim_rotate.xml",
+        "source": "E:\\myWork\\JNSZ\\app\\src\\main\\res\\anim\\loading_anim_rotate.xml"
+    }
+]
