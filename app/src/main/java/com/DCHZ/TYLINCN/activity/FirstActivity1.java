@@ -31,7 +31,6 @@ public class FirstActivity1 extends BaseNormalActivity
 //	private String YHID = "7A42F2C8-6F6B-4EA4-AB66-D81098A68380";
 	private String YHID = "";
 	private boolean hasNext = true;
-	private TextView textView_daiBan;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -48,8 +47,6 @@ public class FirstActivity1 extends BaseNormalActivity
 
 	private void initLayout() {
 		// TODO Auto-generated method stub
-		textView_daiBan=(TextView) findViewById(R.id.textView_daiBan);
-		textView_daiBan.setText("已办事务");
 		mMsgPage = (MsgPage) findViewById(R.id.first_msgPage);
 		this.mMsgPage.setRefreshListener(mRefreshListener);
 		this.mMsgPage.setEmpty(ListViewEmptyView.TYPE_COMMENT);
