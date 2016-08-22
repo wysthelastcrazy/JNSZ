@@ -23,7 +23,6 @@ public class TestActivity extends BaseNormalActivity {
 		ProtocalManager.getInstance().getDaiBanList("7A42F2C8-6F6B-4EA4-AB66-D81098A68380", 1);
 //		registMsgRecevier(EventCommon.EVENT_LOGIN);
 //		ProtocalManager.getInstance().getLogin("yangjing", "");
-		
 	}
 
 	@Override
