@@ -4,31 +4,15 @@
     android:layout_height="match_parent"
     android:background="@color/common_grey" >
 
-    <LinearLayout
-        android:id="@+id/layout_myfocus"
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:background="#f2f5ed"
-        android:gravity="center"
-        android:padding="2px" >
-
-        <TextView
-            android:id="@+id/textView_daiBan"
-            android:layout_width="100dp"
-            android:layout_height="35dp"
-            android:gravity="center"
-            android:text="待办事务"
-            android:textColor="#5c5d49"
-            android:textSize="18sp" />
-
-    </LinearLayout>
+   <com.DCHZ.TYLINCN.component.HeaderSelectView
+       android:id="@+id/header"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"></com.DCHZ.TYLINCN.component.HeaderSelectView>
     <com.DCHZ.TYLINCN.msglist.MsgPage 
         android:id="@+id/first_msgPage"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_marginTop="11.5dp"
-        android:layout_below="@id/layout_myfocus"
+        android:layout_below="@id/header"
         ></com.DCHZ.TYLINCN.msglist.MsgPage>
 </RelativeLayout>
