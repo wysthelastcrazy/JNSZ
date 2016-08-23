@@ -3,6 +3,7 @@ package com.DCHZ.TYLINCN.activity;
 import com.DCHZ.TYLINCN.R;
 import com.DCHZ.TYLINCN.activity.base.BaseNormalActivity;
 import com.DCHZ.TYLINCN.commen.EventCommon;
+import com.DCHZ.TYLINCN.component.ChartView;
 import com.DCHZ.TYLINCN.http.ProtocalManager;
 import com.DCHZ.TYLINCN.http.rsp.RspDaiBanListEntity;
 import com.DCHZ.TYLINCN.http.rsp.RspLoginEntity;
@@ -20,9 +21,10 @@ public class TestActivity extends BaseNormalActivity {
 //		registMsgRecevier(EventCommon.EVENT_FIRST);
 //		ProtocalManager.getInstance().getTest();
 //		registMsgRecevier(EventCommon.EVENT_DAIBAN);
-		ProtocalManager.getInstance().getDaiBanList("7A42F2C8-6F6B-4EA4-AB66-D81098A68380", 1);
+//		ProtocalManager.getInstance().getDaiBanList("7A42F2C8-6F6B-4EA4-AB66-D81098A68380", 1);
 //		registMsgRecevier(EventCommon.EVENT_LOGIN);
 //		ProtocalManager.getInstance().getLogin("yangjing", "");
+		ChartView mChart= (ChartView) this.findViewById(R.id.mChart);
 	}
 
 	@Override
