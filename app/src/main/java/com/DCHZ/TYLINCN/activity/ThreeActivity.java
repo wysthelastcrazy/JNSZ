@@ -9,6 +9,7 @@ import com.DCHZ.TYLINCN.activity.base.BaseNormalActivity;
 import com.DCHZ.TYLINCN.adapter.ThirdListAdapter;
 import com.DCHZ.TYLINCN.commen.EventCommon;
 import com.DCHZ.TYLINCN.component.BaoBiaoListTopView;
+import com.DCHZ.TYLINCN.component.ChartView;
 import com.DCHZ.TYLINCN.component.ListViewEmptyView;
 import com.DCHZ.TYLINCN.entity.VThirdItemEntity;
 import com.DCHZ.TYLINCN.http.ProtocalManager;
@@ -46,6 +47,7 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 	private String IsBMLeader;
 	private String BMID;
 	private boolean hasBottom;
+	private ChartView mChartView;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -108,6 +110,8 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 //		this.mMsgPage.setEmpty(ListViewEmptyView.TYPE_ENROLL);
 		this.mMsgPage.setRefreshListener(mRefreshListener);
 		mMsgPage.setEnablePullDown(false);
+		mChartView=new ChartView(this);
+		mMsgPage.addHeaderView(mChartView);
 	}
 	
 	private IRefreshListener mRefreshListener=new IRefreshListener() {
