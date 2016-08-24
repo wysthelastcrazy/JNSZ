@@ -25,7 +25,8 @@ public class MainActivity extends TabActivity implements OnClickListener{
 	private final String TAB_1 = "tab_1";
 	private final String TAB_2 = "tab_2";
 	private final String TAB_3 = "tab_3";
-	
+	private final String TAB_4 = "tab_4";
+
 	private RelativeLayout relaFirst;
 	private RelativeLayout relaSecond;
 	private RelativeLayout relaThird;
@@ -72,6 +73,14 @@ public class MainActivity extends TabActivity implements OnClickListener{
 		}catch(Exception ee){
 			Log.e(TAB_3, ee.toString());
 		}
+		TabHost.TabSpec tab4=mTabHost.newTabSpec(TAB_4).setIndicator(TAB_4);
+		Intent intent4=new Intent(this,SettingActivity.class);
+		tab4.setContent(intent4);
+		try{
+			mTabHost.addTab(tab4);
+		}catch(Exception ee){
+			Log.e(TAB_4, ee.toString());
+		}
 		
 		
 		
@@ -85,6 +94,8 @@ public class MainActivity extends TabActivity implements OnClickListener{
 		
 		this.relaThird = (RelativeLayout) this.findViewById(R.id.rela_btn_third);
 		this.relaThird.setOnClickListener(this);
+		this.relaForth = (RelativeLayout) this.findViewById(R.id.rela_btn_forth);
+		this.relaForth.setOnClickListener(this);
 		
 //		TextView txtFirst = (TextView) this.relaFirst.findViewById(R.id.btn_txt_first);
 //		TextView txtSecond = (TextView) this.relaSecond.findViewById(R.id.btn_txt_second);
@@ -96,8 +107,8 @@ public class MainActivity extends TabActivity implements OnClickListener{
 		ImageView imgFirst = (ImageView) this.relaFirst.findViewById(R.id.btn_img_first);
 		ImageView imgSecond = (ImageView) this.relaSecond.findViewById(R.id.btn_img_second);
 		ImageView imgThird = (ImageView) this.relaThird.findViewById(R.id.btn_img_third);
-//		ImageView imgForth = (ImageView) this.relaForth.findViewById(R.id.btn_img_forth);
-		ImageView[] imgTempArray = {imgFirst,imgSecond,imgThird};
+		ImageView imgForth = (ImageView) this.relaForth.findViewById(R.id.btn_img_forth);
+		ImageView[] imgTempArray = {imgFirst,imgSecond,imgThird,imgForth};
 		this.imgArray = imgTempArray;
 		setIndex(0);
 	}
