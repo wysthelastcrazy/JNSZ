@@ -38,8 +38,8 @@ public class ParseUtil {
 				mEntity.type=VThirdItemEntity.TYPE_HeTong;
 				mList.add(mEntity);
 				if (!"总部小计".equals(srcList.get(i).BMName)
-						|| !"子公司小计".equals(srcList.get(i).BMName)
-						|| !"分公司小计".equals(srcList.get(i).BMName)) {
+						&& !"分院小计".equals(srcList.get(i).BMName)
+						&& !"公司小计".equals(srcList.get(i).BMName)) {
 					String str = srcList.get(i).NianDuHeTongShiJi;
 					if(!TextUtils.isEmpty(str)){
 						ShiJiTotal = ShiJiTotal + Integer.valueOf(str);
@@ -49,9 +49,11 @@ public class ParseUtil {
 					if(!TextUtils.isEmpty(str1)){
 						YuSuanTotal = YuSuanTotal + Integer.valueOf(str1);
 					}
+				}else{
+					MyLog.debug("dd","[getThirdList]");
 				}
 			}
-			
+			MyLog.debug("dd","[getThirdList]  ShiJiTotal:"+ShiJiTotal+"  YuSuanTotal"+YuSuanTotal);
 			mEntity=new VThirdItemEntity();
 		    entity=new PJiDuHeTongItemEntity();
 			entity.BMName="总计";
@@ -112,8 +114,8 @@ public class ParseUtil {
 				mEntity.type=VThirdItemEntity.TYPE_SHOUKUAN;
 				mList.add(mEntity);
 				if (!"总部小计".equals(srcList.get(i).BMName)
-						|| !"子公司小计".equals(srcList.get(i).BMName)
-						|| !"分公司小计".equals(srcList.get(i).BMName)) {
+						&& !"分院小计".equals(srcList.get(i).BMName)
+						&&!"公司小计".equals(srcList.get(i).BMName)) {
 					String str = srcList.get(i).NianDuShouKuanShiJi;
 					if(!TextUtils.isEmpty(str)){
 						ShiJiTotal = ShiJiTotal + Integer.valueOf(str);

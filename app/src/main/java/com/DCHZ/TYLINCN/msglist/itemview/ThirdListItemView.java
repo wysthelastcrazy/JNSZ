@@ -49,8 +49,8 @@ public class ThirdListItemView extends BaseItemView<VThirdItemEntity> {
 			
 			relat_Layout.setBackgroundResource(R.color.common_white);
 			if ("总部小计".equals(t.mEntity.BMName)
-					|| "子公司小计".equals(t.mEntity.BMName)
-					|| "分公司小计".equals(t.mEntity.BMName)) {
+					|| "分院小计".equals(t.mEntity.BMName)
+					|| "公司小计".equals(t.mEntity.BMName)) {
 				relat_Layout.setBackgroundResource(R.color.thirdList_bg);
 			}
 		}else{
@@ -74,8 +74,8 @@ public class ThirdListItemView extends BaseItemView<VThirdItemEntity> {
 			
 			relat_Layout.setBackgroundResource(R.color.common_white);
 			if ("总部小计".equals(t.shouKuanEntity.BMName)
-					|| "子公司小计".equals(t.shouKuanEntity.BMName)
-					|| "分公司小计".equals(t.shouKuanEntity.BMName)) {
+					|| "分院小计".equals(t.shouKuanEntity.BMName)
+					|| "公司小计".equals(t.shouKuanEntity.BMName)) {
 				relat_Layout.setBackgroundResource(R.color.thirdList_bg);
 			}
 		}
