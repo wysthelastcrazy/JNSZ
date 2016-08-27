@@ -181,7 +181,7 @@ public class ChartView extends LinearLayout{
         set1.setDrawCubic(true);  //设置曲线为圆滑的线
         set1.setCubicIntensity(0.2f);
         set1.setDrawFilled(false);  //设置包括的范围区域填充颜色
-        set1.setDrawCircles(true);  //设置有圆点
+        set1.setDrawCircles(false);  //设置有圆点
         set1.setLineWidth(2f);    //设置线的宽度
         set1.setCircleSize(5f);   //设置小圆的大小
         set1.setHighLightColor(Color.rgb(244, 117, 117));
