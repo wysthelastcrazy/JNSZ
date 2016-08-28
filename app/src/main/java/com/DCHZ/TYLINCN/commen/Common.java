@@ -74,6 +74,10 @@ public class Common {
 	public static final String URL_GONGCHENG="/FenBaoHeTongFuKuanInfo";
 	/**个推**/
 	public static final String URL_PUSH="/InsertBiaoZhiID";
+	/**月度合同信息**/
+	public static final String URL_YUEDU_HETONG_INFO="/YueDuHeTongInfo";
+	/**月度收款信息**/
+	public static final String URL_YUEDU_SHOUKUAN_INFO="/YueDuShouKuanInfo";
 	/**===========================================================================**/
 	/**协议返回成功**/
 	public static final int ERROR_CODE_SUCC = 0;

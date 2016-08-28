@@ -37,6 +37,8 @@ import com.DCHZ.TYLINCN.http.req.ReqXiangMuDetailEntity;
 import com.DCHZ.TYLINCN.http.req.ReqYiBanListEntity;
 import com.DCHZ.TYLINCN.http.req.ReqYingFuHTDetailEntity;
 import com.DCHZ.TYLINCN.http.req.ReqYingShouHTDetailEntity;
+import com.DCHZ.TYLINCN.http.req.ReqYueDuHeTongInfoEntity;
+import com.DCHZ.TYLINCN.http.req.ReqYueDuShouKuanInfoEntity;
 import com.DCHZ.TYLINCN.http.task.TaskBanLiYiJian;
 import com.DCHZ.TYLINCN.http.task.TaskDaiBan;
 import com.DCHZ.TYLINCN.http.task.TaskFaPiaoDetail;
@@ -64,6 +66,8 @@ import com.DCHZ.TYLINCN.http.task.TaskXiangMuDetail;
 import com.DCHZ.TYLINCN.http.task.TaskYiBanList;
 import com.DCHZ.TYLINCN.http.task.TaskYingFuHTDetail;
 import com.DCHZ.TYLINCN.http.task.TaskYingShouHTDetail;
+import com.DCHZ.TYLINCN.http.task.TaskYueDuHeTongInfo;
+import com.DCHZ.TYLINCN.http.task.TaskYueDuShouKuanInfo;
 import com.DCHZ.TYLINCN.util.MyLog;
 import com.DCHZ.TYLINCN.util.SharePreLoginUtil;
 import com.common.http.HttpEngine;
@@ -535,6 +539,29 @@ public class ProtocalManager {
 		req.strClientID=strClientID;
 		req.strDeviceToken="";
 		TaskPushEntity task=new TaskPushEntity(req);
+		return addTask(task);
+	}
+
+	/**
+	 * 获取月度合同信息
+	 * @param NianValue
+	 * @return
+	 */
+	public int getYueDuHeTongInfo(String NianValue){
+		ReqYueDuHeTongInfoEntity req=new ReqYueDuHeTongInfoEntity();
+		req.NianValue=NianValue;
+		TaskYueDuHeTongInfo task=new TaskYueDuHeTongInfo(req);
+		return addTask(task);
+	}
+	/**
+	 * 获取月度收款信息
+	 * @param NianValue
+	 * @return
+	 */
+	public int getYueDuSHouKuanInfo(String NianValue){
+		ReqYueDuShouKuanInfoEntity req=new ReqYueDuShouKuanInfoEntity();
+		req.NianValue=NianValue;
+		TaskYueDuShouKuanInfo task=new TaskYueDuShouKuanInfo(req);
 		return addTask(task);
 	}
 }

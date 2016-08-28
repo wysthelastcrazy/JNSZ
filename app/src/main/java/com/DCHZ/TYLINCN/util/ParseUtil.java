@@ -4,10 +4,13 @@ import java.util.ArrayList;
 
 import android.text.TextUtils;
 
+import com.DCHZ.TYLINCN.commen.Global;
 import com.DCHZ.TYLINCN.entity.PDetailHTInfoEntity;
 import com.DCHZ.TYLINCN.entity.PDetailTJInfoInfoEntity;
 import com.DCHZ.TYLINCN.entity.PJiDuHeTongItemEntity;
 import com.DCHZ.TYLINCN.entity.PJiDuShouKuanItemEntity;
+import com.DCHZ.TYLINCN.entity.PYueDuHeTongItemEntiity;
+import com.DCHZ.TYLINCN.entity.PYueDuInfoItemEntity;
 import com.DCHZ.TYLINCN.entity.VJieShouRenEntity;
 import com.DCHZ.TYLINCN.entity.VThirdItemEntity;
 
@@ -193,5 +196,56 @@ public class ParseUtil {
 			 }
 		 }
 		 return mList;
+	}
+
+	/**
+	 * 计算所有分部的月度信息
+	 * @param srcList
+	 * @return
+	 */
+	public static String[] getYueduTeHongList(final ArrayList<PYueDuHeTongItemEntiity> srcList) {
+		if (srcList != null) {
+			MyLog.debug("dd", "[getYueduTeHongList]  srcList:" + srcList.size());
+		}
+		int yiYue = 0, erYue = 0, sanYue = 0, siYue = 0, wuYue = 0, liuYue = 0, qiYue = 0, baYue = 0, jiuYue = 0, shiYue = 0, shiyiYue = 0, shierYue = 0;
+			if (srcList != null && srcList.size() > 0) {
+				for (int i = 0; i < srcList.size(); i++) {
+					PYueDuHeTongItemEntiity entity = srcList.get(i);
+					if (entity != null && entity.YueDuInfo != null && entity.YueDuInfo.size() > 0) {
+						for (int j = 0; j < entity.YueDuInfo.size(); j++) {
+							PYueDuInfoItemEntity infoItem = entity.YueDuInfo.get(j);
+							String yue = infoItem.Yue;
+							int jine = infoItem.HeTongJinE;
+							if ("1".equals(yue)) {
+								yiYue += jine;
+							} else if ("2".equals(yue)) {
+								erYue += jine;
+							} else if ("3".equals(yue)) {
+								sanYue += jine;
+							} else if ("4".equals(yue)) {
+								siYue += jine;
+							} else if ("5".equals(yue)) {
+								wuYue += jine;
+							} else if ("6".equals(yue)) {
+								liuYue += jine;
+							} else if ("7".equals(yue)) {
+								qiYue += jine;
+							} else if ("8".equals(yue)) {
+								baYue += jine;
+							} else if ("9".equals(yue)) {
+								jiuYue += jine;
+							} else if ("10".equals(yue)) {
+								shiYue += jine;
+							} else if ("11".equals(yue)) {
+								shiyiYue += jine;
+							} else if ("12".equals(yue)) {
+								shierYue += jine;
+							}
+						}
+					}
+				}
+			}
+		String[] mList =new String[]{yiYue/2 + "", erYue/2 + "", sanYue/2 + "", siYue/2 + "", wuYue/2 + "", liuYue/2 + "", qiYue/2 + "", baYue/2 + "", jiuYue/2 + "", shiYue/2 + "", shiyiYue/2 + "", shierYue/2 + ""};
+		return mList;
 	}
 }

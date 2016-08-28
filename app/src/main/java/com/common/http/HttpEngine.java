@@ -102,17 +102,17 @@ public class HttpEngine extends Thread{
 	public String getRefer(){
 		testIp=SharePreIPUtil.loadIpInfo();
 		ip=SharePreIPUtil.loadIpInfo();
-//		if(!TextUtils.isEmpty(testIp)){
-//			return "http://"+testIp+"/CCSFlat/CCSMobile/MobileService.asmx";
-//		}else{
-//			SharePreIPUtil.saveIpInfo(defultTestIp);
-//			return "http://"+defultTestIp+"/CCSFlat/CCSMobile/MobileService.asmx";
-//		}
-		if(!TextUtils.isEmpty(ip)){
-			return "http://"+ip+"/CCSFlat/CCSMobile/MobileService.asmx";
+		if(!TextUtils.isEmpty(testIp)){
+			return "http://"+testIp+"/CCSFlat/CCSMobile/MobileService.asmx";
 		}else{
 			SharePreIPUtil.saveIpInfo(defultTestIp);
-			return "http://"+defultIp+"/CCSFlat/CCSMobile/MobileService.asmx";
+			return "http://"+defultTestIp+"/CCSFlat/CCSMobile/MobileService.asmx";
 		}
+//		if(!TextUtils.isEmpty(ip)){
+//			return "http://"+ip+"/CCSFlat/CCSMobile/MobileService.asmx";
+//		}else{
+//			SharePreIPUtil.saveIpInfo(defultTestIp);
+//			return "http://"+defultIp+"/CCSFlat/CCSMobile/MobileService.asmx";
+//		}
 	}
 }

@@ -62,6 +62,10 @@ public class EventCommon {
 	public static final int EVENT_GONGCHENG=EVENT_XIANGMU+1;
 	//推送
 	public static final int EVENT_PUSH=EVENT_GONGCHENG+1;
+	//月度合同info
+	public static final int EVENT_YUEDUHETONG_INFO=EVENT_PUSH+1;
+	//月度收款info
+	public static final int EVENT_YUEDUSHOUKUAN_INFO=EVENT_YUEDUHETONG_INFO+1;
 	public static final int EVENT_ID_DATA_END = 600;
 	
 	//=============================UI点击时间通知

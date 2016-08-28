@@ -15,11 +15,14 @@ import com.DCHZ.TYLINCN.entity.VThirdItemEntity;
 import com.DCHZ.TYLINCN.http.ProtocalManager;
 import com.DCHZ.TYLINCN.http.rsp.RspJiDuHeTongEntity;
 import com.DCHZ.TYLINCN.http.rsp.RspJiDuShouKuanEntity;
+import com.DCHZ.TYLINCN.http.rsp.RspYueDuHeTongInfoEntity;
+import com.DCHZ.TYLINCN.http.rsp.RspYueDuShouKuanInfoEntity;
 import com.DCHZ.TYLINCN.listener.IBaoBiaoClickListener;
 import com.DCHZ.TYLINCN.msglist.MsgPage;
 import com.DCHZ.TYLINCN.msglist.NLPullRefreshView;
 import com.DCHZ.TYLINCN.msglist.base.BaseListAdapter;
 import com.DCHZ.TYLINCN.msglist.listener.IRefreshListener;
+import com.DCHZ.TYLINCN.util.MyLog;
 import com.DCHZ.TYLINCN.util.ParseUtil;
 import com.DCHZ.TYLINCN.util.SharePreLoginUtil;
 import com.common.util.DateUtil;
@@ -35,6 +38,8 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 	private final int TYPE_SHOUKUAN=2;
 	private final int FLAG_SET_HETONG=0x100;
 	private final int FLAG_SET_SHOUKUAN=0x101;
+	private final int FLAG_SETYUEDUHETONG=0x102;
+	private final int FLAG_SET_YUEDUSHOUKUAN=0x103;
 	private int mType=TYPE_HETONG;
 	private TextView textView_heTong;
 	private TextView textView_shouKuan;
@@ -55,10 +60,14 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 		setContentView(R.layout.activity_three);
 		initLayout();
 		registMsgRecevier(EventCommon.EVENT_JIDU_HETONG);
+		registMsgRecevier(EventCommon.EVENT_YUEDUHETONG_INFO);
 		registMsgRecevier(EventCommon.EVENT_JIDU_SHOUKUAN);
+		registMsgRecevier(EventCommon.EVENT_YUEDUSHOUKUAN_INFO);
 		year=DateUtil.getDate();
 		int seq=ProtocalManager.getInstance().getJiDuHeTongInfo(year);
 		mReqList.add(seq);
+		int seq1=ProtocalManager.getInstance().getYueDuHeTongInfo(year);
+		mReqList.add(seq1);
 		showLoading();
 		String[] strs=year.split("-");
 		topView.setInfo(strs[0]+"合同信息查询");
@@ -82,8 +91,17 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 			public void thistYearClickListener() {
 				// TODO Auto-generated method stub
 				year=DateUtil.getDate();
-				int seq=ProtocalManager.getInstance().getJiDuHeTongInfo(year);
-				mReqList.add(seq);
+				if(mType==TYPE_HETONG){
+					int seq=ProtocalManager.getInstance().getJiDuHeTongInfo(year);
+					mReqList.add(seq);
+					int seq1=ProtocalManager.getInstance().getYueDuHeTongInfo(year);
+					mReqList.add(seq1);
+				}else if(mType==TYPE_SHOUKUAN){
+					int seq=ProtocalManager.getInstance().getJiDuShouKuanInfo(year);
+					int seq1=ProtocalManager.getInstance().getYueDuSHouKuanInfo(year);
+					mReqList.add(seq1);
+					mReqList.add(seq);
+				}
 				showLoading();
 			}
 			
@@ -91,8 +109,17 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 			public void nextYearClickListener() {
 				// TODO Auto-generated method stub
 				year=DateUtil.changeYear(year, DateUtil.TYPE_NEXT);
-				int seq=ProtocalManager.getInstance().getJiDuHeTongInfo(year);
-				mReqList.add(seq);
+				if(mType==TYPE_HETONG){
+					int seq=ProtocalManager.getInstance().getJiDuHeTongInfo(year);
+					mReqList.add(seq);
+					int seq1=ProtocalManager.getInstance().getYueDuHeTongInfo(year);
+					mReqList.add(seq1);
+				}else if(mType==TYPE_SHOUKUAN){
+					int seq=ProtocalManager.getInstance().getJiDuShouKuanInfo(year);
+					int seq1=ProtocalManager.getInstance().getYueDuSHouKuanInfo(year);
+					mReqList.add(seq1);
+					mReqList.add(seq);
+				}
 				showLoading();
 			}
 			
@@ -100,8 +127,17 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 			public void lastYearClickListener() {
 				// TODO Auto-generated method stub
 				year=DateUtil.changeYear(year, DateUtil.TYPE_LAST);
-				int seq=ProtocalManager.getInstance().getJiDuHeTongInfo(year);
-				mReqList.add(seq);
+				if(mType==TYPE_HETONG){
+					int seq=ProtocalManager.getInstance().getJiDuHeTongInfo(year);
+					mReqList.add(seq);
+					int seq1=ProtocalManager.getInstance().getYueDuHeTongInfo(year);
+					mReqList.add(seq1);
+				}else if(mType==TYPE_SHOUKUAN){
+					int seq=ProtocalManager.getInstance().getJiDuShouKuanInfo(year);
+					int seq1=ProtocalManager.getInstance().getYueDuSHouKuanInfo(year);
+					mReqList.add(seq1);
+					mReqList.add(seq);
+				}
 				showLoading();
 			}
 		});
@@ -136,8 +172,12 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 			if(mType==TYPE_HETONG){
 				int seq=ProtocalManager.getInstance().getJiDuHeTongInfo(year);
 				mReqList.add(seq);
+				int seq1=ProtocalManager.getInstance().getYueDuHeTongInfo(year);
+				mReqList.add(seq1);
 			}else if(mType==TYPE_SHOUKUAN){
 				int seq=ProtocalManager.getInstance().getJiDuShouKuanInfo(year);
+				int seq1=ProtocalManager.getInstance().getYueDuSHouKuanInfo(year);
+				mReqList.add(seq1);
 				mReqList.add(seq);
 			}
 		};
@@ -150,6 +190,8 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 			textView_heTong.setEnabled(false);
 			int seq=ProtocalManager.getInstance().getJiDuHeTongInfo(year);
 			mReqList.add(seq);
+			int seq1=ProtocalManager.getInstance().getYueDuHeTongInfo(year);
+			mReqList.add(seq1);
 			showLoading();
 			mType=TYPE_HETONG;
 		}else if(view==this.textView_shouKuan){
@@ -157,6 +199,8 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 			textView_heTong.setEnabled(true);
 			int seq=ProtocalManager.getInstance().getJiDuShouKuanInfo(year);
 			mReqList.add(seq);
+			int seq1=ProtocalManager.getInstance().getYueDuSHouKuanInfo(year);
+			mReqList.add(seq1);
 			showLoading();
 			mType=TYPE_SHOUKUAN;
 		}
@@ -177,6 +221,22 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 				RspJiDuShouKuanEntity rsp=(RspJiDuShouKuanEntity) obj;
 				Message msg = Message.obtain();
 				msg.what = FLAG_SET_SHOUKUAN;
+				msg.obj = rsp;
+				sendMsg(msg);
+			}
+		}else if (eventId==EventCommon.EVENT_YUEDUHETONG_INFO){
+			if(mReqList.remove(Integer.valueOf(seqNo))){
+				RspYueDuHeTongInfoEntity rsp=(RspYueDuHeTongInfoEntity) obj;
+				Message msg = Message.obtain();
+				msg.what = FLAG_SETYUEDUHETONG;
+				msg.obj = rsp;
+				sendMsg(msg);
+			}
+		}else if (eventId==EventCommon.EVENT_YUEDUSHOUKUAN_INFO){
+			if(mReqList.remove(Integer.valueOf(seqNo))){
+				RspYueDuShouKuanInfoEntity rsp=(RspYueDuShouKuanInfoEntity) obj;
+				Message msg = Message.obtain();
+				msg.what = FLAG_SET_YUEDUSHOUKUAN;
 				msg.obj = rsp;
 				sendMsg(msg);
 			}
@@ -209,7 +269,8 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 				}else{
 					 mList=ParseUtil.getThirdList(rsp.mEntity.JiDuHeTongInfo);
 				}
-				
+				VThirdItemEntity item=mList.get(mList.size()-1);
+				mChartView.setData(item);
 //				showToast("mList:"+rsp.mEntity.JiDuShouKuanInfo.size());
 				 if(mAdapter==null){
 					mAdapter=new ThirdListAdapter(mList);
@@ -234,11 +295,13 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 				ArrayList<VThirdItemEntity> mList=new ArrayList<VThirdItemEntity>();
 				if("False".equals(LeaderRole)){
 					if("True".equals(IsBMLeader)){
-						 mList=ParseUtil.getThirdList1(rsp1.mEntity.JiDuShouKuanInfo,BMID);
+						 mList=ParseUtil.getThirdList1(rsp1.mEntity.JiDuShouKuanInfo, BMID);
 					}
 				}else{
 					 mList=ParseUtil.getThirdList1(rsp1.mEntity.JiDuShouKuanInfo);
 				}
+				VThirdItemEntity item=mList.get(mList.size()-1);
+				mChartView.setData(item);
 				 if(mAdapter==null){
 						mAdapter=new ThirdListAdapter(mList);
 						mAdapter.setType(BaseListAdapter.ADAPTER_TYPE_NO_BOTTOM);
@@ -252,6 +315,22 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 				}
 //			mMsgPage.completeRefresh(rsp1.isSucc);
 			break;
+			case FLAG_SETYUEDUHETONG:
+				hideLoadingDialog();
+				RspYueDuHeTongInfoEntity rsp2= (RspYueDuHeTongInfoEntity) msg.obj;
+				if (rsp2!=null&&rsp2.mEntity!=null){
+					MyLog.debug(TAG,"[handleMsg]  rsp");
+					mChartView.setData(rsp2.mEntity.YueDuHeTongInfo);
+				}
+				break;
+			case FLAG_SET_YUEDUSHOUKUAN:
+				hideLoadingDialog();
+				RspYueDuShouKuanInfoEntity rsp3= (RspYueDuShouKuanInfoEntity) msg.obj;
+				if (rsp3!=null&&rsp3.mEntity!=null){
+					MyLog.debug(TAG,"[handleMsg]  rsp");
+					mChartView.setData(rsp3.mEntity.YueDuShouKuanInfo);
+				}
+				break;
 		default:
 			break;
 		}
