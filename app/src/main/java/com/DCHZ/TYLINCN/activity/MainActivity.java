@@ -57,7 +57,7 @@ public class MainActivity extends TabActivity implements OnClickListener{
 		
 		
 		TabHost.TabSpec tabSecond=mTabHost.newTabSpec(TAB_2).setIndicator(TAB_2);
-		Intent intent2=new Intent(this,ThreeActivity.class);
+		Intent intent2=new Intent(this,SearchActivity.class);
 		tabSecond.setContent(intent2);
 		try{
 			mTabHost.addTab(tabSecond);

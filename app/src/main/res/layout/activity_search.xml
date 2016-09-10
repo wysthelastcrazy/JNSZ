@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:background="#EFEFF4">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:textColor="#5D5C4A"
+        android:background="#F3F4ED"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:text="查询"/>
+    <com.DCHZ.TYLINCN.component.MyInfoItemView
+        android:id="@+id/item01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.DCHZ.TYLINCN.component.MyInfoItemView>
+    <com.DCHZ.TYLINCN.component.MyInfoItemView
+        android:id="@+id/item02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.DCHZ.TYLINCN.component.MyInfoItemView>
+    <com.DCHZ.TYLINCN.component.MyInfoItemView
+        android:id="@+id/item03"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.DCHZ.TYLINCN.component.MyInfoItemView>
+    <com.DCHZ.TYLINCN.component.MyInfoItemView
+        android:id="@+id/item04"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.DCHZ.TYLINCN.component.MyInfoItemView>
+    <com.DCHZ.TYLINCN.component.MyInfoItemView
+        android:id="@+id/item05"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.DCHZ.TYLINCN.component.MyInfoItemView>
+    <com.DCHZ.TYLINCN.component.MyInfoItemView
+        android:id="@+id/item06"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.DCHZ.TYLINCN.component.MyInfoItemView>
+</LinearLayout>
