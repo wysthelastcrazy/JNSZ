@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="55dp"
-    android:background="@drawable/more_setting_bg_selector"
+    android:background="@color/common_white"
     android:minHeight="55dp"
     >
     

@@ -15,25 +15,30 @@
     <com.DCHZ.TYLINCN.component.MyInfoItemView
         android:id="@+id/item01"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.DCHZ.TYLINCN.component.MyInfoItemView>
+        android:layout_marginTop="50dp"
+        android:layout_height="55dp"></com.DCHZ.TYLINCN.component.MyInfoItemView>
     <com.DCHZ.TYLINCN.component.MyInfoItemView
         android:id="@+id/item02"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.DCHZ.TYLINCN.component.MyInfoItemView>
+        android:layout_height="55dp"></com.DCHZ.TYLINCN.component.MyInfoItemView>
     <com.DCHZ.TYLINCN.component.MyInfoItemView
         android:id="@+id/item03"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.DCHZ.TYLINCN.component.MyInfoItemView>
+        android:layout_height="55dp"></com.DCHZ.TYLINCN.component.MyInfoItemView>
     <com.DCHZ.TYLINCN.component.MyInfoItemView
         android:id="@+id/item04"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.DCHZ.TYLINCN.component.MyInfoItemView>
+        android:layout_height="55dp"></com.DCHZ.TYLINCN.component.MyInfoItemView>
     <com.DCHZ.TYLINCN.component.MyInfoItemView
         android:id="@+id/item05"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.DCHZ.TYLINCN.component.MyInfoItemView>
+        android:layout_height="55dp"></com.DCHZ.TYLINCN.component.MyInfoItemView>
     <com.DCHZ.TYLINCN.component.MyInfoItemView
         android:id="@+id/item06"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.DCHZ.TYLINCN.component.MyInfoItemView>
+        android:layout_height="55dp"></com.DCHZ.TYLINCN.component.MyInfoItemView>
+    <com.DCHZ.TYLINCN.component.MyInfoItemView
+        android:id="@+id/item07"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"></com.DCHZ.TYLINCN.component.MyInfoItemView>
 </LinearLayout>

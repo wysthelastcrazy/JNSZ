@@ -180,6 +180,11 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.DCHZ" />
+        <activity
+            android:name="com.DCHZ.TYLINCN.activity.SearchActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.DCHZ" />
                
                
                <!--个推SDK配置开始-->

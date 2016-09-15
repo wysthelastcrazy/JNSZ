@@ -80,6 +80,7 @@ public class MyInfoItemView extends RelativeLayout {
 				str = "项目查询";
 				break;
 			case TYPE_XIANMU_BEIAN:
+				str="项目备案查询";
 		}
 		
 		if(!TextUtils.isEmpty(str)){
