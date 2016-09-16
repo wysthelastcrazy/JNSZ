@@ -182,6 +182,12 @@ public class ListTopItemView extends LinearLayout{
 			text_item3_key.setText("数量");
 			text_item4_key.setText("金额（元）");
 			text_item5_key.setText("说明");
+		}else if (Common.DIZHIYIHAOPIN.equals(type)){
+			text_item1_key.setText("名称");
+			text_item2_key.setText("规格");
+			text_item3_key.setText("数量");
+			text_item4_key.setText("金额（元）");
+			text_item5_key.setText("供应商");
 		}
 		else {
 			//错误处理

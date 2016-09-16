@@ -22,16 +22,15 @@ import com.DCHZ.TYLINCN.component.ListOpenWordView;
 import com.DCHZ.TYLINCN.component.ListTopItemView;
 import com.DCHZ.TYLINCN.entity.PBanLiYiJianEntity;
 import com.DCHZ.TYLINCN.entity.PDaiBanEntity;
-import com.DCHZ.TYLINCN.entity.PDetailGaiZhangEntity;
+import com.DCHZ.TYLINCN.entity.PDiZhiYiHaoPinEntity;
+import com.DCHZ.TYLINCN.entity.PDiZhiYiHaoPinItemEntity;
 import com.DCHZ.TYLINCN.entity.PFuJianEntity;
-import com.DCHZ.TYLINCN.entity.PGongZhangEntity;
 import com.DCHZ.TYLINCN.entity.PGuDingZiChanEntity;
 import com.DCHZ.TYLINCN.entity.PGuDingZiChanItemEntity;
 import com.DCHZ.TYLINCN.entity.VJieShouRenEntity;
 import com.DCHZ.TYLINCN.http.ProtocalManager;
 import com.DCHZ.TYLINCN.http.rsp.RspBanLiYiJianEntity;
-import com.DCHZ.TYLINCN.http.rsp.RspGaiZhangEntity;
-import com.DCHZ.TYLINCN.http.rsp.RspGongZhangJieChuDetailEntity;
+import com.DCHZ.TYLINCN.http.rsp.RspDiZhiYiHaoPinDetailEntity;
 import com.DCHZ.TYLINCN.http.rsp.RspGuDingZiChanDetailEntity;
 import com.DCHZ.TYLINCN.http.rsp.RspSaveFlowBusinessEntity;
 import com.DCHZ.TYLINCN.http.rsp.RspSaveReturnFlowBusinessEntity;
@@ -54,7 +53,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/9/16.
  */
-public class GuDingZiChangDetail extends BaseNormalActivity {
+public class DiZhiYiHaoPinDetail extends BaseNormalActivity {
     private List<Integer> mReqList = new ArrayList<Integer>();
     private int type;
     private PDaiBanEntity entity;
@@ -69,7 +68,7 @@ public class GuDingZiChangDetail extends BaseNormalActivity {
     private final int GET_JIESHOUREN=101;
     private ArrayList<VJieShouRenEntity> mList;
     private String TJtype;
-    private RspGuDingZiChanDetailEntity rsp;
+    private RspDiZhiYiHaoPinDetailEntity rsp;
     private ListBottomView mBottomView;
 
     private String mBLUserName;
@@ -117,13 +116,13 @@ public class GuDingZiChangDetail extends BaseNormalActivity {
         setContentView(R.layout.activity_detail);
         initExtras();
         initLayout();
-        registMsgRecevier(EventCommon.EVENT_GUDINGZICHAN_DETAIL);
+        registMsgRecevier(EventCommon.EVENT_DIZHIYIHAOPIN);
         registMsgRecevier(EventCommon.EVENT_BANLI_YIJIAN);
         registMsgRecevier(EventCommon.EVENT_SAVE_FLOWBUSINESS);
         registMsgRecevier(EventCommon.EVENT_SAVE_RETURN_FLOWBUSINESS);
 //		String LCID=entity.LCID;
 //		String YWID=entity.YWID;
-        int seq=ProtocalManager.getInstance().geGuDingZiChanDetail(entity);
+        int seq=ProtocalManager.getInstance().geDiZhiYiHaoPinDetail(entity);
         mReqList.add(seq);
 //		String SLID=entity.SLID;
 //		int seq1=ProtocalManager.getInstance().getBanLiYiJian(SLID);
@@ -165,14 +164,14 @@ public class GuDingZiChangDetail extends BaseNormalActivity {
                 public void typeClickListener() {
                     // TODO Auto-generated method stub
                     String noTag=rsp.mEntity.htInfo.get(0).nodeTag;
-                    IntentUtils.starTiJiaoActivity(GuDingZiChangDetail.this, GET_TYPE,noTag);
+                    IntentUtils.starTiJiaoActivity(DiZhiYiHaoPinDetail.this, GET_TYPE,noTag);
                 }
 
                 @Override
                 public void nextClickListener() {
                     // TODO Auto-generated method stub
                     MyLog.debug(TAG, "[nextClickListener]  mList:"+mList.size());
-                    IntentUtils.starJieShouRenActivity(GuDingZiChangDetail.this, mList, GET_JIESHOUREN);
+                    IntentUtils.starJieShouRenActivity(DiZhiYiHaoPinDetail.this, mList, GET_JIESHOUREN);
                 }
 
                 @Override
@@ -222,9 +221,9 @@ public class GuDingZiChangDetail extends BaseNormalActivity {
     @Override
     public void handleReceiveMsg(int eventId, int seqNo, Object obj) {
         // TODO Auto-generated method stub
-        if(eventId==EventCommon.EVENT_GUDINGZICHAN_DETAIL){
-            if(obj instanceof RspGuDingZiChanDetailEntity){
-                RspGuDingZiChanDetailEntity rsp=(RspGuDingZiChanDetailEntity) obj;
+        if(eventId==EventCommon.EVENT_DIZHIYIHAOPIN){
+            if(obj instanceof RspDiZhiYiHaoPinDetailEntity){
+                RspDiZhiYiHaoPinDetailEntity rsp=(RspDiZhiYiHaoPinDetailEntity) obj;
                 Message msg=Message.obtain();
                 msg.obj=rsp;
                 msg.what=FLAG_SET_TOP;
@@ -266,12 +265,12 @@ public class GuDingZiChangDetail extends BaseNormalActivity {
         int what=msg.what;
         switch (what) {
             case FLAG_SET_TOP:
-                rsp=(RspGuDingZiChanDetailEntity)msg. obj;
+                rsp=(RspDiZhiYiHaoPinDetailEntity)msg. obj;
                 if(rsp!=null&&rsp.isSucc){
 //				List<PShenPiInfoEntity> mList=rsp.mEntity.BXMXInfo;
-                    ArrayList<PGuDingZiChanEntity> bxInfo=rsp.mEntity.GuDingZiChanInfo;
+                    ArrayList<PDiZhiYiHaoPinEntity> bxInfo=rsp.mEntity.DiZhiYiHaoInfo;
                     if(bxInfo!=null&&bxInfo.size()>0)
-                        mHeader.setValue(bxInfo.get(0).ShenQingRenName, bxInfo.get(0).ShenQingBuMenName, bxInfo.get(0).ShenQingRiQi, bxInfo.get(0).GouZhiBuMenName);
+                        mHeader.setValue(bxInfo.get(0).ShenQingRenName, bxInfo.get(0).ShenQingBuMenMingCheng, bxInfo.get(0).GZShenQingRiQi, bxInfo.get(0).GZBuMenMingCheng);
                     View view=getHeaderView(bxInfo);
                     mMsgPage.addHeaderView(view);
                     int seq1=ProtocalManager.getInstance().getBanLiYiJian(entity.SLID);
@@ -345,7 +344,7 @@ public class GuDingZiChangDetail extends BaseNormalActivity {
 //			showToast(mBLUserName);
         }
     }
-    private View getHeaderView(ArrayList<PGuDingZiChanEntity> bxInfo){
+    private View getHeaderView(ArrayList<PDiZhiYiHaoPinEntity> bxInfo){
         LinearLayout layout=new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
         AbsListView.LayoutParams params=new AbsListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT, AbsListView.LayoutParams.WRAP_CONTENT);
@@ -354,21 +353,21 @@ public class GuDingZiChangDetail extends BaseNormalActivity {
             ListTopItemView top=new ListTopItemView(this);
             ArrayList<String> keys=new ArrayList<String>();
             ArrayList<String> values=new ArrayList<String>();
-            values.add(bxInfo.get(0).LeiXing);
-            values.add(bxInfo.get(0).GouZhiYuanYin);
-            keys.add("资产类型");
+            values.add(bxInfo.get(0).GZFenLei);
+            values.add(bxInfo.get(0).GZYuanYin);
+            keys.add("分类");
             keys.add("购置原因");
             top.setData(keys, values);
             layout.addView(top);
-           ArrayList<PGuDingZiChanItemEntity>  mInfo=bxInfo.get(0).GuDingZiChanMXInfo;
+           ArrayList<PDiZhiYiHaoPinItemEntity>  mInfo=bxInfo.get(0).DiZhiYiHaoMXInfo;
             for(int i=0;i<mInfo.size();i++){
                 ArrayList<String> mList=new ArrayList<String>();
                 ListTopItemView topView=new ListTopItemView(this);
-                mList.add(mInfo.get(i).ZiChanMingCheng);
-                mList.add(mInfo.get(i).ZiChanGuiGe);
-                mList.add(mInfo.get(i).ZiChanShuLiang);
-                mList.add(mInfo.get(i).ZiChanJinE);
-                mList.add(mInfo.get(i).ZiChanShuoMing);
+                mList.add(mInfo.get(i).GZMingCheng);
+                mList.add(mInfo.get(i).GZGuiGe);
+                mList.add(mInfo.get(i).GZShuLiang);
+                mList.add(mInfo.get(i).GZJinE);
+                mList.add(mInfo.get(i).GZGongYingShang);
                 topView.setData(entity.LCID, mList);
                 if(i==mInfo.size()-1){
                     topView.showBottom();
@@ -376,7 +375,7 @@ public class GuDingZiChangDetail extends BaseNormalActivity {
                 layout.addView(topView);
             }
 
-            ArrayList<PFuJianEntity> fujian=bxInfo.get(0).FuJian;
+            ArrayList<PFuJianEntity> fujian=bxInfo.get(0).GZFuJian;
             if(fujian!=null&&fujian.size()>0){
                 for(int i=0;i<fujian.size();i++){
                     ListOpenWordView openView=new ListOpenWordView(this);

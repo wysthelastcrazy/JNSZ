@@ -99,8 +99,8 @@ public class HeaderDetailView extends RelativeLayout implements OnClickListener{
 		initKey(str);
 		text_item1_value.setText(mEntity.ShenQingRen);
 		String date=mEntity.BLAcceptDate;
-		if (!TextUtils.isDigitsOnly(date)) {
-			date = DateUtil.DateToStr(DateUtil.StrToDate(date));
+		if (!TextUtils.isEmpty(date)) {
+			date = date.split(" ")[0];
 		}
 		text_item3_value.setText(date);
 		if(!Common.FENBAO.equals(str)){
@@ -238,6 +238,13 @@ public class HeaderDetailView extends RelativeLayout implements OnClickListener{
 			text_item4_key.setText("归还时间：");
 		}else if(Common.GUDINGZICHAN.equals(str)){
 			text_title.setText("固定资产购置申请");
+
+			text_item1_key.setText("申请人：");
+			text_item2_key.setText("申请部门：");
+			text_item3_key.setText("申请日期：");
+			text_item4_key.setText("购置部门：");
+		}else if(Common.DIZHIYIHAOPIN.equals(str)){
+			text_title.setText("低值易耗品购置申请");
 
 			text_item1_key.setText("申请人：");
 			text_item2_key.setText("申请部门：");

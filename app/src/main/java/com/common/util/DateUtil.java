@@ -100,7 +100,7 @@ public class DateUtil {
     }  
 	public static String DateToStr(Date date) {
         if (date!=null) {
-            SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
             String str = format.format(date);
             return str;
         }

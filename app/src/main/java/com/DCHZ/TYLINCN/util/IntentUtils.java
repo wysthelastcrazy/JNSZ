@@ -2,6 +2,7 @@ package com.DCHZ.TYLINCN.util;
 
 import java.util.ArrayList;
 
+import com.DCHZ.TYLINCN.activity.DiZhiYiHaoPinDetail;
 import com.DCHZ.TYLINCN.activity.FaPiaoDetailActivity;
 import com.DCHZ.TYLINCN.activity.FaRenDetailActivity;
 import com.DCHZ.TYLINCN.activity.FeiYongDetailActivity;
@@ -219,6 +220,19 @@ public class IntentUtils {
 	 */
 	public static void startGuDIngZiChangDetailActivity(Context mContext,PDaiBanEntity mEntity,int type){
 		Intent intent=new Intent(mContext,GuDingZiChangDetail.class);
+		intent.putExtra(KEY_ENTITY, mEntity);
+		intent.putExtra(KEY_TYPE, type);
+		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		mContext.startActivity(intent);
+	}
+	/**
+	 * 低值易耗品
+	 * @param mContext
+	 * @param mEntity
+	 * @param type
+	 */
+	public static void startDizhiYiHaoPinDetailActivity(Context mContext,PDaiBanEntity mEntity,int type){
+		Intent intent=new Intent(mContext,DiZhiYiHaoPinDetail.class);
 		intent.putExtra(KEY_ENTITY, mEntity);
 		intent.putExtra(KEY_TYPE, type);
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

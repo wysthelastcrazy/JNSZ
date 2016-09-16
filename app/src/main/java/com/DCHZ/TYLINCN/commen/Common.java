@@ -80,6 +80,8 @@ public class Common {
 	public static final String URL_GONGZHANGJIECHU_DETAIL="/GongZhangJieChu";
 	/**固定资产购置申请**/
 	public static final String URL_GUDINGZICHAN_DETAIL="/GuDingZiChanGouZhi";
+	/**低值易耗品**/
+	public static final String URL_DIZHIYIHAOPIN="/DiZhiYiHao";
 	/**个推**/
 	public static final String URL_PUSH="/InsertBiaoZhiID";
 	/**月度合同信息**/
@@ -132,4 +134,6 @@ public class Common {
 	public static final String GONGZHANGJIECHU="2710d672-5b98-4271-bb14-caa5b49ec53f";
 	/**固定资产购置申请**/
 	public static final String GUDINGZICHAN="23560e65-30ab-4970-a1e4-c6f0c74f1ed8";
+	/**低值易耗品**/
+	public static final String DIZHIYIHAOPIN="312a46e4-f4c2-4a2e-8c4b-0390f129b589";
 }

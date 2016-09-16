@@ -12,6 +12,7 @@ import com.DCHZ.TYLINCN.http.base.BaseTask;
 import com.DCHZ.TYLINCN.http.base.ReqBaseEntity;
 import com.DCHZ.TYLINCN.http.req.ReqBaiLiYiJianEntity;
 import com.DCHZ.TYLINCN.http.req.ReqDaiBanListEntity;
+import com.DCHZ.TYLINCN.http.req.ReqDiZhiYiHaoPinDetailEntiy;
 import com.DCHZ.TYLINCN.http.req.ReqFaPiaoDetailEntity;
 import com.DCHZ.TYLINCN.http.req.ReqFaRenDetailEntity;
 import com.DCHZ.TYLINCN.http.req.ReqFeiYongDetailEntity;
@@ -43,6 +44,7 @@ import com.DCHZ.TYLINCN.http.req.ReqYueDuHeTongInfoEntity;
 import com.DCHZ.TYLINCN.http.req.ReqYueDuShouKuanInfoEntity;
 import com.DCHZ.TYLINCN.http.task.TaskBanLiYiJian;
 import com.DCHZ.TYLINCN.http.task.TaskDaiBan;
+import com.DCHZ.TYLINCN.http.task.TaskDiZhiYiHaoPinDetail;
 import com.DCHZ.TYLINCN.http.task.TaskFaPiaoDetail;
 import com.DCHZ.TYLINCN.http.task.TaskFaRenDetail;
 import com.DCHZ.TYLINCN.http.task.TaskFeiYongDetail;
@@ -516,6 +518,26 @@ public class ProtocalManager {
 		String[] strs3=strs2[1].split("@");
 		req.JDID=strs3[0];
 		TaskGuDingZiChanDetail task=new TaskGuDingZiChanDetail(req);
+		return addTask(task);
+	}
+	/**
+	 * 低值易耗品申请
+	 * @return
+	 */
+	public int geDiZhiYiHaoPinDetail(PDaiBanEntity entity){
+		ReqDiZhiYiHaoPinDetailEntiy req=new ReqDiZhiYiHaoPinDetailEntiy();
+		req.LCID=entity.LCID;
+		req.SLID=entity.SLID;
+		req.YWID=entity.YWID;
+		req.YHID=SharePreLoginUtil.loadLoginInfo().YHID;
+		String BLUrl=entity.BLUrl;
+		String[] strs=BLUrl.split("\\?");
+		req.UrlParam=strs[1].replaceAll("\\&", "\\$");
+		String[] strs1=BLUrl.split(";");
+		String[] strs2=strs1[1].split("=");
+		String[] strs3=strs2[1].split("@");
+		req.JDID=strs3[0];
+		TaskDiZhiYiHaoPinDetail task=new TaskDiZhiYiHaoPinDetail(req);
 		return addTask(task);
 	}
 	public int SaveFlowBusiness(PDaiBanEntity entity,String BLUserID,String opinion){
