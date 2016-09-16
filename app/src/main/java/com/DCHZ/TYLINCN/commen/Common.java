@@ -78,6 +78,8 @@ public class Common {
 	public static final String URL_GONGCHENG="/FenBaoHeTongFuKuanInfo";
 	/***公章借出申请详情*/
 	public static final String URL_GONGZHANGJIECHU_DETAIL="/GongZhangJieChu";
+	/**固定资产购置申请**/
+	public static final String URL_GUDINGZICHAN_DETAIL="/GuDingZiChanGouZhi";
 	/**个推**/
 	public static final String URL_PUSH="/InsertBiaoZhiID";
 	/**月度合同信息**/
@@ -128,4 +130,6 @@ public class Common {
 	public static final String GONGCHENG="dd271305-d12b-4edf-8042-537877d6e33d";
 	/**公章借出**/
 	public static final String GONGZHANGJIECHU="2710d672-5b98-4271-bb14-caa5b49ec53f";
+	/**固定资产购置申请**/
+	public static final String GUDINGZICHAN="23560e65-30ab-4970-a1e4-c6f0c74f1ed8";
 }

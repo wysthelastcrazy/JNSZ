@@ -233,9 +233,16 @@ public class HeaderDetailView extends RelativeLayout implements OnClickListener{
 			text_title.setText("公章借出申请");
 
 			text_item1_key.setText("申请人：");
-			text_item2_key.setText("申请部：");
+			text_item2_key.setText("申请部门：");
 			text_item3_key.setText("借出时间：");
 			text_item4_key.setText("归还时间：");
+		}else if(Common.GUDINGZICHAN.equals(str)){
+			text_title.setText("固定资产购置申请");
+
+			text_item1_key.setText("申请人：");
+			text_item2_key.setText("申请部门：");
+			text_item3_key.setText("申请日期：");
+			text_item4_key.setText("购置部门：");
 		}
 		else{
 			//TODO ：错误数据处理
