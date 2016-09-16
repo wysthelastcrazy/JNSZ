@@ -2,6 +2,7 @@ package com.DCHZ.TYLINCN.util;
 
 import java.util.ArrayList;
 
+import com.DCHZ.TYLINCN.activity.ChengBaoFeiDetailActivity;
 import com.DCHZ.TYLINCN.activity.DiZhiYiHaoPinDetail;
 import com.DCHZ.TYLINCN.activity.FaPiaoDetailActivity;
 import com.DCHZ.TYLINCN.activity.FaRenDetailActivity;
@@ -252,6 +253,19 @@ public class IntentUtils {
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		mContext.startActivity(intent);
 	}
+	/**承包费用审批
+	 * @param mContext
+	 * @param mEntity
+	 * @param type
+	 */
+	public static void startChengBaoFeiYongDetailActivity(Context mContext,PDaiBanEntity mEntity,int type){
+		Intent intent=new Intent(mContext,ChengBaoFeiDetailActivity.class);
+		intent.putExtra(KEY_ENTITY, mEntity);
+		intent.putExtra(KEY_TYPE, type);
+		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		mContext.startActivity(intent);
+	}
+
 
 	/**
 	 * 启动提交方式

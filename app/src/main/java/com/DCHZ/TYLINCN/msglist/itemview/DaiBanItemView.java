@@ -120,6 +120,8 @@ public class DaiBanItemView extends BaseItemView<PDaiBanEntity> implements OnCli
 			IntentUtils.startDizhiYiHaoPinDetailActivity(mContext, mEntity, mType);
 		}else if (Common.TOUBIAOFEIYONG.equals(LCID)){
 			IntentUtils.startTouBiaoFeiYongDetailActivity(mContext, mEntity, mType);
+		}else if (Common.CHENGBAOFEI.equals(LCID)){
+			IntentUtils.startChengBaoFeiYongDetailActivity(mContext, mEntity, mType);
 		}
 
 		else{

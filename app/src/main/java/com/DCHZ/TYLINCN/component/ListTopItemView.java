@@ -34,6 +34,16 @@ public class ListTopItemView extends LinearLayout{
 	private TextView text_item9_value;
 	private TextView text_item10_key;
 	private TextView text_item10_value;
+	private TextView text_item11_key;
+	private TextView text_item11_value;
+	private TextView text_item12_key;
+	private TextView text_item12_value;
+	private TextView text_item13_key;
+	private TextView text_item13_value;
+	private TextView text_item14_key;
+	private TextView text_item14_value;
+	private TextView text_item15_key;
+	private TextView text_item15_value;
 	private TextView[] keys;
 	private TextView[] values;
 	
@@ -72,13 +82,27 @@ public class ListTopItemView extends LinearLayout{
 		this.text_item9_value=(TextView) this.findViewById(R.id.text_item9_value);
 		this.text_item10_key=(TextView) this.findViewById(R.id.text_item10_key);
 		this.text_item10_value=(TextView) this.findViewById(R.id.text_item10_value);
+
+		this.text_item11_key=(TextView) this.findViewById(R.id.text_item11_key);
+		this.text_item11_value=(TextView) this.findViewById(R.id.text_item11_value);
+		this.text_item12_key=(TextView) this.findViewById(R.id.text_item12_key);
+		this.text_item12_value=(TextView) this.findViewById(R.id.text_item12_value);
+		this.text_item13_key=(TextView) this.findViewById(R.id.text_item13_key);
+		this.text_item13_value=(TextView) this.findViewById(R.id.text_item13_value);
+		this.text_item14_key=(TextView) this.findViewById(R.id.text_item14_key);
+		this.text_item14_value=(TextView) this.findViewById(R.id.text_item14_value);
+		this.text_item15_key=(TextView) this.findViewById(R.id.text_item15_key);
+		this.text_item15_value=(TextView) this.findViewById(R.id.text_item15_value);
+
 		
 		item_top=(RelativeLayout) this.findViewById(R.id.item_top);
 		
 		keys=new TextView[]{text_item1_key,text_item2_key,text_item3_key,text_item4_key,
-				text_item5_key,text_item6_key,text_item7_key,text_item8_key,text_item9_key,text_item10_key};
+				text_item5_key,text_item6_key,text_item7_key,text_item8_key,text_item9_key,text_item10_key,
+				text_item11_key,text_item12_key,text_item13_key,text_item14_key,text_item15_key};
 		values=new TextView[]{text_item1_value,text_item2_value,text_item3_value,text_item4_value,
-				text_item5_value,text_item6_value,text_item7_value,text_item8_value,text_item9_value,text_item10_value};
+				text_item5_value,text_item6_value,text_item7_value,text_item8_value,text_item9_value,text_item10_value,
+				text_item11_value,text_item12_value,text_item13_value,text_item14_value,text_item15_value};
 	}
 	
 	public void showBottom(){
@@ -211,6 +235,23 @@ public class ListTopItemView extends LinearLayout{
 			text_item8_key.setText("本次付款（元)");
 			text_item9_key.setText("累计付款（元）");
 			text_item10_key.setText("备注");
+
+		}else if (Common.CHENGBAOFEI.equals(type)){
+			text_item1_key.setText("项目编号");
+			text_item2_key.setText("项目名称");
+			text_item3_key.setText("收入金额");
+			text_item4_key.setText("抵减金额");
+			text_item5_key.setText("可提取收入");
+			text_item6_key.setText("财务凭证号");
+			text_item7_key.setText("提取比例（%）");
+			text_item8_key.setText("本次净交");
+			text_item9_key.setText("本次应提");
+			text_item10_key.setText("前研经费");
+			text_item11_key.setText("固定资产");
+			text_item12_key.setText("审图费");
+			text_item13_key.setText("培训费");
+			text_item14_key.setText("税费");
+			text_item15_key.setText("本次实提");
 
 		}
 		else {

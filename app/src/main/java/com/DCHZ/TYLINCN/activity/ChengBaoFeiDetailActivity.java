@@ -18,11 +18,14 @@ import com.DCHZ.TYLINCN.component.JZADScoreTextView;
 import com.DCHZ.TYLINCN.component.ListBottomView;
 import com.DCHZ.TYLINCN.component.ListTopItemView;
 import com.DCHZ.TYLINCN.entity.PBanLiYiJianEntity;
+import com.DCHZ.TYLINCN.entity.PChengBaoEntity;
+import com.DCHZ.TYLINCN.entity.PChengBaoFeiYongItemEntity;
 import com.DCHZ.TYLINCN.entity.PDaiBanEntity;
 import com.DCHZ.TYLINCN.entity.PTouBiaoFeiYongEntity;
 import com.DCHZ.TYLINCN.entity.VJieShouRenEntity;
 import com.DCHZ.TYLINCN.http.ProtocalManager;
 import com.DCHZ.TYLINCN.http.rsp.RspBanLiYiJianEntity;
+import com.DCHZ.TYLINCN.http.rsp.RspChengBaoFeiYongDetailEntity;
 import com.DCHZ.TYLINCN.http.rsp.RspSaveFlowBusinessEntity;
 import com.DCHZ.TYLINCN.http.rsp.RspSaveReturnFlowBusinessEntity;
 import com.DCHZ.TYLINCN.http.rsp.RspTouBiaoFeiYongDetailEntity;
@@ -42,7 +45,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/9/16.
  */
-public class TouBiaoFeiYongDetailActivity extends BaseNormalActivity {
+public class ChengBaoFeiDetailActivity extends BaseNormalActivity {
     private List<Integer> mReqList = new ArrayList<Integer>();
     private int type;
     private PDaiBanEntity entity;
@@ -57,7 +60,7 @@ public class TouBiaoFeiYongDetailActivity extends BaseNormalActivity {
     private final int GET_JIESHOUREN=101;
     private ArrayList<VJieShouRenEntity> mList;
     private String TJtype;
-    private RspTouBiaoFeiYongDetailEntity rsp;
+    private RspChengBaoFeiYongDetailEntity rsp;
     private ListBottomView mBottomView;
     private String mBLUserID;
     private String mBLUserName;
@@ -69,11 +72,11 @@ public class TouBiaoFeiYongDetailActivity extends BaseNormalActivity {
         setContentView(R.layout.activity_detail);
         initExtras();
         initLayout();
-        registMsgRecevier(EventCommon.EVENT_TOUBIAOFEIYONG);
+        registMsgRecevier(EventCommon.EVENT_CHENGBAOFEIYONG);
         registMsgRecevier(EventCommon.EVENT_BANLI_YIJIAN);
         registMsgRecevier(EventCommon.EVENT_SAVE_FLOWBUSINESS);
         registMsgRecevier(EventCommon.EVENT_SAVE_RETURN_FLOWBUSINESS);
-        int seq= ProtocalManager.getInstance().getTouBiaoFeiYongDetail(entity);
+        int seq= ProtocalManager.getInstance().getTChengBaoeiYongDetail(entity);
         mReqList.add(seq);
         showLoading();
     }
@@ -111,7 +114,7 @@ public class TouBiaoFeiYongDetailActivity extends BaseNormalActivity {
                 public void typeClickListener() {
                     // TODO Auto-generated method stub
                     String noTag=rsp.mEntity.htInfo.get(0).nodeTag;
-                    IntentUtils.starTiJiaoActivity(TouBiaoFeiYongDetailActivity.this, GET_TYPE,noTag);
+                    IntentUtils.starTiJiaoActivity(ChengBaoFeiDetailActivity.this, GET_TYPE,noTag);
                 }
 
                 @Override
@@ -119,7 +122,7 @@ public class TouBiaoFeiYongDetailActivity extends BaseNormalActivity {
                     // TODO Auto-generated method stub
                     MyLog.debug(TAG, "[nextClickListener]  mList:" + mList.size());
                     if("同意".equals(TJtype)||"退回".equals(TJtype)){
-                        IntentUtils.starJieShouRenActivity(TouBiaoFeiYongDetailActivity.this, mList, GET_JIESHOUREN);
+                        IntentUtils.starJieShouRenActivity(ChengBaoFeiDetailActivity.this, mList, GET_JIESHOUREN);
                     }else{
                         showToast("请先选择提交方式！");
                     }
@@ -172,9 +175,9 @@ public class TouBiaoFeiYongDetailActivity extends BaseNormalActivity {
     @Override
     public void handleReceiveMsg(int eventId, int seqNo, Object obj) {
         // TODO Auto-generated method stub
-        if(eventId==EventCommon.EVENT_TOUBIAOFEIYONG){
-            if(obj instanceof RspTouBiaoFeiYongDetailEntity){
-                RspTouBiaoFeiYongDetailEntity rsp=(RspTouBiaoFeiYongDetailEntity) obj;
+        if(eventId==EventCommon.EVENT_CHENGBAOFEIYONG){
+            if(obj instanceof RspChengBaoFeiYongDetailEntity){
+                RspChengBaoFeiYongDetailEntity rsp=(RspChengBaoFeiYongDetailEntity) obj;
                 Message msg=Message.obtain();
                 msg.obj=rsp;
                 msg.what=FLAG_SET_TOP;
@@ -216,13 +219,13 @@ public class TouBiaoFeiYongDetailActivity extends BaseNormalActivity {
         int what=msg.what;
         switch (what) {
             case FLAG_SET_TOP:
-                rsp=(RspTouBiaoFeiYongDetailEntity)msg. obj;
+                rsp=(RspChengBaoFeiYongDetailEntity)msg. obj;
                 if(rsp!=null&&rsp.isSucc){
 //				List<PShenPiInfoEntity> mList=rsp.mEntity.BXMXInfo;
-                    ArrayList<PTouBiaoFeiYongEntity> bxInfo=rsp.mEntity.TouBiaoFeiYongInfo;
+                    ArrayList<PChengBaoEntity> bxInfo=rsp.mEntity.ChengBaoFeiTiQuInfo;
                     if(bxInfo!=null&&bxInfo.size()>0)
 //				mHeader.setItem(bxInfo.get(0).BXMXZhuDaoBuMen);
-                        mHeader.setValue(bxInfo.get(0).yhname, bxInfo.get(0).bmname, bxInfo.get(0).SQRiQi.split(" ")[0], "");
+                        mHeader.setValue(bxInfo.get(0).uname, bxInfo.get(0).BMName, bxInfo.get(0).QKTianBiaoRiQi.split(" ")[0], "");
                     View view=getHeaderView(bxInfo);
                     mMsgPage.addHeaderView(view);
                     int seq1=ProtocalManager.getInstance().getBanLiYiJian(entity.SLID);
@@ -297,31 +300,60 @@ public class TouBiaoFeiYongDetailActivity extends BaseNormalActivity {
         }
     }
 
-    private View getHeaderView(ArrayList<PTouBiaoFeiYongEntity> bxInfo){
+    private View getHeaderView(ArrayList<PChengBaoEntity> bxInfo){
         LinearLayout layout=new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
         AbsListView.LayoutParams params=new AbsListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT, AbsListView.LayoutParams.WRAP_CONTENT);
         layout.setLayoutParams(params);
         if(bxInfo!=null&&bxInfo.size()>0){
-            for(int i=0;i<bxInfo.size();i++){
+            ArrayList<PChengBaoFeiYongItemEntity> itemInfo=bxInfo.get(0).ChengBaoFeiTiQuMXInfo;
+            for(int i=0;i<itemInfo.size();i++){
                 ArrayList<String> mList=new ArrayList<String>();
                 ListTopItemView topView=new ListTopItemView(this);
-                mList.add(bxInfo.get(i).XMMingCheng);
-                mList.add(bxInfo.get(i).XMBianMa);
-                mList.add(bxInfo.get(i).GongChengJinDu);
-                mList.add(bxInfo.get(i).JianSheDanWei);
-                mList.add(bxInfo.get(i).HTJinE);
-                mList.add(bxInfo.get(i).YiShouKuanE);
-                mList.add(bxInfo.get(i).YiBoKuan);
-                mList.add(bxInfo.get(i).BenCiZhiFu);
-                mList.add(bxInfo.get(i).LeiJiBoKuan);
-                mList.add(bxInfo.get(i).BeiZhu);
+                mList.add(itemInfo.get(i).XMBianHao);
+                mList.add(itemInfo.get(i).XMMingCheng);
+                mList.add(itemInfo.get(i).ShouRuJinE);
+                mList.add(itemInfo.get(i).DiJianJinE);
+                mList.add(itemInfo.get(i).BenCiShouRu);
+                mList.add(itemInfo.get(i).CWPingZhengHao);
+                mList.add(itemInfo.get(i).TiQuBiLi);
+                mList.add(itemInfo.get(i).BenCiJingJiao);
+                mList.add(itemInfo.get(i).BenCiYingTi);
+                mList.add(itemInfo.get(i).QianYanJingFei);
+                mList.add(itemInfo.get(i).GuDingZiChan);
+                mList.add(itemInfo.get(i).ShenTuFei);
+                mList.add(itemInfo.get(i).PeiXunFei);
+                mList.add(itemInfo.get(i).ShuiFei);
+                mList.add(itemInfo.get(i).BenCiShiTi);
                 topView.setData(entity.LCID, mList);
-                if(i==bxInfo.size()-1){
-                    topView.showBottom();
-                }
                 layout.addView(topView);
             }
+            ListTopItemView top=new ListTopItemView(this);
+            ArrayList<String> keys=new ArrayList<String>();
+            ArrayList<String> values=new ArrayList<String>();
+            values.add(bxInfo.get(0).LeiJiShouRu);
+            values.add(bxInfo.get(0).LeiJiJinShangJiao);
+            values.add(bxInfo.get(0).ZhiBaoJin);
+            values.add(bxInfo.get(0).LeiJiShenTuFei);
+            values.add(bxInfo.get(0).GuDingZiChan);
+            values.add(bxInfo.get(0).DanTuFei);
+            values.add(bxInfo.get(0).QianYanJingFei);
+            values.add(bxInfo.get(0).LeiJiYingTi);
+            values.add(bxInfo.get(0).ShiJiTiQuE);
+            values.add(bxInfo.get(0).BeiZhu);
+            keys.add("累计收入");
+            keys.add("累计净上交");
+            keys.add("质保金");
+            keys.add("累计审图费");
+            keys.add("固定资产");
+            keys.add("打图费");
+            keys.add("前研经费");
+            keys.add("累计应提承包费");
+            keys.add("实际提取额");
+            keys.add("备注");
+            top.setData(keys,values);
+            layout.addView(top);
+
         }
         return layout;
     }
