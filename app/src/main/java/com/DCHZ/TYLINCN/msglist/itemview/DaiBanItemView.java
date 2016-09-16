@@ -112,6 +112,8 @@ public class DaiBanItemView extends BaseItemView<PDaiBanEntity> implements OnCli
 			IntentUtils.startXiangMuDetailActivity(mContext, mEntity, mType);
 		}else if(Common.GONGCHENG.equals(LCID)){
 			IntentUtils.startGongChengDetailActivity(mContext, mEntity, mType);
+		}else if (Common.GONGZHANGJIECHU.equals(LCID)){
+			IntentUtils.startGongZhangJieChuDetailActivity(mContext,mEntity,mType);
 		}
 		else{
 			//TODO ：错误数据处理

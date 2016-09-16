@@ -35,8 +35,8 @@ public class FirstActivity extends BaseNormalActivity
 			 private YiBanListAdapter mAdapterYiban;
 	private int pageIndexLeft = 1;
 	private int pageIndexRight=1;
-	private String YHID = "7A42F2C8-6F6B-4EA4-AB66-D81098A68380";
-//	private String YHID = "";
+//	private String YHID = "7A42F2C8-6F6B-4EA4-AB66-D81098A68380";
+	private String YHID = "";
 	private boolean hasNext = true;
 //	private TextView textView_daiBan;
 	private HeaderSelectView mHeader;
@@ -52,7 +52,7 @@ public class FirstActivity extends BaseNormalActivity
 		initLayout();
 		registMsgRecevier(EventCommon.EVENT_DAIBAN);
 		registMsgRecevier(EventCommon.EVENT_YIBAN);
-//		YHID=SharePreLoginUtil.loadLoginInfo().YHID;
+		YHID=SharePreLoginUtil.loadLoginInfo().YHID;
 		
 		int seq = ProtocalManager.getInstance().getDaiBanList(YHID, pageIndexLeft);
 		mReqList.add(seq);
@@ -74,7 +74,7 @@ public class FirstActivity extends BaseNormalActivity
 		public void leftTabClick() {
 			mType=TYPE_DAIBAN;
 			if (mAdapterDaiBan==null){
-				int seq = ProtocalManager.getInstance().getDaiBanList(YHID, pageIndexLeft);
+				int seq = ProtocalManager.getInstance().getDaiBanList(YHID, 1);
 				mReqList.add(seq);
 				showLoading();
 			}else{
@@ -86,7 +86,7 @@ public class FirstActivity extends BaseNormalActivity
 		public void rightTabClick() {
 			mType=TYPE_YIBAN;
 			if (mAdapterYiban==null){
-				int seq = ProtocalManager.getInstance().getYiBanList(YHID, pageIndexRight);
+				int seq = ProtocalManager.getInstance().getYiBanList(YHID, 1);
 				mReqList.add(seq);
 				showLoading();
 			}else{

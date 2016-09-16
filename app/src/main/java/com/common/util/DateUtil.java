@@ -99,9 +99,12 @@ public class DateUtil {
         return sdf.format(date);  
     }  
 	public static String DateToStr(Date date) {
-		SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-		String str = format.format(date);
-		return str;
+        if (date!=null) {
+            SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+            String str = format.format(date);
+            return str;
+        }
+        return "";
 	}
 
 	public static String getCurrentTime(long date) {
@@ -111,6 +114,7 @@ public class DateUtil {
 	}
 
 	public static Date StrToDate(String str) {
+        str=str.replaceAll("-","/");
 		SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date date = null;
 		try {

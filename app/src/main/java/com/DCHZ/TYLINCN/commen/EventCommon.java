@@ -66,6 +66,8 @@ public class EventCommon {
 	public static final int EVENT_YUEDUHETONG_INFO=EVENT_PUSH+1;
 	//月度收款info
 	public static final int EVENT_YUEDUSHOUKUAN_INFO=EVENT_YUEDUHETONG_INFO+1;
+	//公章借出申请
+	public static final int EVENT_GONGZHANGJIECHU_DETAIL=EVENT_YUEDUSHOUKUAN_INFO+1;
 	public static final int EVENT_ID_DATA_END = 600;
 	
 	//=============================UI点击时间通知

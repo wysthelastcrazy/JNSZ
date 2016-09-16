@@ -21,6 +21,7 @@ import com.DCHZ.TYLINCN.http.req.ReqGSTuiHuiEntity;
 import com.DCHZ.TYLINCN.http.req.ReqGaiZhangDetailEntity;
 import com.DCHZ.TYLINCN.http.req.ReqGongChengDetailEntity;
 import com.DCHZ.TYLINCN.http.req.ReqGongShiShenPiEntity;
+import com.DCHZ.TYLINCN.http.req.ReqGongZhangJieChuDetailEntiy;
 import com.DCHZ.TYLINCN.http.req.ReqIsHeGeEntity;
 import com.DCHZ.TYLINCN.http.req.ReqJiDuHeTongEntity;
 import com.DCHZ.TYLINCN.http.req.ReqJiDuShouKuanEntity;
@@ -50,6 +51,7 @@ import com.DCHZ.TYLINCN.http.task.TaskGSTuiHui;
 import com.DCHZ.TYLINCN.http.task.TaskGaiZhang;
 import com.DCHZ.TYLINCN.http.task.TaskGongChengDetail;
 import com.DCHZ.TYLINCN.http.task.TaskGongShiShenPi;
+import com.DCHZ.TYLINCN.http.task.TaskGongZhangJIeChuDetail;
 import com.DCHZ.TYLINCN.http.task.TaskIsHeGe;
 import com.DCHZ.TYLINCN.http.task.TaskJiDuHeTong;
 import com.DCHZ.TYLINCN.http.task.TaskJiDuShouKuan;
@@ -471,6 +473,27 @@ public class ProtocalManager {
 		String[] strs3=strs2[1].split("@");
 		req.JDID=strs3[0];
 		TaskGongChengDetail task=new TaskGongChengDetail(req);
+		return addTask(task);
+	}
+
+	/**
+	 * 公章借出申请
+	 * @return
+	 */
+	public int getGongZhangJieChuDetail(PDaiBanEntity entity){
+		ReqGongZhangJieChuDetailEntiy req=new ReqGongZhangJieChuDetailEntiy();
+		req.LCID=entity.LCID;
+		req.SLID=entity.SLID;
+		req.YWID=entity.YWID;
+		req.YHID=SharePreLoginUtil.loadLoginInfo().YHID;
+		String BLUrl=entity.BLUrl;
+		String[] strs=BLUrl.split("\\?");
+		req.UrlParam=strs[1].replaceAll("\\&", "\\$");
+		String[] strs1=BLUrl.split(";");
+		String[] strs2=strs1[1].split("=");
+		String[] strs3=strs2[1].split("@");
+		req.JDID=strs3[0];
+		TaskGongZhangJIeChuDetail task=new TaskGongZhangJIeChuDetail(req);
 		return addTask(task);
 	}
 	public int SaveFlowBusiness(PDaiBanEntity entity,String BLUserID,String opinion){

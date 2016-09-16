@@ -24,8 +24,12 @@ public class Common {
 	public static final String URL_DAIBAN="/daiBanList";
 	/**代办列表分页**/
 	public static final String URL_DAIBAN_FENYE="/daiBanListFenYe";
+	/**代办列表分页**/
+	public static final String URL_DAIBAN_FENYE_V2="/daiBanList_IOS";
 	/**已办列表分页**/
 	public static final String URL_YIBAN_FENYE="/yiBanListFenYe";
+	/**已办列表分页**/
+	public static final String URL_YIBAN_FENYE_V2="/daiBanList_IOS";
 	/**代办数量**/
 	public static final String URL_DAIBAN_COUNT="/daiBanCount";
 	
@@ -72,6 +76,8 @@ public class Common {
 	public static final String URL_XIANGMU="/XiangMuXiaDa";
 	/**工程拨款申请**/
 	public static final String URL_GONGCHENG="/FenBaoHeTongFuKuanInfo";
+	/***公章借出申请详情*/
+	public static final String URL_GONGZHANGJIECHU_DETAIL="/GongZhangJieChu";
 	/**个推**/
 	public static final String URL_PUSH="/InsertBiaoZhiID";
 	/**月度合同信息**/
@@ -120,4 +126,6 @@ public class Common {
 	public static final String XIANGMUXIADA="fbedc4e3-d528-4982-9283-19ee368df6c8";
 	/**工程拨款**/
 	public static final String GONGCHENG="dd271305-d12b-4edf-8042-537877d6e33d";
+	/**公章借出**/
+	public static final String GONGZHANGJIECHU="2710d672-5b98-4271-bb14-caa5b49ec53f";
 }

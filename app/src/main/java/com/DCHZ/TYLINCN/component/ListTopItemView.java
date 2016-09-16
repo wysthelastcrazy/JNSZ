@@ -173,6 +173,9 @@ public class ListTopItemView extends LinearLayout{
 			text_item2_key.setText("分包方名称");
 			text_item3_key.setText("分包合同编号");
 			text_item4_key.setText("支付金额");
+		}else if (Common.GONGZHANGJIECHU.equals(type)){
+			text_item1_key.setText("事由");
+			text_item2_key.setText("备注");
 		}
 		else {
 			//错误处理

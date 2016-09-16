@@ -6,7 +6,6 @@ import java.util.HashMap;
 import com.DCHZ.TYLINCN.commen.Global;
 import com.DCHZ.TYLINCN.msglist.MsgPageBottomView;
 import com.DCHZ.TYLINCN.msglist.listener.IRefreshListener;
-import com.DCHZ.TYLINCN.util.MyLog;
 
 import android.view.View;
 import android.view.ViewGroup;
@@ -92,7 +91,6 @@ public abstract class BaseListAdapter<T> extends BaseAdapter{
 	
 	@Override
 	public int getCount() {
-		MyLog.debug(TAG, "[getCount] list:"+mList.size());
 		// TODO Auto-generated method stub
 		if(this.mList != null){		//footer也计算在内
 			if(mType == ADAPTER_TYPE_NO_BOTTOM){
@@ -106,7 +104,6 @@ public abstract class BaseListAdapter<T> extends BaseAdapter{
 
 	@Override
 	public Object getItem(int pos) {
-		MyLog.debug(TAG, "[getItem] pos:"+pos);
 		// TODO Auto-generated method stub
 		if(this.mList != null && mList.size() > 0 && pos < this.mList.size()){
 			return this.mList.get(pos);
@@ -156,7 +153,6 @@ public abstract class BaseListAdapter<T> extends BaseAdapter{
 	@Override
 	public View getView(int pos, View convertView, ViewGroup arg2) {
 		// TODO Auto-generated method stub
-		MyLog.debug(TAG, "[getView]  pos:"+pos);
 		View mView = null;
 		if(getItemViewType(pos) == TYPE_ITEM_NORMAL){
 			T t = (T) getItem(pos);

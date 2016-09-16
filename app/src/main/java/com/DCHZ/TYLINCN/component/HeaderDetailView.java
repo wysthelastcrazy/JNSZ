@@ -9,6 +9,7 @@ import com.DCHZ.TYLINCN.listener.IHeaderClickListener;
 import com.common.util.DateUtil;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -98,7 +99,9 @@ public class HeaderDetailView extends RelativeLayout implements OnClickListener{
 		initKey(str);
 		text_item1_value.setText(mEntity.ShenQingRen);
 		String date=mEntity.BLAcceptDate;
-		date=DateUtil.DateToStr(DateUtil.StrToDate(date));
+		if (!TextUtils.isDigitsOnly(date)) {
+			date = DateUtil.DateToStr(DateUtil.StrToDate(date));
+		}
 		text_item3_value.setText(date);
 		if(!Common.FENBAO.equals(str)){
 			text_item4_value.setText(mEntity.YWTypeValue);
@@ -226,6 +229,13 @@ public class HeaderDetailView extends RelativeLayout implements OnClickListener{
 			text_item2_key.setText("申请部门：");
 			text_item3_key.setText("申请时间：");
 			text_item4_key.setText("本次支付：");
+		}else if(Common.GONGZHANGJIECHU.equals(str)){
+			text_title.setText("公章借出申请");
+
+			text_item1_key.setText("申请人：");
+			text_item2_key.setText("申请部：");
+			text_item3_key.setText("借出时间：");
+			text_item4_key.setText("归还时间：");
 		}
 		else{
 			//TODO ：错误数据处理

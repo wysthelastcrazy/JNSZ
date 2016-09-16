@@ -9,6 +9,7 @@ import com.DCHZ.TYLINCN.activity.FenBaoFangDetailActivity;
 import com.DCHZ.TYLINCN.activity.FirstActivity;
 import com.DCHZ.TYLINCN.activity.GaiZhangDetailActivity;
 import com.DCHZ.TYLINCN.activity.GongChengDetailActivity;
+import com.DCHZ.TYLINCN.activity.GongZhangJIeCHuDetail;
 import com.DCHZ.TYLINCN.activity.HelpActivity;
 import com.DCHZ.TYLINCN.activity.JieKuangDetailActivity;
 import com.DCHZ.TYLINCN.activity.JieShouRenActivity;
@@ -190,6 +191,20 @@ public class IntentUtils {
 	 */
 	public static void startGongChengDetailActivity(Context mContext,PDaiBanEntity mEntity,int type){
 		Intent intent=new Intent(mContext,GongChengDetailActivity.class);
+		intent.putExtra(KEY_ENTITY, mEntity);
+		intent.putExtra(KEY_TYPE, type);
+		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		mContext.startActivity(intent);
+	}
+
+	/**
+	 * 公章借出
+	 * @param mContext
+	 * @param mEntity
+	 * @param type
+	 */
+	public static void startGongZhangJieChuDetailActivity(Context mContext,PDaiBanEntity mEntity,int type){
+		Intent intent=new Intent(mContext,GongZhangJIeCHuDetail.class);
 		intent.putExtra(KEY_ENTITY, mEntity);
 		intent.putExtra(KEY_TYPE, type);
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

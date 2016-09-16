@@ -10,10 +10,12 @@ public class ReqYiBanListEntity extends ReqBaseEntity{
 	public String YHID;
 	public int pageSize;
 	public int pageIndex;
+	public String strWhere="";
+
 	@Override
 	public String getReqUrl() {
 		// TODO Auto-generated method stub
-		return Common.URL_YIBAN_FENYE;
+		return Common.URL_YIBAN_FENYE_V2;
 	}
 
 	@Override
@@ -27,6 +29,7 @@ public class ReqYiBanListEntity extends ReqBaseEntity{
 		if(pageIndex>0){
 			mMap.put("pageIndex", pageIndex+"");
 		}
+		mMap.put("strWhere",strWhere);
 		return mMap;
 	}
 

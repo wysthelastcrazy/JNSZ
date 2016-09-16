@@ -10,11 +10,12 @@ public class ReqDaiBanListEntity extends ReqBaseEntity{
 	public String YHID;
 	public int pageSize;
 	public int pageIndex;
+	public String strWhere="";
 	@Override
 	public String getReqUrl() {
 		// TODO Auto-generated method stub
 //		return Common.URL_DAIBAN;
-		return Common.URL_DAIBAN_FENYE;
+		return Common.URL_DAIBAN_FENYE_V2;
 	}
 
 	@Override
@@ -28,6 +29,7 @@ public class ReqDaiBanListEntity extends ReqBaseEntity{
 		if(pageIndex>0){
 			mMap.put("pageIndex", pageIndex+"");
 		}
+		mMap.put("strWhere",strWhere);
 		return mMap;
 	}
 
