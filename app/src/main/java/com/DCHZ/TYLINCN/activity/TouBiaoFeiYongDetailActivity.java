@@ -3,8 +3,6 @@ package com.DCHZ.TYLINCN.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
-import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.AbsListView;
@@ -18,33 +16,26 @@ import com.DCHZ.TYLINCN.commen.EventCommon;
 import com.DCHZ.TYLINCN.component.HeaderDetailView;
 import com.DCHZ.TYLINCN.component.JZADScoreTextView;
 import com.DCHZ.TYLINCN.component.ListBottomView;
-import com.DCHZ.TYLINCN.component.ListOpenWordView;
 import com.DCHZ.TYLINCN.component.ListTopItemView;
 import com.DCHZ.TYLINCN.entity.PBanLiYiJianEntity;
 import com.DCHZ.TYLINCN.entity.PDaiBanEntity;
-import com.DCHZ.TYLINCN.entity.PDiZhiYiHaoPinEntity;
-import com.DCHZ.TYLINCN.entity.PDiZhiYiHaoPinItemEntity;
-import com.DCHZ.TYLINCN.entity.PFuJianEntity;
-import com.DCHZ.TYLINCN.entity.PGuDingZiChanEntity;
-import com.DCHZ.TYLINCN.entity.PGuDingZiChanItemEntity;
+import com.DCHZ.TYLINCN.entity.PGongZhangEntity;
+import com.DCHZ.TYLINCN.entity.PTouBiaoFeiYongEntity;
 import com.DCHZ.TYLINCN.entity.VJieShouRenEntity;
 import com.DCHZ.TYLINCN.http.ProtocalManager;
 import com.DCHZ.TYLINCN.http.rsp.RspBanLiYiJianEntity;
-import com.DCHZ.TYLINCN.http.rsp.RspDiZhiYiHaoPinDetailEntity;
-import com.DCHZ.TYLINCN.http.rsp.RspGuDingZiChanDetailEntity;
+import com.DCHZ.TYLINCN.http.rsp.RspGongZhangJieChuDetailEntity;
 import com.DCHZ.TYLINCN.http.rsp.RspSaveFlowBusinessEntity;
 import com.DCHZ.TYLINCN.http.rsp.RspSaveReturnFlowBusinessEntity;
+import com.DCHZ.TYLINCN.http.rsp.RspTouBiaoFeiYongDetailEntity;
 import com.DCHZ.TYLINCN.listener.IDaiBanClickListener;
 import com.DCHZ.TYLINCN.listener.IHeaderClickListener;
-import com.DCHZ.TYLINCN.listener.IWordOpenListener;
 import com.DCHZ.TYLINCN.msglist.MsgPage;
 import com.DCHZ.TYLINCN.msglist.base.BaseListAdapter;
-import com.DCHZ.TYLINCN.util.FileUtil;
 import com.DCHZ.TYLINCN.util.IntentUtils;
 import com.DCHZ.TYLINCN.util.MyLog;
 import com.DCHZ.TYLINCN.util.ParseUtil;
 
-import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -53,7 +44,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/9/16.
  */
-public class DiZhiYiHaoPinDetail extends BaseNormalActivity {
+public class TouBiaoFeiYongDetailActivity extends BaseNormalActivity {
     private List<Integer> mReqList = new ArrayList<Integer>();
     private int type;
     private PDaiBanEntity entity;
@@ -68,46 +59,10 @@ public class DiZhiYiHaoPinDetail extends BaseNormalActivity {
     private final int GET_JIESHOUREN=101;
     private ArrayList<VJieShouRenEntity> mList;
     private String TJtype;
-    private RspDiZhiYiHaoPinDetailEntity rsp;
+    private RspTouBiaoFeiYongDetailEntity rsp;
     private ListBottomView mBottomView;
-
-    private String mBLUserName;
     private String mBLUserID;
-    private String savePath= Environment.getExternalStorageDirectory().getAbsolutePath();
-    private File file;
-    private String filename;
-    private static final int what=1;
-    private Handler mHandler=new Handler(){
-        public void handleMessage(Message msg) {
-            hideLoadingDialog();
-            switch (msg.what) {
-                case what:
-                    String fileName=(String) msg.obj;
-                    String[] strs=fileName.split("\\.");
-                    String str=strs[strs.length-1];
-                    str=str.toLowerCase();
-                    if(!new File(savePath+"/"+fileName).exists()){
-                        showToast("文件下载失败！");
-                    }else {
-                        if("doc".equals(str)||"docx".equals(str)){
-                            Intent intent= FileUtil.getWordFileIntent(savePath + "/" + fileName);
-                            startActivity(intent);
-                        }else if("xls".equals(str)||"xlsx".equals(str)){
-                            Intent intent=FileUtil.getExcelFileIntent(savePath+"/"+fileName);
-                            startActivity(intent);
-                        }else if("pdf".equals(str)){
-                            Intent intent=FileUtil.getPdfFileIntent(savePath+"/"+fileName);
-                            startActivity(intent);
-                        }
-                    }
-                    break;
-                default:
-                    showToast("文件下载失败！");
-                    break;
-            }
-
-        };
-    };
+    private String mBLUserName;
     //	private List<String> mStrList=new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,17 +71,12 @@ public class DiZhiYiHaoPinDetail extends BaseNormalActivity {
         setContentView(R.layout.activity_detail);
         initExtras();
         initLayout();
-        registMsgRecevier(EventCommon.EVENT_DIZHIYIHAOPIN);
+        registMsgRecevier(EventCommon.EVENT_TOUBIAOFEIYONG);
         registMsgRecevier(EventCommon.EVENT_BANLI_YIJIAN);
         registMsgRecevier(EventCommon.EVENT_SAVE_FLOWBUSINESS);
         registMsgRecevier(EventCommon.EVENT_SAVE_RETURN_FLOWBUSINESS);
-//		String LCID=entity.LCID;
-//		String YWID=entity.YWID;
-        int seq=ProtocalManager.getInstance().geDiZhiYiHaoPinDetail(entity);
+        int seq= ProtocalManager.getInstance().getTouBiaoFeiYongDetail(entity);
         mReqList.add(seq);
-//		String SLID=entity.SLID;
-//		int seq1=ProtocalManager.getInstance().getBanLiYiJian(SLID);
-//		mReqList.add(seq1);
         showLoading();
     }
 
@@ -137,7 +87,7 @@ public class DiZhiYiHaoPinDetail extends BaseNormalActivity {
     }
     private void initLayout() {
         // TODO Auto-generated method stub
-
+        mList=new ArrayList<VJieShouRenEntity>();
 //		showToast("type:"+type+"  entity:"+entity.LCID);
         mHeader=(HeaderDetailView) this.findViewById(R.id.header_detail);
 //		mHeader.setData(entity);
@@ -152,10 +102,9 @@ public class DiZhiYiHaoPinDetail extends BaseNormalActivity {
         });
 
         this.mMsgPage=(MsgPage) this.findViewById(R.id.mMsgPage_detail);
-//		mMsgPage.setEmpty(ListViewEmptyView.TYPE_COMMENT);
         mMsgPage.setEnablePullDown(false);
 //		mMsgPage.setRefreshListener(mRefreshListener);
-        if(this.type==Common.TYPE_DAIBAN){
+        if(this.type== Common.TYPE_DAIBAN){
             mBottomView=new ListBottomView(this);
             mMsgPage.addFooterView(mBottomView);
             mBottomView.setClickListener(new IDaiBanClickListener() {
@@ -164,14 +113,18 @@ public class DiZhiYiHaoPinDetail extends BaseNormalActivity {
                 public void typeClickListener() {
                     // TODO Auto-generated method stub
                     String noTag=rsp.mEntity.htInfo.get(0).nodeTag;
-                    IntentUtils.starTiJiaoActivity(DiZhiYiHaoPinDetail.this, GET_TYPE,noTag);
+                    IntentUtils.starTiJiaoActivity(TouBiaoFeiYongDetailActivity.this, GET_TYPE,noTag);
                 }
 
                 @Override
                 public void nextClickListener() {
                     // TODO Auto-generated method stub
-                    MyLog.debug(TAG, "[nextClickListener]  mList:"+mList.size());
-                    IntentUtils.starJieShouRenActivity(DiZhiYiHaoPinDetail.this, mList, GET_JIESHOUREN);
+                    MyLog.debug(TAG, "[nextClickListener]  mList:" + mList.size());
+                    if("同意".equals(TJtype)||"退回".equals(TJtype)){
+                        IntentUtils.starJieShouRenActivity(TouBiaoFeiYongDetailActivity.this, mList, GET_JIESHOUREN);
+                    }else{
+                        showToast("请先选择提交方式！");
+                    }
                 }
 
                 @Override
@@ -221,9 +174,9 @@ public class DiZhiYiHaoPinDetail extends BaseNormalActivity {
     @Override
     public void handleReceiveMsg(int eventId, int seqNo, Object obj) {
         // TODO Auto-generated method stub
-        if(eventId==EventCommon.EVENT_DIZHIYIHAOPIN){
-            if(obj instanceof RspDiZhiYiHaoPinDetailEntity){
-                RspDiZhiYiHaoPinDetailEntity rsp=(RspDiZhiYiHaoPinDetailEntity) obj;
+        if(eventId==EventCommon.EVENT_TOUBIAOFEIYONG){
+            if(obj instanceof RspTouBiaoFeiYongDetailEntity){
+                RspTouBiaoFeiYongDetailEntity rsp=(RspTouBiaoFeiYongDetailEntity) obj;
                 Message msg=Message.obtain();
                 msg.obj=rsp;
                 msg.what=FLAG_SET_TOP;
@@ -265,12 +218,13 @@ public class DiZhiYiHaoPinDetail extends BaseNormalActivity {
         int what=msg.what;
         switch (what) {
             case FLAG_SET_TOP:
-                rsp=(RspDiZhiYiHaoPinDetailEntity)msg. obj;
+                rsp=(RspTouBiaoFeiYongDetailEntity)msg. obj;
                 if(rsp!=null&&rsp.isSucc){
 //				List<PShenPiInfoEntity> mList=rsp.mEntity.BXMXInfo;
-                    ArrayList<PDiZhiYiHaoPinEntity> bxInfo=rsp.mEntity.DiZhiYiHaoInfo;
+                    ArrayList<PTouBiaoFeiYongEntity> bxInfo=rsp.mEntity.TouBiaoFeiYongInfo;
                     if(bxInfo!=null&&bxInfo.size()>0)
-                        mHeader.setValue(bxInfo.get(0).ShenQingRenName, bxInfo.get(0).ShenQingBuMenMingCheng, bxInfo.get(0).GZShenQingRiQi.split(" ")[0], bxInfo.get(0).GZBuMenMingCheng);
+//				mHeader.setItem(bxInfo.get(0).BXMXZhuDaoBuMen);
+                        mHeader.setValue(bxInfo.get(0).yhname, bxInfo.get(0).bmname, bxInfo.get(0).SQRiQi.split(" ")[0], "");
                     View view=getHeaderView(bxInfo);
                     mMsgPage.addHeaderView(view);
                     int seq1=ProtocalManager.getInstance().getBanLiYiJian(entity.SLID);
@@ -319,18 +273,18 @@ public class DiZhiYiHaoPinDetail extends BaseNormalActivity {
                 break;
         }
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//		MyLog.debug(TAG, "[onActivityResult] resultCode:"+resultCode);
         // TODO Auto-generated method stub
-        if(resultCode!=Activity.RESULT_OK){
+        if(resultCode!= Activity.RESULT_OK){
             return;
         }
         if(requestCode==GET_TYPE){
             TJtype=data.getStringExtra("type");
             mBottomView.setType(TJtype);
             if("同意".equals(TJtype)){
-                mList=ParseUtil.getJieShouRen1(rsp.mEntity.tjInfo);
+                mList= ParseUtil.getJieShouRen1(rsp.mEntity.tjInfo);
             }else{
                 mList=ParseUtil.getJieShouRen(rsp.mEntity.htInfo);
             }
@@ -341,102 +295,36 @@ public class DiZhiYiHaoPinDetail extends BaseNormalActivity {
             mBLUserName=data.getStringExtra("name");
             mBLUserID=data.getStringExtra("id");
             mBottomView.setname(mBLUserName);
-//			showToast(mBLUserName);
+//			showToast(mBLUserID);
         }
     }
-    private View getHeaderView(ArrayList<PDiZhiYiHaoPinEntity> bxInfo){
+
+    private View getHeaderView(ArrayList<PTouBiaoFeiYongEntity> bxInfo){
         LinearLayout layout=new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
         AbsListView.LayoutParams params=new AbsListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT, AbsListView.LayoutParams.WRAP_CONTENT);
         layout.setLayoutParams(params);
         if(bxInfo!=null&&bxInfo.size()>0){
-            ListTopItemView top=new ListTopItemView(this);
-            ArrayList<String> keys=new ArrayList<String>();
-            ArrayList<String> values=new ArrayList<String>();
-            values.add(bxInfo.get(0).GZFenLei);
-            values.add(bxInfo.get(0).GZYuanYin);
-            keys.add("分类");
-            keys.add("购置原因");
-            top.setData(keys, values);
-            layout.addView(top);
-           ArrayList<PDiZhiYiHaoPinItemEntity>  mInfo=bxInfo.get(0).DiZhiYiHaoMXInfo;
-            for(int i=0;i<mInfo.size();i++){
+            for(int i=0;i<bxInfo.size();i++){
                 ArrayList<String> mList=new ArrayList<String>();
                 ListTopItemView topView=new ListTopItemView(this);
-                mList.add(mInfo.get(i).GZMingCheng);
-                mList.add(mInfo.get(i).GZGuiGe);
-                mList.add(mInfo.get(i).GZShuLiang);
-                mList.add(mInfo.get(i).GZJinE);
-                mList.add(mInfo.get(i).GZGongYingShang);
+                mList.add(bxInfo.get(i).XMMingCheng);
+                mList.add(bxInfo.get(i).XMBianMa);
+                mList.add(bxInfo.get(i).GongChengJinDu);
+                mList.add(bxInfo.get(i).JianSheDanWei);
+                mList.add(bxInfo.get(i).HTJinE);
+                mList.add(bxInfo.get(i).YiShouKuanE);
+                mList.add(bxInfo.get(i).YiBoKuan);
+                mList.add(bxInfo.get(i).BenCiZhiFu);
+                mList.add(bxInfo.get(i).LeiJiBoKuan);
+                mList.add(bxInfo.get(i).BeiZhu);
                 topView.setData(entity.LCID, mList);
-                if(i==mInfo.size()-1){
+                if(i==bxInfo.size()-1){
                     topView.showBottom();
                 }
                 layout.addView(topView);
             }
-
-            ArrayList<PFuJianEntity> fujian=bxInfo.get(0).GZFuJian;
-            if(fujian!=null&&fujian.size()>0){
-                for(int i=0;i<fujian.size();i++){
-                    ListOpenWordView openView=new ListOpenWordView(this);
-                    openView.setData(fujian.get(i));
-                    openView.setOpenListener(mListener);
-                    layout.addView(openView);
-                }
-            }
         }
         return layout;
     }
-
-    private IWordOpenListener mListener=new IWordOpenListener() {
-
-        @Override
-        public void openListener(final String fileName,final String path) {
-            // TODO Auto-generated method stub
-            filename=fileName;
-            // TODO Auto-generated method stub
-            try {
-                file=new File(savePath,fileName);
-                if(!file.exists()){
-                    file.getParentFile().mkdirs();
-                    file.createNewFile();
-                }
-            } catch (Exception e){
-                e.printStackTrace();
-            }
-            showLoading("文件正在下载中，请稍后。。。");
-            new Thread() {
-                public void run() {
-                    String str="";
-                    String name="";
-                    String filePath="";
-                    try {
-                        str=URLEncoder.encode("合同文件", "utf-8");
-                        name=URLEncoder.encode(fileName, "utf-8");
-                        filePath=path.replaceAll("\\\\", "/");
-                        filePath=URLEncoder.encode(filePath, "utf-8");
-                    } catch (UnsupportedEncodingException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
-                    String url="http://60.208.75.182:9080/file/"+filePath;
-                    MyLog.debug(TAG, "[IWordOpenListener]  url:"+url);
-                    boolean is=FileUtil.saveFileFromURL(url, file);
-                    Message message = new Message();
-                    if(is){
-                        message.what=what;
-                        message.obj = fileName;
-                    }
-                    mHandler.sendMessage(message);
-                };
-            }.start();
-        }
-    };
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if(new File(savePath+"/"+filename).exists()){
-            boolean is=FileUtil.deleteFile(savePath+"/"+filename);
-        }
-    };
 }

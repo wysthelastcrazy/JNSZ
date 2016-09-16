@@ -28,6 +28,12 @@ public class ListTopItemView extends LinearLayout{
 	private TextView text_item6_value;
 	private TextView text_item7_key;
 	private TextView text_item7_value;
+	private TextView text_item8_key;
+	private TextView text_item8_value;
+	private TextView text_item9_key;
+	private TextView text_item9_value;
+	private TextView text_item10_key;
+	private TextView text_item10_value;
 	private TextView[] keys;
 	private TextView[] values;
 	
@@ -60,13 +66,19 @@ public class ListTopItemView extends LinearLayout{
 		this.text_item6_value=(TextView) this.findViewById(R.id.text_item6_value);
 		this.text_item7_key=(TextView) this.findViewById(R.id.text_item7_key);
 		this.text_item7_value=(TextView) this.findViewById(R.id.text_item7_value);
+		this.text_item8_key=(TextView) this.findViewById(R.id.text_item8_key);
+		this.text_item8_value=(TextView) this.findViewById(R.id.text_item8_value);
+		this.text_item9_key=(TextView) this.findViewById(R.id.text_item9_key);
+		this.text_item9_value=(TextView) this.findViewById(R.id.text_item9_value);
+		this.text_item10_key=(TextView) this.findViewById(R.id.text_item10_key);
+		this.text_item10_value=(TextView) this.findViewById(R.id.text_item10_value);
 		
 		item_top=(RelativeLayout) this.findViewById(R.id.item_top);
 		
 		keys=new TextView[]{text_item1_key,text_item2_key,text_item3_key,text_item4_key,
-				text_item5_key,text_item6_key,text_item7_key};
+				text_item5_key,text_item6_key,text_item7_key,text_item8_key,text_item9_key,text_item10_key};
 		values=new TextView[]{text_item1_value,text_item2_value,text_item3_value,text_item4_value,
-				text_item5_value,text_item6_value,text_item7_value};
+				text_item5_value,text_item6_value,text_item7_value,text_item8_value,text_item9_value,text_item10_value};
 	}
 	
 	public void showBottom(){
@@ -188,6 +200,18 @@ public class ListTopItemView extends LinearLayout{
 			text_item3_key.setText("数量");
 			text_item4_key.setText("金额（元）");
 			text_item5_key.setText("供应商");
+		}else if (Common.TOUBIAOFEIYONG.equals(type)){
+			text_item1_key.setText("工程名称");
+			text_item2_key.setText("工程编码");
+			text_item3_key.setText("工程进度");
+			text_item4_key.setText("建设单位名称");
+			text_item5_key.setText("合同金额（元）");
+			text_item6_key.setText("已收款额（元）");
+			text_item7_key.setText("前期已付款（元）");
+			text_item8_key.setText("本次付款（元)");
+			text_item9_key.setText("累计付款（元）");
+			text_item10_key.setText("备注");
+
 		}
 		else {
 			//错误处理

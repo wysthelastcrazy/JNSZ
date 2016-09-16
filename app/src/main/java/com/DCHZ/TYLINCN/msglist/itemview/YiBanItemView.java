@@ -122,6 +122,8 @@ public class YiBanItemView extends BaseItemView<PDaiBanEntity> implements OnClic
 			IntentUtils.startGuDIngZiChangDetailActivity(mContext,mEntity,mType);
 		}else if (Common.DIZHIYIHAOPIN.equals(LCID)){
 			IntentUtils.startDizhiYiHaoPinDetailActivity(mContext, mEntity, mType);
+		}else if (Common.TOUBIAOFEIYONG.equals(LCID)){
+			IntentUtils.startTouBiaoFeiYongDetailActivity(mContext, mEntity, mType);
 		}else{
 			//TODO ：错误数据处理
 		}

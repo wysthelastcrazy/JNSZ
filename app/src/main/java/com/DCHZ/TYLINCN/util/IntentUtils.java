@@ -20,6 +20,7 @@ import com.DCHZ.TYLINCN.activity.MainActivity;
 import com.DCHZ.TYLINCN.activity.QingJiaDetailActivity;
 import com.DCHZ.TYLINCN.activity.TiJiaoTypeActivity;
 import com.DCHZ.TYLINCN.activity.TouBiaoDetailActivity;
+import com.DCHZ.TYLINCN.activity.TouBiaoFeiYongDetailActivity;
 import com.DCHZ.TYLINCN.activity.XiangMuDetailActivity;
 import com.DCHZ.TYLINCN.activity.XiuGaiIPActivity;
 import com.DCHZ.TYLINCN.activity.YingFuHTDetailActivity;
@@ -238,6 +239,20 @@ public class IntentUtils {
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		mContext.startActivity(intent);
 	}
+	/**
+	 * 投标费用审批
+	 * @param mContext
+	 * @param mEntity
+	 * @param type
+	 */
+	public static void startTouBiaoFeiYongDetailActivity(Context mContext,PDaiBanEntity mEntity,int type){
+		Intent intent=new Intent(mContext,TouBiaoFeiYongDetailActivity.class);
+		intent.putExtra(KEY_ENTITY, mEntity);
+		intent.putExtra(KEY_TYPE, type);
+		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		mContext.startActivity(intent);
+	}
+
 	/**
 	 * 启动提交方式
 	 * @param mContext

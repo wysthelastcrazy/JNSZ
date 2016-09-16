@@ -35,6 +35,7 @@ import com.DCHZ.TYLINCN.http.req.ReqSaveFlowBusinessEntity;
 import com.DCHZ.TYLINCN.http.req.ReqSaveReturnFlowBusinessEntity;
 import com.DCHZ.TYLINCN.http.req.ReqShenPiInfoEntity;
 import com.DCHZ.TYLINCN.http.req.ReqTest;
+import com.DCHZ.TYLINCN.http.req.ReqTouBiaoFeiYongDetailEntiy;
 import com.DCHZ.TYLINCN.http.req.ReqUpDateEntity;
 import com.DCHZ.TYLINCN.http.req.ReqXiangMuDetailEntity;
 import com.DCHZ.TYLINCN.http.req.ReqYiBanListEntity;
@@ -67,6 +68,7 @@ import com.DCHZ.TYLINCN.http.task.TaskSaveFlowBusiness;
 import com.DCHZ.TYLINCN.http.task.TaskSaveReturnFlowBusiness;
 import com.DCHZ.TYLINCN.http.task.TaskShenPiInfo;
 import com.DCHZ.TYLINCN.http.task.TaskTest;
+import com.DCHZ.TYLINCN.http.task.TaskTouBiaoFeiYongDetail;
 import com.DCHZ.TYLINCN.http.task.TaskUpdate;
 import com.DCHZ.TYLINCN.http.task.TaskXiangMuDetail;
 import com.DCHZ.TYLINCN.http.task.TaskYiBanList;
@@ -538,6 +540,26 @@ public class ProtocalManager {
 		String[] strs3=strs2[1].split("@");
 		req.JDID=strs3[0];
 		TaskDiZhiYiHaoPinDetail task=new TaskDiZhiYiHaoPinDetail(req);
+		return addTask(task);
+	}
+	/**
+	 * 投标费用
+	 * @return
+	 */
+	public int getTouBiaoFeiYongDetail(PDaiBanEntity entity){
+		ReqTouBiaoFeiYongDetailEntiy req=new ReqTouBiaoFeiYongDetailEntiy();
+		req.LCID=entity.LCID;
+		req.SLID=entity.SLID;
+		req.YWID=entity.YWID;
+		req.YHID=SharePreLoginUtil.loadLoginInfo().YHID;
+		String BLUrl=entity.BLUrl;
+		String[] strs=BLUrl.split("\\?");
+		req.UrlParam=strs[1].replaceAll("\\&", "\\$");
+		String[] strs1=BLUrl.split(";");
+		String[] strs2=strs1[1].split("=");
+		String[] strs3=strs2[1].split("@");
+		req.JDID=strs3[0];
+		TaskTouBiaoFeiYongDetail task=new TaskTouBiaoFeiYongDetail(req);
 		return addTask(task);
 	}
 	public int SaveFlowBusiness(PDaiBanEntity entity,String BLUserID,String opinion){

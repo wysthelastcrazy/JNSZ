@@ -271,7 +271,7 @@ public class GuDingZiChangDetail extends BaseNormalActivity {
 //				List<PShenPiInfoEntity> mList=rsp.mEntity.BXMXInfo;
                     ArrayList<PGuDingZiChanEntity> bxInfo=rsp.mEntity.GuDingZiChanInfo;
                     if(bxInfo!=null&&bxInfo.size()>0)
-                        mHeader.setValue(bxInfo.get(0).ShenQingRenName, bxInfo.get(0).ShenQingBuMenName, bxInfo.get(0).ShenQingRiQi, bxInfo.get(0).GouZhiBuMenName);
+                        mHeader.setValue(bxInfo.get(0).ShenQingRenName, bxInfo.get(0).ShenQingBuMenName, bxInfo.get(0).ShenQingRiQi.split(" ")[0], bxInfo.get(0).GouZhiBuMenName);
                     View view=getHeaderView(bxInfo);
                     mMsgPage.addHeaderView(view);
                     int seq1=ProtocalManager.getInstance().getBanLiYiJian(entity.SLID);

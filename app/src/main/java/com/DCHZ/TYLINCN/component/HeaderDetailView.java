@@ -250,6 +250,13 @@ public class HeaderDetailView extends RelativeLayout implements OnClickListener{
 			text_item2_key.setText("申请部门：");
 			text_item3_key.setText("申请日期：");
 			text_item4_key.setText("购置部门：");
+		}else if(Common.TOUBIAOFEIYONG.equals(str)){
+			text_title.setText("投标费用审批");
+
+			text_item1_key.setText("申请人：");
+			text_item2_key.setText("申请部门：");
+			text_item3_key.setText("申请日期：");
+			text_item4_key.setVisibility(View.INVISIBLE);
 		}
 		else{
 			//TODO ：错误数据处理

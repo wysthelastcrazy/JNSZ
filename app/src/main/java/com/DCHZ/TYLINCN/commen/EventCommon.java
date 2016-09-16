@@ -72,6 +72,8 @@ public class EventCommon {
 	public static final int EVENT_GUDINGZICHAN_DETAIL=EVENT_GONGZHANGJIECHU_DETAIL+1;
 	//低值易耗品
 	public static final int EVENT_DIZHIYIHAOPIN=EVENT_GUDINGZICHAN_DETAIL+1;
+	//投标费用
+	public static final int EVENT_TOUBIAOFEIYONG=EVENT_DIZHIYIHAOPIN+1;
 	public static final int EVENT_ID_DATA_END = 600;
 	
 	//=============================UI点击时间通知
