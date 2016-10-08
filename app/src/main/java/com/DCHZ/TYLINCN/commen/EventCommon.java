@@ -76,6 +76,10 @@ public class EventCommon {
 	public static final int EVENT_TOUBIAOFEIYONG=EVENT_DIZHIYIHAOPIN+1;
 	//承包费用
 	public static final int EVENT_CHENGBAOFEIYONG=EVENT_TOUBIAOFEIYONG+1;
+	//项目搜索
+	public static final int EVENT_XIANGMU_SEARCH=EVENT_CHENGBAOFEIYONG+1;
+	//合同搜索
+	public static final int EVENT_HETONG_SEARCH=EVENT_XIANGMU_SEARCH+1;
 	public static final int EVENT_ID_DATA_END = 600;
 	
 	//=============================UI点击时间通知

@@ -92,6 +92,11 @@ public class Common {
 	public static final String URL_YUEDU_HETONG_INFO="/YueDuHeTongInfo";
 	/**月度收款信息**/
 	public static final String URL_YUEDU_SHOUKUAN_INFO="/YueDuShouKuanInfo";
+
+	/**项目查询**/
+	public static final String URL_XIANGMU_SEARCH="/GetXiangMuInfo";
+	/**合同查询**/
+	public static final String URL_HETONG_SEARCH="/GetHeTongInfo";
 	/**===========================================================================**/
 	/**协议返回成功**/
 	public static final int ERROR_CODE_SUCC = 0;

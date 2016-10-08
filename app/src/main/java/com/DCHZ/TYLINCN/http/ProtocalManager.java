@@ -25,6 +25,7 @@ import com.DCHZ.TYLINCN.http.req.ReqGongChengDetailEntity;
 import com.DCHZ.TYLINCN.http.req.ReqGongShiShenPiEntity;
 import com.DCHZ.TYLINCN.http.req.ReqGongZhangJieChuDetailEntiy;
 import com.DCHZ.TYLINCN.http.req.ReqGuDingZiChangDetailEntiy;
+import com.DCHZ.TYLINCN.http.req.ReqHeTongSearchEntity;
 import com.DCHZ.TYLINCN.http.req.ReqIsHeGeEntity;
 import com.DCHZ.TYLINCN.http.req.ReqJiDuHeTongEntity;
 import com.DCHZ.TYLINCN.http.req.ReqJiDuShouKuanEntity;
@@ -39,6 +40,7 @@ import com.DCHZ.TYLINCN.http.req.ReqTest;
 import com.DCHZ.TYLINCN.http.req.ReqTouBiaoFeiYongDetailEntiy;
 import com.DCHZ.TYLINCN.http.req.ReqUpDateEntity;
 import com.DCHZ.TYLINCN.http.req.ReqXiangMuDetailEntity;
+import com.DCHZ.TYLINCN.http.req.ReqXiangMuSearchEntity;
 import com.DCHZ.TYLINCN.http.req.ReqYiBanListEntity;
 import com.DCHZ.TYLINCN.http.req.ReqYingFuHTDetailEntity;
 import com.DCHZ.TYLINCN.http.req.ReqYingShouHTDetailEntity;
@@ -59,6 +61,7 @@ import com.DCHZ.TYLINCN.http.task.TaskGongChengDetail;
 import com.DCHZ.TYLINCN.http.task.TaskGongShiShenPi;
 import com.DCHZ.TYLINCN.http.task.TaskGongZhangJIeChuDetail;
 import com.DCHZ.TYLINCN.http.task.TaskGuDingZiChanDetail;
+import com.DCHZ.TYLINCN.http.task.TaskHeTongSearch;
 import com.DCHZ.TYLINCN.http.task.TaskIsHeGe;
 import com.DCHZ.TYLINCN.http.task.TaskJiDuHeTong;
 import com.DCHZ.TYLINCN.http.task.TaskJiDuShouKuan;
@@ -73,6 +76,7 @@ import com.DCHZ.TYLINCN.http.task.TaskTest;
 import com.DCHZ.TYLINCN.http.task.TaskTouBiaoFeiYongDetail;
 import com.DCHZ.TYLINCN.http.task.TaskUpdate;
 import com.DCHZ.TYLINCN.http.task.TaskXiangMuDetail;
+import com.DCHZ.TYLINCN.http.task.TaskXiangMuSearch;
 import com.DCHZ.TYLINCN.http.task.TaskYiBanList;
 import com.DCHZ.TYLINCN.http.task.TaskYingFuHTDetail;
 import com.DCHZ.TYLINCN.http.task.TaskYingShouHTDetail;
@@ -673,6 +677,36 @@ public class ProtocalManager {
 		ReqYueDuShouKuanInfoEntity req=new ReqYueDuShouKuanInfoEntity();
 		req.NianValue=NianValue;
 		TaskYueDuShouKuanInfo task=new TaskYueDuShouKuanInfo(req);
+		return addTask(task);
+	}
+
+	/**
+	 * 项目搜索
+	 * @param page
+	 * @param strWhere
+	 * @return
+	 */
+	public int reqXiangMuSearchList(int page,String strWhere ){
+		ReqXiangMuSearchEntity req=new ReqXiangMuSearchEntity();
+		req.strWhere=SharePreLoginUtil.loadLoginInfo().YHID;
+		req.pageIndex=page;
+		req.strWhere=strWhere;
+		TaskXiangMuSearch task=new TaskXiangMuSearch(req);
+		return addTask(task);
+	}
+
+	/**
+	 * 合同搜索
+	 * @param page
+	 * @param strWhere
+	 * @return
+	 */
+	public int reqHeTongSearchList(int page,String strWhere){
+		ReqHeTongSearchEntity req=new ReqHeTongSearchEntity();
+		req.strWhere=SharePreLoginUtil.loadLoginInfo().YHID;
+		req.pageIndex=page;
+		req.strWhere=strWhere;
+		TaskHeTongSearch task=new TaskHeTongSearch(req);
 		return addTask(task);
 	}
 }
