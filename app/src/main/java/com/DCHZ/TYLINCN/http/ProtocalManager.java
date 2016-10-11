@@ -688,7 +688,7 @@ public class ProtocalManager {
 	 */
 	public int reqXiangMuSearchList(int page,String strWhere ){
 		ReqXiangMuSearchEntity req=new ReqXiangMuSearchEntity();
-		req.strWhere=SharePreLoginUtil.loadLoginInfo().YHID;
+		req.strYHID=SharePreLoginUtil.loadLoginInfo().YHID;
 		req.pageIndex=page;
 		req.strWhere=strWhere;
 		TaskXiangMuSearch task=new TaskXiangMuSearch(req);
@@ -703,7 +703,7 @@ public class ProtocalManager {
 	 */
 	public int reqHeTongSearchList(int page,String strWhere){
 		ReqHeTongSearchEntity req=new ReqHeTongSearchEntity();
-		req.strWhere=SharePreLoginUtil.loadLoginInfo().YHID;
+		req.strYHID=SharePreLoginUtil.loadLoginInfo().YHID;
 		req.pageIndex=page;
 		req.strWhere=strWhere;
 		TaskHeTongSearch task=new TaskHeTongSearch(req);

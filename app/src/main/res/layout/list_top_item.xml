@@ -16,6 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1"
             android:text="item1"
             android:textColor="@color/header_item_textColor"
@@ -28,13 +29,18 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
             android:text="item1"
             android:textColor="#000000"
             android:textSize="15sp"
             android:visibility="gone" />
     </LinearLayout>
-
+<View
+    android:id="@+id/line01"
+    android:layout_width="match_parent"
+    android:layout_height="1px"
+    android:background="@color/common_grey"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -46,6 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1"
             android:text="item1"
             android:textColor="@color/header_item_textColor"
@@ -58,13 +65,18 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
             android:text="item1"
             android:textColor="#000000"
             android:textSize="15sp"
             android:visibility="gone" />
     </LinearLayout>
-
+    <View
+        android:id="@+id/line02"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/common_grey"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -76,6 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1"
             android:text="item1"
             android:textColor="@color/header_item_textColor"
@@ -87,12 +100,17 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
             android:text="item1"
             android:textColor="#000000"
             android:visibility="gone" />
     </LinearLayout>
-
+    <View
+        android:id="@+id/line03"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/common_grey"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -104,6 +122,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1"
             android:text="item1"
             android:textColor="@color/header_item_textColor"
@@ -115,12 +134,17 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
             android:text="item1"
             android:textColor="#000000"
             android:visibility="gone" />
     </LinearLayout>
-
+    <View
+        android:id="@+id/line04"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/common_grey"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -132,6 +156,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1"
             android:text="item1"
             android:textColor="@color/header_item_textColor"
@@ -143,12 +168,17 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
             android:text="item1"
             android:textColor="#000000"
             android:visibility="gone" />
     </LinearLayout>
-
+    <View
+        android:id="@+id/line05"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/common_grey"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -160,6 +190,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1"
             android:text="item1"
             android:textColor="@color/header_item_textColor"
@@ -171,12 +202,17 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
             android:text="item1"
             android:textColor="#000000"
             android:visibility="gone" />
     </LinearLayout>
-
+    <View
+        android:id="@+id/line06"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/common_grey"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -188,6 +224,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1"
             android:text="item1"
             android:textColor="@color/header_item_textColor"
@@ -199,10 +236,16 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
             android:textColor="#000000"
             android:visibility="gone" />
     </LinearLayout>
+    <View
+        android:id="@+id/line07"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/common_grey"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -214,6 +257,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1"
             android:text="item1"
             android:textColor="@color/header_item_textColor"
@@ -225,10 +269,16 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
             android:textColor="#000000"
             android:visibility="gone" />
     </LinearLayout>
+    <View
+        android:id="@+id/line08"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/common_grey"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -240,6 +290,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1"
             android:text="item1"
             android:textColor="@color/header_item_textColor"
@@ -251,10 +302,16 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
             android:textColor="#000000"
             android:visibility="gone" />
     </LinearLayout>
+    <View
+        android:id="@+id/line09"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/common_grey"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -266,6 +323,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1"
             android:text="item1"
             android:textColor="@color/header_item_textColor"
@@ -277,10 +335,16 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
             android:textColor="#000000"
             android:visibility="gone" />
     </LinearLayout>
+    <View
+        android:id="@+id/line10"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/common_grey"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -292,6 +356,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1"
             android:text="item1"
             android:textColor="@color/header_item_textColor"
@@ -303,10 +368,16 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
             android:textColor="#000000"
             android:visibility="gone" />
     </LinearLayout>
+    <View
+        android:id="@+id/line11"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/common_grey"/>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -319,6 +390,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1"
             android:text="item1"
             android:textColor="@color/header_item_textColor"
@@ -330,11 +402,16 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
             android:textColor="#000000"
             android:visibility="gone" />
     </LinearLayout>
-
+    <View
+        android:id="@+id/line12"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/common_grey"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -346,6 +423,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1"
             android:text="item1"
             android:textColor="@color/header_item_textColor"
@@ -357,11 +435,16 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
             android:textColor="#000000"
             android:visibility="gone" />
     </LinearLayout>
-
+    <View
+        android:id="@+id/line13"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/common_grey"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -373,6 +456,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1"
             android:text="item1"
             android:textColor="@color/header_item_textColor"
@@ -384,11 +468,16 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
             android:textColor="#000000"
             android:visibility="gone" />
     </LinearLayout>
-
+    <View
+        android:id="@+id/line14"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/common_grey"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -400,6 +489,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1"
             android:text="item1"
             android:textColor="@color/header_item_textColor"
@@ -411,18 +501,23 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="12.5dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
             android:textColor="#000000"
             android:visibility="gone" />
     </LinearLayout>
-
+    <View
+        android:id="@+id/line15"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/common_grey"/>
 
     <View
         android:id="@+id/line_bootom"
         android:layout_width="fill_parent"
         android:layout_height="1px"
         android:background="@color/common_orange"
-        android:layout_marginTop="12.5dp" />
+         />
 
     <RelativeLayout
         android:id="@+id/item_top"

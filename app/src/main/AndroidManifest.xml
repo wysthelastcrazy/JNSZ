@@ -211,6 +211,23 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.DCHZ" />
+
+        <activity
+            android:name="com.DCHZ.TYLINCN.activity.SearchActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.DCHZ" />
+        <activity
+            android:name="com.DCHZ.TYLINCN.activity.SearchXiangMuActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.DCHZ" />
+        <activity
+            android:name="com.DCHZ.TYLINCN.activity.SearchXiangMuDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.DCHZ" />
+
                <!--个推SDK配置开始-->
     <!-- 配置的第三方参数属性 -->
     <meta-data

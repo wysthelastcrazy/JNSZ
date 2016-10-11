@@ -46,18 +46,41 @@ public class ListTopItemView extends LinearLayout{
 	private TextView text_item15_value;
 	private TextView[] keys;
 	private TextView[] values;
-	
+
+	private View line01;
+	private View line02;
+	private View line03;
+	private View line04;
+	private View line05;
+	private View line06;
+	private View line07;
+	private View line08;
+	private View line09;
+	private View line10;
+	private View line11;
+	private View line12;
+	private View line13;
+	private View line14;
+	private View line15;
+	private View[] lines;
+
 	private RelativeLayout item_top;
+
 	public ListTopItemView(Context context) {
 		super(context);
-		// TODO Auto-generated constructor stub
 		init();
 	}
+
 	public ListTopItemView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		init();
-		// TODO Auto-generated constructor stub
 	}
+
+	public ListTopItemView(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+		init();
+	}
+
 	private void init() {
 		// TODO Auto-generated method stub
 		LayoutInflater li = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -103,6 +126,38 @@ public class ListTopItemView extends LinearLayout{
 		values=new TextView[]{text_item1_value,text_item2_value,text_item3_value,text_item4_value,
 				text_item5_value,text_item6_value,text_item7_value,text_item8_value,text_item9_value,text_item10_value,
 				text_item11_value,text_item12_value,text_item13_value,text_item14_value,text_item15_value};
+
+		this.line01=this.findViewById(R.id.line01);
+		this.line02=this.findViewById(R.id.line02);
+		this.line03=this.findViewById(R.id.line03);
+		this.line04=this.findViewById(R.id.line04);
+		this.line05=this.findViewById(R.id.line05);
+		this.line06=this.findViewById(R.id.line06);
+		this.line07=this.findViewById(R.id.line07);
+		this.line08=this.findViewById(R.id.line08);
+		this.line09=this.findViewById(R.id.line09);
+		this.line10=this.findViewById(R.id.line10);
+		this.line11=this.findViewById(R.id.line11);
+		this.line12=this.findViewById(R.id.line12);
+		this.line13=this.findViewById(R.id.line13);
+		this.line14=this.findViewById(R.id.line14);
+		this.line15=this.findViewById(R.id.line15);
+		line01.setVisibility(View.GONE);
+		line02.setVisibility(View.GONE);
+		line03.setVisibility(View.GONE);
+		line04.setVisibility(View.GONE);
+		line05.setVisibility(View.GONE);
+		line06.setVisibility(View.GONE);
+		line07.setVisibility(View.GONE);
+		line08.setVisibility(View.GONE);
+		line09.setVisibility(View.GONE);
+		line10.setVisibility(View.GONE);
+		line11.setVisibility(View.GONE);
+		line12.setVisibility(View.GONE);
+		line13.setVisibility(View.GONE);
+		line14.setVisibility(View.GONE);
+		line15.setVisibility(View.GONE);
+		lines=new View[]{line01,line02,line03,line04,line05,line06,line07,line08,line09,line10,line11,line12,line13,line14,line15};
 	}
 	
 	public void showBottom(){
@@ -113,6 +168,7 @@ public class ListTopItemView extends LinearLayout{
 			for(int i=0;i<strs.size();i++){
 				keys[i].setVisibility(View.VISIBLE);
 				values[i].setVisibility(View.VISIBLE);
+				lines[i].setVisibility(View.VISIBLE);
 				values[i].setText(strs.get(i));
 			}
 		}
@@ -124,6 +180,7 @@ public class ListTopItemView extends LinearLayout{
 				keys[i].setVisibility(View.VISIBLE);
 				values[i].setVisibility(View.VISIBLE);
 				keys[i].setText(key.get(i));
+				lines[i].setVisibility(View.VISIBLE);
 				values[i].setText(value.get(i));
 			}
 		}

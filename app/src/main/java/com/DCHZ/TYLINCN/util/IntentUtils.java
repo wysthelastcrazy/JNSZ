@@ -19,6 +19,8 @@ import com.DCHZ.TYLINCN.activity.JieShouRenActivity;
 import com.DCHZ.TYLINCN.activity.LoginActivity;
 import com.DCHZ.TYLINCN.activity.MainActivity;
 import com.DCHZ.TYLINCN.activity.QingJiaDetailActivity;
+import com.DCHZ.TYLINCN.activity.SearchXiangMuActivity;
+import com.DCHZ.TYLINCN.activity.SearchXiangMuDetailActivity;
 import com.DCHZ.TYLINCN.activity.TiJiaoTypeActivity;
 import com.DCHZ.TYLINCN.activity.TouBiaoDetailActivity;
 import com.DCHZ.TYLINCN.activity.TouBiaoFeiYongDetailActivity;
@@ -27,6 +29,7 @@ import com.DCHZ.TYLINCN.activity.XiuGaiIPActivity;
 import com.DCHZ.TYLINCN.activity.YingFuHTDetailActivity;
 import com.DCHZ.TYLINCN.activity.YingShouHTDetailActivity;
 import com.DCHZ.TYLINCN.entity.PDaiBanEntity;
+import com.DCHZ.TYLINCN.entity.PXiangMuSearchItemEntity;
 import com.DCHZ.TYLINCN.entity.VJieShouRenEntity;
 
 import android.app.Activity;
@@ -303,6 +306,26 @@ public class IntentUtils {
 	}
 	public static void startFirstActivity(Activity mContext){
 		Intent intent=new Intent(mContext,FirstActivity.class);
+		mContext.startActivity(intent);
+	}
+
+	/**
+	 * 跳转到项目搜索页
+	 * @param mContext
+	 */
+	public static void startSearchXiangMuActivity(Activity mContext){
+		Intent intent=new Intent(mContext,SearchXiangMuActivity.class);
+		mContext.startActivity(intent);
+	}
+
+	/**
+	 * 跳转项目搜索详情页
+	 * @param mContext
+	 * @param mEntity
+	 */
+	public static void startSearchXiangMuDetailActivity(Activity mContext,PXiangMuSearchItemEntity mEntity){
+		Intent intent=new Intent(mContext,SearchXiangMuDetailActivity.class);
+		intent.putExtra(IntentUtils.KEY_ENTITY,mEntity);
 		mContext.startActivity(intent);
 	}
 }

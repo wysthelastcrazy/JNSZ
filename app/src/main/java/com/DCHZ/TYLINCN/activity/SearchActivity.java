@@ -6,6 +6,7 @@ import android.view.View;
 import com.DCHZ.TYLINCN.R;
 import com.DCHZ.TYLINCN.activity.base.BaseNormalActivity;
 import com.DCHZ.TYLINCN.component.MyInfoItemView;
+import com.DCHZ.TYLINCN.util.IntentUtils;
 
 /**
  * Created by yas on 2016/9/10.
@@ -57,7 +58,7 @@ public class SearchActivity extends BaseNormalActivity implements View.OnClickLi
     @Override
     public void onClick(View v) {
         if (v==itemView01){
-            showToast("item01");
+            IntentUtils.startSearchXiangMuActivity(SearchActivity.this);
         }else if (v==itemView02){
             showToast("item02");
         }else if (v==itemView03){
