@@ -60,7 +60,7 @@ public class SearchActivity extends BaseNormalActivity implements View.OnClickLi
         if (v==itemView01){
             IntentUtils.startSearchXiangMuActivity(SearchActivity.this);
         }else if (v==itemView02){
-            showToast("item02");
+            IntentUtils.startSearchHeTongActivity(SearchActivity.this);
         }else if (v==itemView03){
             showToast("item03");
         }else if (v==itemView04){

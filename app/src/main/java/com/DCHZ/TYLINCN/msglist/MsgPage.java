@@ -48,7 +48,7 @@ public class MsgPage extends RelativeLayout {
 		// TODO Auto-generated constructor stub
 		init();
 	}
-	
+
 	public void setRefreshListener(IRefreshListener refreshListener){
 		this.mRefreshListener = refreshListener;
 		if(mRefreshView != null){

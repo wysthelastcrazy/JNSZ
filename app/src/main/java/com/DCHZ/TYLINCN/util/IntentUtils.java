@@ -19,6 +19,7 @@ import com.DCHZ.TYLINCN.activity.JieShouRenActivity;
 import com.DCHZ.TYLINCN.activity.LoginActivity;
 import com.DCHZ.TYLINCN.activity.MainActivity;
 import com.DCHZ.TYLINCN.activity.QingJiaDetailActivity;
+import com.DCHZ.TYLINCN.activity.SearchHeTongActivity;
 import com.DCHZ.TYLINCN.activity.SearchXiangMuActivity;
 import com.DCHZ.TYLINCN.activity.SearchXiangMuDetailActivity;
 import com.DCHZ.TYLINCN.activity.TiJiaoTypeActivity;
@@ -326,6 +327,15 @@ public class IntentUtils {
 	public static void startSearchXiangMuDetailActivity(Activity mContext,PXiangMuSearchItemEntity mEntity){
 		Intent intent=new Intent(mContext,SearchXiangMuDetailActivity.class);
 		intent.putExtra(IntentUtils.KEY_ENTITY,mEntity);
+		mContext.startActivity(intent);
+	}
+
+	/**
+	 * 合同搜索页
+	 * @param mContext
+	 */
+	public static void startSearchHeTongActivity(Activity mContext){
+		Intent intent=new Intent(mContext,SearchHeTongActivity.class);
 		mContext.startActivity(intent);
 	}
 }
