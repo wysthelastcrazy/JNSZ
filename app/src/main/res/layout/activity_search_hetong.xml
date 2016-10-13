@@ -11,6 +11,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
             android:text="合同查询"
             android:layout_centerInParent="true"/>
         <TextView
@@ -23,6 +24,12 @@
             android:layout_marginRight="12.5dp"
             android:textColor="@color/common_orange"/>
     </RelativeLayout>
+    <com.DCHZ.TYLINCN.component.HeaderSearchView
+        android:id="@+id/header_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"></com.DCHZ.TYLINCN.component.HeaderSearchView>
     <com.DCHZ.TYLINCN.msglist.MsgPage
         android:id="@+id/mMsgPage"
         android:layout_width="match_parent"

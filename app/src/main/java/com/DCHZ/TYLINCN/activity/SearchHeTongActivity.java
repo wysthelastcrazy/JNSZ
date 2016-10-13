@@ -2,6 +2,8 @@ package com.DCHZ.TYLINCN.activity;
 
 import android.os.Bundle;
 import android.os.Message;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.TextView;
@@ -12,6 +14,7 @@ import com.DCHZ.TYLINCN.adapter.SearchHeTongAdapter;
 import com.DCHZ.TYLINCN.adapter.SearchXiangMuAdapter;
 import com.DCHZ.TYLINCN.commen.EventCommon;
 import com.DCHZ.TYLINCN.commen.MConfiger;
+import com.DCHZ.TYLINCN.component.HeaderSearchView;
 import com.DCHZ.TYLINCN.component.ListViewEmptyView;
 import com.DCHZ.TYLINCN.entity.PHeTongSearchItemEntity;
 import com.DCHZ.TYLINCN.entity.PXiangMuSearchItemEntity;
@@ -32,18 +35,20 @@ import java.util.ArrayList;
 public class SearchHeTongActivity extends BaseNormalActivity implements View.OnClickListener {
     private TextView txtBack;
     private MsgPage mMsgPage;
+    private HeaderSearchView mSearchView;
     private ArrayList<Integer> mReqList=new ArrayList<Integer>();
     private int page=1;
     private static final int FLAG_SHOW=0x100;
     private boolean hasNext=true;
     private boolean isRefresh;
     private SearchHeTongAdapter mAdapter;
+    private String strWhere="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_hetong);
         registMsgRecevier(EventCommon.EVENT_HETONG_SEARCH);
-        int seq=ProtocalManager.getInstance().reqHeTongSearchList(page, "");
+        int seq=ProtocalManager.getInstance().reqHeTongSearchList(page, strWhere);
         mReqList.add(seq);
         initLayout();
     }
@@ -63,20 +68,40 @@ public class SearchHeTongActivity extends BaseNormalActivity implements View.OnC
         });
         this.mMsgPage.setRefreshListener(mRefreshListener);
         this.mMsgPage.setEmpty(ListViewEmptyView.TYPE_COMMENT);
+
+        mSearchView= (HeaderSearchView) this.findViewById(R.id.header_search);
+        mSearchView.addTextChangeListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                strWhere=editable.toString();
+                int seq=ProtocalManager.getInstance().reqHeTongSearchList(refreshPage(), strWhere);
+                mReqList.add(seq);
+            }
+        });
     }
     // mMsgpage的监听事件，包括下拉刷新和点击加载更多
     private IRefreshListener mRefreshListener = new IRefreshListener() {
         @Override
         public void reachListViewBottom() {
             if (hasNext){
-                int seq= ProtocalManager.getInstance().reqHeTongSearchList(nextPage(), "");
+                int seq= ProtocalManager.getInstance().reqHeTongSearchList(nextPage(), strWhere);
                 mReqList.add(seq);
             }
         }
         @Override
         public void onRefresh(NLPullRefreshView view) {
             isRefresh=true;
-            int seq=ProtocalManager.getInstance().reqHeTongSearchList(refreshPage(), "");
+            int seq=ProtocalManager.getInstance().reqHeTongSearchList(refreshPage(), strWhere);
             mReqList.add(seq);
         }
     };
@@ -110,7 +135,11 @@ public class SearchHeTongActivity extends BaseNormalActivity implements View.OnC
                         mAdapter.setType(BaseListAdapter.ADAPTER_TYPE_NO_BOTTOM);
                         mMsgPage.setListAdapter(mAdapter);
                     }else{
-                        mAdapter.appendList(rsp.mEntity.HTInfo);
+                        if (page==1){
+                            mAdapter.reSetList(rsp.mEntity.HTInfo);
+                        }else{
+                            mAdapter.appendList(rsp.mEntity.HTInfo);
+                        }
                     }
                     if (rsp.mEntity.HTInfo.size()< MConfiger.PAGE_SIZE){
                         hasNext=false;

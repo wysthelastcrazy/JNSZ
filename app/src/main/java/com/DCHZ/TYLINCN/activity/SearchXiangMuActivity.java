@@ -2,6 +2,8 @@ package com.DCHZ.TYLINCN.activity;
 
 import android.os.Bundle;
 import android.os.Message;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.TextView;
@@ -11,6 +13,7 @@ import com.DCHZ.TYLINCN.activity.base.BaseNormalActivity;
 import com.DCHZ.TYLINCN.adapter.SearchXiangMuAdapter;
 import com.DCHZ.TYLINCN.commen.EventCommon;
 import com.DCHZ.TYLINCN.commen.MConfiger;
+import com.DCHZ.TYLINCN.component.HeaderSearchView;
 import com.DCHZ.TYLINCN.component.ListViewEmptyView;
 import com.DCHZ.TYLINCN.entity.PXiangMuSearchItemEntity;
 import com.DCHZ.TYLINCN.http.ProtocalManager;
@@ -36,13 +39,15 @@ public class SearchXiangMuActivity extends BaseNormalActivity implements View.On
     private static final int FLAG_SHOW=0x100;
     private boolean hasNext=true;
     private boolean isRefresh;
+    private HeaderSearchView mSearchView;
+    private String strWhere="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_xiangmu);
         initLayout();
         registMsgRecevier(EventCommon.EVENT_XIANGMU_SEARCH);
-        int seq=ProtocalManager.getInstance().reqXiangMuSearchList(page,"");
+        int seq=ProtocalManager.getInstance().reqXiangMuSearchList(page,strWhere);
         mReqList.add(seq);
         showLoading();
     }
@@ -54,13 +59,32 @@ public class SearchXiangMuActivity extends BaseNormalActivity implements View.On
         mMsgPage.getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {
-                if (mAdapter!=null&&mAdapter.getCount()>pos){
-                    PXiangMuSearchItemEntity entity= (PXiangMuSearchItemEntity) mAdapter.getItem(pos);
-                    IntentUtils.startSearchXiangMuDetailActivity(SearchXiangMuActivity.this,entity);
+                if (mAdapter != null && mAdapter.getCount() > pos) {
+                    PXiangMuSearchItemEntity entity = (PXiangMuSearchItemEntity) mAdapter.getItem(pos);
+                    IntentUtils.startSearchXiangMuDetailActivity(SearchXiangMuActivity.this, entity);
                 }
             }
         });
         this.mMsgPage.setRefreshListener(mRefreshListener);
+        mSearchView= (HeaderSearchView) this.findViewById(R.id.header_search);
+        mSearchView.addTextChangeListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                strWhere = editable.toString();
+                int seq = ProtocalManager.getInstance().reqXiangMuSearchList(refreshPage(), strWhere);
+                mReqList.add(seq);
+            }
+        });
     }
 
     // mMsgpage的监听事件，包括下拉刷新和点击加载更多
@@ -68,7 +92,7 @@ public class SearchXiangMuActivity extends BaseNormalActivity implements View.On
         @Override
         public void reachListViewBottom() {
             if (hasNext){
-                int seq=ProtocalManager.getInstance().reqXiangMuSearchList(nextPage(),"");
+                int seq=ProtocalManager.getInstance().reqXiangMuSearchList(nextPage(),strWhere);
                 mReqList.add(seq);
             }
         }
@@ -76,7 +100,7 @@ public class SearchXiangMuActivity extends BaseNormalActivity implements View.On
         public void onRefresh(NLPullRefreshView view) {
             isRefresh=true;
             mAdapter=null;
-            int seq=ProtocalManager.getInstance().reqXiangMuSearchList(refreshPage(),"");
+            int seq=ProtocalManager.getInstance().reqXiangMuSearchList(refreshPage(),strWhere);
             mReqList.add(seq);
         }
     };
@@ -111,7 +135,11 @@ public class SearchXiangMuActivity extends BaseNormalActivity implements View.On
                         mAdapter.setType(BaseListAdapter.ADAPTER_TYPE_NO_BOTTOM);
                         mMsgPage.setListAdapter(mAdapter);
                     }else{
-                        mAdapter.appendList(rsp.mEntity.XMInfo);
+                        if (page==1){
+                            mAdapter.reSetList(rsp.mEntity.XMInfo);
+                        }else{
+                            mAdapter.appendList(rsp.mEntity.XMInfo);
+                        }
                     }
                     if (rsp.mEntity.XMInfo.size()< MConfiger.PAGE_SIZE){
                         hasNext=false;
