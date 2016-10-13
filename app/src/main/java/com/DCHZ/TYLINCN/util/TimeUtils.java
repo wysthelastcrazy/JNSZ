@@ -1,6 +1,7 @@
 package com.DCHZ.TYLINCN.util;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class TimeUtils {
@@ -52,5 +53,14 @@ public class TimeUtils {
 			str = timeLineSimpleDate.format(date);
 		}
 		return str;
+	}
+
+	/**
+	 * 获取当前年
+	 * @return
+	 */
+	public static final String getCurrYear(){
+		Calendar a= Calendar.getInstance();
+		return a.get(Calendar.YEAR)+"";
 	}
 }

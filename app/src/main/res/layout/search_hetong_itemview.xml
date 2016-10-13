@@ -6,7 +6,7 @@
         android:id="@+id/txtJinE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/tab_txt_color_blue"
+        android:textColor="#3B54AB"
         android:textSize="16sp"
         android:text="--"
         android:layout_alignParentRight="true"
