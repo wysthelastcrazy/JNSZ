@@ -12,7 +12,6 @@ import android.widget.LinearLayout;
 import com.DCHZ.TYLINCN.R;
 import com.DCHZ.TYLINCN.entity.PYueDuHeTongItemEntiity;
 import com.DCHZ.TYLINCN.entity.VThirdItemEntity;
-import com.DCHZ.TYLINCN.http.rsp.RspYueDuHeTongInfoEntity;
 import com.DCHZ.TYLINCN.util.MyLog;
 import com.DCHZ.TYLINCN.util.ParseUtil;
 import com.github.mikephil.charting.charts.LineChart;
@@ -135,6 +134,7 @@ public class ChartView extends LinearLayout{
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setDrawLabels(true);
         xAxis.setAvoidFirstLastClipping(true);
+        xAxis.setSpaceBetweenLabels(3);
 //        xAxis.resetLabelsToSkip();
 //        xAxis.setDrawAxisLine(true);
         // 设置不从X轴发出纵向直线
