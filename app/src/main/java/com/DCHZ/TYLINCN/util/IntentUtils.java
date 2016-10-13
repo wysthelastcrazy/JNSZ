@@ -20,6 +20,7 @@ import com.DCHZ.TYLINCN.activity.LoginActivity;
 import com.DCHZ.TYLINCN.activity.MainActivity;
 import com.DCHZ.TYLINCN.activity.QingJiaDetailActivity;
 import com.DCHZ.TYLINCN.activity.SearchHeTongActivity;
+import com.DCHZ.TYLINCN.activity.SearchHeTongDetailActivity;
 import com.DCHZ.TYLINCN.activity.SearchXiangMuActivity;
 import com.DCHZ.TYLINCN.activity.SearchXiangMuDetailActivity;
 import com.DCHZ.TYLINCN.activity.TiJiaoTypeActivity;
@@ -30,6 +31,7 @@ import com.DCHZ.TYLINCN.activity.XiuGaiIPActivity;
 import com.DCHZ.TYLINCN.activity.YingFuHTDetailActivity;
 import com.DCHZ.TYLINCN.activity.YingShouHTDetailActivity;
 import com.DCHZ.TYLINCN.entity.PDaiBanEntity;
+import com.DCHZ.TYLINCN.entity.PHeTongSearchItemEntity;
 import com.DCHZ.TYLINCN.entity.PXiangMuSearchItemEntity;
 import com.DCHZ.TYLINCN.entity.VJieShouRenEntity;
 
@@ -336,6 +338,15 @@ public class IntentUtils {
 	 */
 	public static void startSearchHeTongActivity(Activity mContext){
 		Intent intent=new Intent(mContext,SearchHeTongActivity.class);
+		mContext.startActivity(intent);
+	}
+	/**
+	 * 合同搜索详情页
+	 * @param mContext
+	 */
+	public static void startSearchHeTongDetailActivity(Activity mContext,PHeTongSearchItemEntity mEntity){
+		Intent intent=new Intent(mContext,SearchHeTongDetailActivity.class);
+		intent.putExtra(IntentUtils.KEY_ENTITY,mEntity);
 		mContext.startActivity(intent);
 	}
 }

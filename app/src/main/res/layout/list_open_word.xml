@@ -28,6 +28,6 @@
 <View
     android:layout_width="fill_parent"
     android:layout_height="2px"
-    android:layout_alignParentBottom="true"
+    android:layout_below="@id/text_open"
     android:background="@color/common_orange"/>
 </RelativeLayout>

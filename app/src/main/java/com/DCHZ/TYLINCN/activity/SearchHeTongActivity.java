@@ -57,7 +57,7 @@ public class SearchHeTongActivity extends BaseNormalActivity implements View.OnC
             public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {
                 if (mAdapter!=null&&mAdapter.getCount()>pos){
                     PHeTongSearchItemEntity entity= (PHeTongSearchItemEntity) mAdapter.getItem(pos);
-                    showToast(entity.HTMingCheng);
+                    IntentUtils.startSearchHeTongDetailActivity(SearchHeTongActivity.this,entity);
                 }
             }
         });
