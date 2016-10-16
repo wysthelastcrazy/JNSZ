@@ -95,7 +95,7 @@ public class SearchHeTongDetailActivity extends BaseNormalActivity implements Vi
                 valList.add(mEntity.HTBianHao);
                 valList.add(mEntity.HTJinE);
                 valList.add(mEntity.HTQianDingBuMen);
-                valList.add(mEntity.HTQianDingRiQi);
+                valList.add(mEntity.HTQianDingRiQi.split(" ")[0]);
                 valList.add(mEntity.LeiJiShouKuan);
                 valList.add(mEntity.WeiShouKuan);
                 if(mEntity.FuJian!=null&&mEntity.FuJian.size()>0){
@@ -108,9 +108,15 @@ public class SearchHeTongDetailActivity extends BaseNormalActivity implements Vi
                         }
                         mFileView.addView(openView);
                     }
+                }else{
+                    ListOpenWordView openView=new ListOpenWordView(this);
+                    openView.setEmptyData();
+                    mFileView.addView(openView);
                 }
         }else{
-            mFileView.setVisibility(View.GONE);
+            ListOpenWordView openView=new ListOpenWordView(this);
+            openView.setEmptyData();
+            mFileView.addView(openView);
         }
         mTopView.setData(keyList,valList);
     }

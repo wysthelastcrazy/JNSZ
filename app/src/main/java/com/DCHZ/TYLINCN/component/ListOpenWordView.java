@@ -18,6 +18,7 @@ public class ListOpenWordView extends RelativeLayout implements OnClickListener{
 	private IWordOpenListener mListener;
 	private PFuJianEntity entity;
 	private View viewLine;
+	private TextView text_title;
 	public ListOpenWordView(Context context) {
 		super(context);
 		// TODO Auto-generated constructor stub
@@ -42,11 +43,17 @@ public class ListOpenWordView extends RelativeLayout implements OnClickListener{
 		text_open=(TextView) this.findViewById(R.id.text_open);
 		text_open.setOnClickListener(this);
 		viewLine=this.findViewById(R.id.view);
+		text_title= (TextView) this.findViewById(R.id.text_title);
 	}
 	
 	public void setData(PFuJianEntity entity){
 		this.entity=entity;
 		text_desp.setText(entity.FJName);
+	}
+	public void setEmptyData(){
+		text_desp.setText("");
+		text_title.setVisibility(View.VISIBLE);
+		text_open.setVisibility(View.GONE);
 	}
 	public void hideLine(){
 		viewLine.setVisibility(View.GONE);

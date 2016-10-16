@@ -51,7 +51,7 @@ public class SearchXiangMuDetailActivity extends BaseNormalActivity implements V
             valList.add(mEntity.KHMingCheng);
             valList.add(mEntity.ZhuDaoBuMen);
             valList.add(mEntity.XMJingLi);
-            valList.add(mEntity.XMLiXiangRiQi);
+            valList.add(mEntity.XMLiXiangRiQi.split(" ")[0]);
             valList.add(mEntity.PeiHeBuMen);
         }
         mTopView.setData(keyList,valList);

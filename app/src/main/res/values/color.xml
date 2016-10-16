@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="common_white">#ffffff</color>
-    <color name="common_grey">#f2f5ed</color>
+    <color name="common_grey">#f1f1f1</color>
     <color name="common_orange">#FF6600</color>
      <color name="tab_txt_color_grey">#a1a1a1</color>
     <color name="tab_txt_color_blue">#0aaaf5</color>
@@ -9,7 +9,8 @@
     <color name="popwin_item_press">#f7f7f7</color>
     <color name="more_list_item_press">#f1fafe</color>
     <color name="thirdList_bg">#ffe3d0</color>
-    <color name="header_item_textColor">#3c6d95</color>
+    <color name="header_item_textColor">#808080</color>
+    <color name="common_red">#ff0000</color>
 
     <!--已办待办相关-->
     <!--搜索view相关-->

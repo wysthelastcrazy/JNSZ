@@ -147,7 +147,7 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 		this.mMsgPage.setRefreshListener(mRefreshListener);
 		mMsgPage.setEnablePullDown(false);
 		mChartView=new ChartView(this);
-		mMsgPage.addHeaderView(mChartView);
+//		mMsgPage.addHeaderView(mChartView);
 	}
 	
 	private IRefreshListener mRefreshListener=new IRefreshListener() {

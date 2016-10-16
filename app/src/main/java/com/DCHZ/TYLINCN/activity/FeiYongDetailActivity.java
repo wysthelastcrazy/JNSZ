@@ -359,6 +359,7 @@ public class FeiYongDetailActivity extends BaseNormalActivity{
 				mList.add(bxInfo.get(i).BXMXXiangMuMingCheng);
 				mList.add(bxInfo.get(i).BXMXZhuDaoBuMen);
 				mList.add(bxInfo.get(i).BXMXJinE);
+				mList.add(bxInfo.get(i).BXMXMiaoShu);
 				topView.setData(entity.LCID, mList);
 				if(i==bxInfo.size()-1){
 					topView.showBottom();

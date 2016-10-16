@@ -32,7 +32,7 @@ public class PDetailBXInfoEntity implements Serializable{
 	public String CHID;
 	public String LiuShuiHao;
 	public String xuhao;
-	
+
 	public ArrayList<PFuJianEntity> FuJian;
 	
 }

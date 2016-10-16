@@ -250,9 +250,9 @@ public class ChartView extends LinearLayout{
      *
      */
     private PieData getPieData(String yusuan,String shiji) {
-
         ArrayList<String> xValues = new ArrayList<String>();  //xVals用来表示每个饼块上的内容
         xValues.add("未完成："+(Float.valueOf(yusuan)-Float.valueOf(shiji))+"万元");
+//        xValues.add("");
         xValues.add("已完成："+shiji+"万元");
 //        for (int i = 0; i < count; i++) {
 //            xValues.add("Quarterly" + (i + 1));  //饼块上显示成Quarterly1, Quarterly2, Quarterly3, Quarterly4

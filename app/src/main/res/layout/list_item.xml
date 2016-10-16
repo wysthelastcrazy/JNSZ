@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:gravity="right"
             android:layout_marginRight="12.5dp"
-            android:textSize="15sp"
+            android:textSize="13sp"
             android:textColor="#808080"
             android:layout_weight="1"
             android:text="2015-09-07" />

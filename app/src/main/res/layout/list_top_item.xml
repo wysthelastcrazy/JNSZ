@@ -27,7 +27,7 @@
             android:id="@+id/text_item1_value"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="12.5dp"
+            android:layout_marginRight="24dp"
             android:layout_marginTop="12.5dp"
             android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
@@ -40,7 +40,9 @@
     android:id="@+id/line01"
     android:layout_width="match_parent"
     android:layout_height="1px"
-    android:background="@color/common_grey"/>
+    android:background="@color/common_grey"
+    android:layout_marginLeft="12.5dp"
+    android:layout_marginRight="12.5dp"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -63,7 +65,7 @@
             android:id="@+id/text_item2_value"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="12.5dp"
+            android:layout_marginRight="24dp"
             android:layout_marginTop="12.5dp"
             android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
@@ -76,7 +78,9 @@
         android:id="@+id/line02"
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/common_grey"/>
+        android:background="@color/common_grey"
+        android:layout_marginLeft="12.5dp"
+        android:layout_marginRight="12.5dp"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -98,7 +102,7 @@
             android:id="@+id/text_item3_value"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="12.5dp"
+            android:layout_marginRight="24dp"
             android:layout_marginTop="12.5dp"
             android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
@@ -110,7 +114,9 @@
         android:id="@+id/line03"
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/common_grey"/>
+        android:background="@color/common_grey"
+        android:layout_marginLeft="12.5dp"
+        android:layout_marginRight="12.5dp"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -132,7 +138,7 @@
             android:id="@+id/text_item4_value"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="12.5dp"
+            android:layout_marginRight="24dp"
             android:layout_marginTop="12.5dp"
             android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
@@ -144,7 +150,9 @@
         android:id="@+id/line04"
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/common_grey"/>
+        android:background="@color/common_grey"
+        android:layout_marginLeft="12.5dp"
+        android:layout_marginRight="12.5dp"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -166,7 +174,7 @@
             android:id="@+id/text_item5_value"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="12.5dp"
+            android:layout_marginRight="24dp"
             android:layout_marginTop="12.5dp"
             android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
@@ -178,7 +186,9 @@
         android:id="@+id/line05"
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/common_grey"/>
+        android:background="@color/common_grey"
+        android:layout_marginLeft="12.5dp"
+        android:layout_marginRight="12.5dp"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -200,7 +210,7 @@
             android:id="@+id/text_item6_value"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="12.5dp"
+            android:layout_marginRight="24dp"
             android:layout_marginTop="12.5dp"
             android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
@@ -212,7 +222,9 @@
         android:id="@+id/line06"
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/common_grey"/>
+        android:background="@color/common_grey"
+        android:layout_marginLeft="12.5dp"
+        android:layout_marginRight="12.5dp"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -234,7 +246,7 @@
             android:id="@+id/text_item7_value"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="12.5dp"
+            android:layout_marginRight="24dp"
             android:layout_marginTop="12.5dp"
             android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
@@ -245,7 +257,9 @@
         android:id="@+id/line07"
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/common_grey"/>
+        android:background="@color/common_grey"
+        android:layout_marginLeft="12.5dp"
+        android:layout_marginRight="12.5dp"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -267,7 +281,7 @@
             android:id="@+id/text_item8_value"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="12.5dp"
+            android:layout_marginRight="24dp"
             android:layout_marginTop="12.5dp"
             android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
@@ -278,7 +292,9 @@
         android:id="@+id/line08"
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/common_grey"/>
+        android:background="@color/common_grey"
+        android:layout_marginLeft="12.5dp"
+        android:layout_marginRight="12.5dp"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -300,7 +316,7 @@
             android:id="@+id/text_item9_value"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="12.5dp"
+            android:layout_marginRight="24dp"
             android:layout_marginTop="12.5dp"
             android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
@@ -311,7 +327,9 @@
         android:id="@+id/line09"
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/common_grey"/>
+        android:background="@color/common_grey"
+        android:layout_marginLeft="12.5dp"
+        android:layout_marginRight="12.5dp"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -333,7 +351,7 @@
             android:id="@+id/text_item10_value"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="12.5dp"
+            android:layout_marginRight="24dp"
             android:layout_marginTop="12.5dp"
             android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
@@ -344,7 +362,9 @@
         android:id="@+id/line10"
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/common_grey"/>
+        android:background="@color/common_grey"
+        android:layout_marginLeft="12.5dp"
+        android:layout_marginRight="12.5dp"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -366,7 +386,7 @@
             android:id="@+id/text_item11_value"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="12.5dp"
+            android:layout_marginRight="24dp"
             android:layout_marginTop="12.5dp"
             android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
@@ -377,7 +397,9 @@
         android:id="@+id/line11"
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/common_grey"/>
+        android:background="@color/common_grey"
+        android:layout_marginLeft="12.5dp"
+        android:layout_marginRight="12.5dp"/>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -400,7 +422,7 @@
             android:id="@+id/text_item12_value"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="12.5dp"
+            android:layout_marginRight="24dp"
             android:layout_marginTop="12.5dp"
             android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
@@ -411,7 +433,9 @@
         android:id="@+id/line12"
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/common_grey"/>
+        android:background="@color/common_grey"
+        android:layout_marginLeft="12.5dp"
+        android:layout_marginRight="12.5dp"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -433,7 +457,7 @@
             android:id="@+id/text_item13_value"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="12.5dp"
+            android:layout_marginRight="24dp"
             android:layout_marginTop="12.5dp"
             android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
@@ -444,7 +468,9 @@
         android:id="@+id/line13"
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/common_grey"/>
+        android:background="@color/common_grey"
+        android:layout_marginLeft="12.5dp"
+        android:layout_marginRight="12.5dp"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -466,7 +492,7 @@
             android:id="@+id/text_item14_value"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="12.5dp"
+            android:layout_marginRight="24dp"
             android:layout_marginTop="12.5dp"
             android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
@@ -477,7 +503,9 @@
         android:id="@+id/line14"
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/common_grey"/>
+        android:background="@color/common_grey"
+        android:layout_marginLeft="12.5dp"
+        android:layout_marginRight="12.5dp"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -499,7 +527,7 @@
             android:id="@+id/text_item15_value"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="12.5dp"
+            android:layout_marginRight="24dp"
             android:layout_marginTop="12.5dp"
             android:layout_marginBottom="12.5dp"
             android:layout_weight="1.5"
@@ -510,7 +538,9 @@
         android:id="@+id/line15"
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/common_grey"/>
+        android:background="@color/common_grey"
+        android:layout_marginLeft="12.5dp"
+        android:layout_marginRight="12.5dp"/>
 
     <View
         android:id="@+id/line_bootom"
@@ -553,7 +583,7 @@
             android:layout_marginLeft="8dp"
             android:layout_toRightOf="@id/view"
             android:text="审批意见"
-            android:textColor="@color/common_orange"
+            android:textColor="@color/common_red"
             android:textSize="16sp" />
     </RelativeLayout>
 

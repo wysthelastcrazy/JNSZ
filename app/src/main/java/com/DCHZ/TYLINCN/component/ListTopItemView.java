@@ -200,6 +200,7 @@ public class ListTopItemView extends LinearLayout{
 			text_item5_key.setText("归属项目名称");
 			text_item6_key.setText("项目主导部门");
 			text_item7_key.setText("金额（元）");
+			text_item8_key.setText("费用描述");
 		}else if(Common.FENBAO.equals(type)){
 			text_item1_key.setText("分包方名称");
 			text_item2_key.setText("单位地址");
