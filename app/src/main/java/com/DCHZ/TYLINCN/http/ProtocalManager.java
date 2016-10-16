@@ -137,11 +137,12 @@ public class ProtocalManager {
 	 * @param YHID	用户id
 	 * @return
 	 */
-	public int getDaiBanList(String YHID,int pageIndex){
+	public int getDaiBanList(String YHID,int pageIndex,String strWhere){
 		ReqDaiBanListEntity req =new ReqDaiBanListEntity();
 		req.YHID=YHID;
 		req.pageSize=MConfiger.PAGE_SIZE;
 		req.pageIndex=pageIndex;
+		req.strWhere=strWhere;
 		TaskDaiBan task=new TaskDaiBan(req);
 		return addTask(task);
 	}
@@ -151,11 +152,12 @@ public class ProtocalManager {
 	 * @param pageIndex
 	 * @return
 	 */
-	public int getYiBanList(String YHID,int pageIndex){
+	public int getYiBanList(String YHID,int pageIndex,String strWhere){
 		ReqYiBanListEntity req=new ReqYiBanListEntity();
 		req.YHID=YHID;
 		req.pageSize=MConfiger.PAGE_SIZE;
 		req.pageIndex=pageIndex;
+		req.strWhere=strWhere;
 		TaskYiBanList task=new TaskYiBanList(req);
 		return addTask(task);
 	}

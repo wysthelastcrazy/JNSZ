@@ -22,13 +22,23 @@
             android:layout_marginRight="12.5dp"
             android:textColor="@color/common_orange"/>
     </RelativeLayout>
-    <com.DCHZ.TYLINCN.component.ListTopItemView
-        android:id="@+id/topView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <LinearLayout
-        android:id="@+id/fileView"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <com.DCHZ.TYLINCN.component.ListTopItemView
+                android:id="@+id/topView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:id="@+id/fileView"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>

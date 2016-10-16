@@ -70,6 +70,7 @@ public class SearchHeTongActivity extends BaseNormalActivity implements View.OnC
         this.mMsgPage.setEmpty(ListViewEmptyView.TYPE_COMMENT);
 
         mSearchView= (HeaderSearchView) this.findViewById(R.id.header_search);
+        mSearchView.setHint("合同名称/签订部门");
         mSearchView.addTextChangeListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {

@@ -33,12 +33,13 @@ public class SearchHeTongItemView extends BaseItemView<PHeTongSearchItemEntity>{
             String year=strs[0];
             if (TimeUtils.getCurrYear().equals(year)){
                 if (month%2==0){
-                    txtTime.setBackgroundColor(Color.parseColor("#E1E3D0"));
+                    txtTime.setBackgroundColor(Color.parseColor("#FFE3D0"));
                 }else{
-                    txtTime.setBackgroundColor(Color.parseColor("#CC00FF"));
+                    txtTime.setBackgroundColor(Color.parseColor("#CEEEBD"));
                 }
             }else{
-                txtTime.setBackgroundColor(Color.parseColor("#F1F1F1"));
+//                txtTime.setBackgroundColor(Color.parseColor("#F1F1F1"));
+                this.setBackgroundColor(Color.parseColor("#f1f1f1"));
             }
             txtTime.setText(month+"月");
         }

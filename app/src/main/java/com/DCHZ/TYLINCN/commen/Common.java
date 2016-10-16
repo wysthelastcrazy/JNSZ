@@ -29,7 +29,7 @@ public class Common {
 	/**已办列表分页**/
 	public static final String URL_YIBAN_FENYE="/yiBanListFenYe";
 	/**已办列表分页**/
-	public static final String URL_YIBAN_FENYE_V2="/daiBanList_IOS";
+	public static final String URL_YIBAN_FENYE_V2="/yiBanList_IOS";
 	/**代办数量**/
 	public static final String URL_DAIBAN_COUNT="/daiBanCount";
 	

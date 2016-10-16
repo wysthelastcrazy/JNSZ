@@ -103,6 +103,9 @@ public class SearchHeTongDetailActivity extends BaseNormalActivity implements Vi
                         ListOpenWordView openView=new ListOpenWordView(this);
                         openView.setData(mEntity.FuJian.get(i));
                         openView.setOpenListener(mListener);
+                        if (i!=mEntity.FuJian.size()-1){
+                            openView.hideLine();
+                        }
                         mFileView.addView(openView);
                     }
                 }

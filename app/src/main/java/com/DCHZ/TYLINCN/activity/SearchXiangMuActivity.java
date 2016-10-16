@@ -67,6 +67,7 @@ public class SearchXiangMuActivity extends BaseNormalActivity implements View.On
         });
         this.mMsgPage.setRefreshListener(mRefreshListener);
         mSearchView= (HeaderSearchView) this.findViewById(R.id.header_search);
+        mSearchView.setHint("项目名称/项目负责人/承担部门/客户名称");
         mSearchView.addTextChangeListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {

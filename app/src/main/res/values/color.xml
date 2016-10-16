@@ -11,4 +11,8 @@
     <color name="thirdList_bg">#ffe3d0</color>
     <color name="header_item_textColor">#3c6d95</color>
 
+    <!--已办待办相关-->
+    <!--搜索view相关-->
+    <color name="search_hint_textColor">#808080</color>
+    <color name="search_bg">#f1f1f1</color>
 </resources>

@@ -9,6 +9,7 @@ import com.DCHZ.TYLINCN.adapter.DaiBanListAdapter;
 import com.DCHZ.TYLINCN.adapter.YiBanListAdapter;
 import com.DCHZ.TYLINCN.commen.EventCommon;
 import com.DCHZ.TYLINCN.commen.MConfiger;
+import com.DCHZ.TYLINCN.component.HeaderSearchView;
 import com.DCHZ.TYLINCN.component.HeaderSelectView;
 import com.DCHZ.TYLINCN.component.ListViewEmptyView;
 import com.DCHZ.TYLINCN.http.ProtocalManager;
@@ -23,6 +24,9 @@ import com.DCHZ.TYLINCN.util.SharePreLoginUtil;
 
 import android.os.Bundle;
 import android.os.Message;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.widget.TextView;
 
 public class FirstActivity extends BaseNormalActivity 
@@ -44,6 +48,9 @@ public class FirstActivity extends BaseNormalActivity
 	private static final int TYPE_DAIBAN = 1;
 	private static final int TYPE_YIBAN = 2;
 	private boolean isRefresh;
+			 private HeaderSearchView mSearchView;
+	private String strWhereYiBan="";
+	private String strWhereDaiBan="";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -54,7 +61,7 @@ public class FirstActivity extends BaseNormalActivity
 		registMsgRecevier(EventCommon.EVENT_YIBAN);
 		YHID=SharePreLoginUtil.loadLoginInfo().YHID;
 		
-		int seq = ProtocalManager.getInstance().getDaiBanList(YHID, pageIndexLeft);
+		int seq = ProtocalManager.getInstance().getDaiBanList(YHID, pageIndexLeft,strWhereDaiBan);
 		mReqList.add(seq);
 		showLoading();
 	}
@@ -64,17 +71,43 @@ public class FirstActivity extends BaseNormalActivity
 
 		mHeader= (HeaderSelectView) findViewById(R.id.header);
 		mHeader.setTabSelectClickListener(mTabSelecterListener);
-		mHeader.setTabTitle("待办事务","已办事务");
+		mHeader.setTabTitle("待办事务", "已办事务");
 		mMsgPage = (MsgPage) findViewById(R.id.first_msgPage);
 		this.mMsgPage.setRefreshListener(mRefreshListener);
 		this.mMsgPage.setEmpty(ListViewEmptyView.TYPE_COMMENT);
+		mSearchView= (HeaderSearchView) this.findViewById(R.id.header_search);
+		mSearchView.setHint("申请人/事务标题/事务类型");
+		mSearchView.addTextChangeListener(new TextWatcher() {
+			@Override
+			public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+			}
+
+			@Override
+			public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+			}
+
+			@Override
+			public void afterTextChanged(Editable editable) {
+				if (mType==TYPE_DAIBAN){
+					strWhereDaiBan=editable.toString();
+					int seq = ProtocalManager.getInstance().getDaiBanList(YHID, refreshPage(), strWhereDaiBan);
+					mReqList.add(seq);
+				}else if (mType==TYPE_YIBAN){
+					strWhereYiBan=editable.toString();
+					int seq = ProtocalManager.getInstance().getYiBanList(YHID, refreshPage(), strWhereYiBan);
+					mReqList.add(seq);
+				}
+			}
+		});
 	}
 	private IHeaderSelecterTabClickListener mTabSelecterListener=new IHeaderSelecterTabClickListener() {
 		@Override
 		public void leftTabClick() {
 			mType=TYPE_DAIBAN;
 			if (mAdapterDaiBan==null){
-				int seq = ProtocalManager.getInstance().getDaiBanList(YHID, 1);
+				int seq = ProtocalManager.getInstance().getDaiBanList(YHID, 1,strWhereDaiBan);
 				mReqList.add(seq);
 				showLoading();
 			}else{
@@ -86,7 +119,7 @@ public class FirstActivity extends BaseNormalActivity
 		public void rightTabClick() {
 			mType=TYPE_YIBAN;
 			if (mAdapterYiban==null){
-				int seq = ProtocalManager.getInstance().getYiBanList(YHID, 1);
+				int seq = ProtocalManager.getInstance().getYiBanList(YHID, 1,strWhereYiBan);
 				mReqList.add(seq);
 				showLoading();
 			}else{
@@ -104,12 +137,12 @@ public class FirstActivity extends BaseNormalActivity
 			if (hasNext) {
 				if (mType == TYPE_DAIBAN) {
 					int seq = ProtocalManager.getInstance().getDaiBanList(YHID,
-							nextPage());
+							nextPage(),strWhereDaiBan);
 					mReqList.add(seq);
 				} else if (mType == TYPE_YIBAN) {
 					int page=nextPage();
 					int seq = ProtocalManager.getInstance().getYiBanList(YHID,
-							page);
+							page,strWhereYiBan);
 					mReqList.add(seq);
 				}
 			} else {
@@ -125,12 +158,12 @@ public class FirstActivity extends BaseNormalActivity
 			if (mType == TYPE_DAIBAN) {
 				mAdapterDaiBan=null;
 				int seq = ProtocalManager.getInstance().getDaiBanList(YHID,
-						refreshPage());
+						refreshPage(),strWhereDaiBan);
 				mReqList.add(seq);
 			} else if (mType == TYPE_YIBAN) {
 				mAdapterYiban=null;
 				int seq = ProtocalManager.getInstance().getYiBanList(YHID,
-						refreshPage());
+						refreshPage(),strWhereYiBan);
 				mReqList.add(seq);
 			}
 		}
@@ -184,7 +217,11 @@ public class FirstActivity extends BaseNormalActivity
 							.setType(BaseListAdapter.ADAPTER_TYPE_NO_BOTTOM);
 					mMsgPage.setListAdapter(mAdapterDaiBan);
 				} else {
-					mAdapterDaiBan.appendList(rsp.mEntity.daiBan);
+					if (pageIndexLeft==1){
+						mAdapterDaiBan.reSetList(rsp.mEntity.daiBan);
+					}else {
+						mAdapterDaiBan.appendList(rsp.mEntity.daiBan);
+					}
 				}
 				if (rsp.mEntity.daiBan.size() < MConfiger.PAGE_SIZE) {
 					hasNext = false;
@@ -205,7 +242,11 @@ public class FirstActivity extends BaseNormalActivity
 								.setType(BaseListAdapter.ADAPTER_TYPE_NO_BOTTOM);
 						mMsgPage.setListAdapter(mAdapterYiban);
 					} else {
-						mAdapterYiban.appendList(rsp1.mEntity.daiBan);
+						if (pageIndexRight==1){
+							mAdapterYiban.reSetList(rsp1.mEntity.daiBan);
+						}else {
+							mAdapterYiban.appendList(rsp1.mEntity.daiBan);
+						}
 
 					}
 					if (rsp1.mEntity.daiBan.size() < MConfiger.PAGE_SIZE) {
