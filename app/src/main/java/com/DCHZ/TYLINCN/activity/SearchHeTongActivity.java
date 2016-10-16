@@ -153,7 +153,8 @@ public class SearchHeTongActivity extends BaseNormalActivity implements View.OnC
         }
     }
     private int nextPage() {
-        return page+1;
+        page=page+1;
+        return page;
     }
 
     private int refreshPage() {
