@@ -106,6 +106,9 @@ public class SearchHeTongDetailActivity extends BaseNormalActivity implements Vi
                         if (i!=mEntity.FuJian.size()-1){
                             openView.hideLine();
                         }
+                        if(i==0){
+                            openView.showTitle();
+                        }
                         mFileView.addView(openView);
                     }
                 }else{

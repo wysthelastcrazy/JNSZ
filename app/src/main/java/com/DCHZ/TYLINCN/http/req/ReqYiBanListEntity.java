@@ -1,5 +1,7 @@
 package com.DCHZ.TYLINCN.http.req;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,6 +30,11 @@ public class ReqYiBanListEntity extends ReqBaseEntity{
 		}
 		if(pageIndex>0){
 			mMap.put("pageIndex", pageIndex+"");
+		}
+		try {
+			strWhere= URLEncoder.encode(strWhere, "GBK");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
 		}
 		mMap.put("strWhere",strWhere);
 		return mMap;

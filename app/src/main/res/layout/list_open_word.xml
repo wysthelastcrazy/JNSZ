@@ -12,7 +12,8 @@
         android:layout_marginTop="12.5dp"
         android:layout_marginLeft="12.5dp"
         android:textColorHint="#000000"
-        android:text="合同附件"
+        android:textSize="15sp"
+        android:text="合同附件:"
         android:visibility="gone"/>
 <TextView 
     android:id="@+id/text_desp"

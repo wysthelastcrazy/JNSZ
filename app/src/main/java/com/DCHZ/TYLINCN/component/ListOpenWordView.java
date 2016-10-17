@@ -55,6 +55,9 @@ public class ListOpenWordView extends RelativeLayout implements OnClickListener{
 		text_title.setVisibility(View.VISIBLE);
 		text_open.setVisibility(View.GONE);
 	}
+	public void showTitle(){
+		text_title.setVisibility(View.VISIBLE);
+	}
 	public void hideLine(){
 		viewLine.setVisibility(View.GONE);
 	}

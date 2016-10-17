@@ -27,6 +27,7 @@ import android.os.Message;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.TextView;
 
 public class FirstActivity extends BaseNormalActivity 
@@ -48,7 +49,8 @@ public class FirstActivity extends BaseNormalActivity
 	private static final int TYPE_DAIBAN = 1;
 	private static final int TYPE_YIBAN = 2;
 	private boolean isRefresh;
-			 private HeaderSearchView mSearchView;
+	private HeaderSearchView mSearchViewLfet;
+	private HeaderSearchView mSearchViewRifht;
 	private String strWhereYiBan="";
 	private String strWhereDaiBan="";
 	@Override
@@ -75,9 +77,9 @@ public class FirstActivity extends BaseNormalActivity
 		mMsgPage = (MsgPage) findViewById(R.id.first_msgPage);
 		this.mMsgPage.setRefreshListener(mRefreshListener);
 		this.mMsgPage.setEmpty(ListViewEmptyView.TYPE_COMMENT);
-		mSearchView= (HeaderSearchView) this.findViewById(R.id.header_search);
-		mSearchView.setHint("申请人/事务标题/事务类型");
-		mSearchView.addTextChangeListener(new TextWatcher() {
+		mSearchViewLfet= (HeaderSearchView) this.findViewById(R.id.header_search);
+		mSearchViewLfet.setHint("申请人/事务标题/事务类型");
+		mSearchViewLfet.addTextChangeListener(new TextWatcher() {
 			@Override
 			public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -90,17 +92,33 @@ public class FirstActivity extends BaseNormalActivity
 
 			@Override
 			public void afterTextChanged(Editable editable) {
-				if (mType==TYPE_DAIBAN){
-					strWhereDaiBan=editable.toString();
-					int seq = ProtocalManager.getInstance().getDaiBanList(YHID, refreshPage(), strWhereDaiBan);
-					mReqList.add(seq);
-				}else if (mType==TYPE_YIBAN){
-					strWhereYiBan=editable.toString();
-					int seq = ProtocalManager.getInstance().getYiBanList(YHID, refreshPage(), strWhereYiBan);
-					mReqList.add(seq);
-				}
+				strWhereDaiBan = editable.toString();
+				int seq = ProtocalManager.getInstance().getDaiBanList(YHID, refreshPage(), strWhereDaiBan);
+				mReqList.add(seq);
 			}
 		});
+		mSearchViewRifht= (HeaderSearchView) this.findViewById(R.id.header_search_right);
+		mSearchViewRifht.setHint("申请人/事务标题/事务类型");
+		mSearchViewRifht.addTextChangeListener(new TextWatcher() {
+			@Override
+			public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+			}
+
+			@Override
+			public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+			}
+
+			@Override
+			public void afterTextChanged(Editable editable) {
+				strWhereYiBan=editable.toString();
+				int seq = ProtocalManager.getInstance().getYiBanList(YHID, refreshPage(), strWhereYiBan);
+				mReqList.add(seq);
+			}
+		});
+		mSearchViewLfet.setVisibility(View.VISIBLE);
+		mSearchViewRifht.setVisibility(View.INVISIBLE);
 	}
 	private IHeaderSelecterTabClickListener mTabSelecterListener=new IHeaderSelecterTabClickListener() {
 		@Override
@@ -113,6 +131,8 @@ public class FirstActivity extends BaseNormalActivity
 			}else{
 				mMsgPage.setListAdapter(mAdapterDaiBan);
 			}
+			mSearchViewLfet.setVisibility(View.VISIBLE);
+			mSearchViewRifht.setVisibility(View.INVISIBLE);
 		}
 
 		@Override
@@ -125,6 +145,8 @@ public class FirstActivity extends BaseNormalActivity
 			}else{
 				mMsgPage.setListAdapter(mAdapterYiban);
 			}
+			mSearchViewLfet.setVisibility(View.INVISIBLE);
+			mSearchViewRifht.setVisibility(View.VISIBLE);
 		}
 	};
 	// mMsgpage的监听事件，包括下拉刷新和点击加载更多
