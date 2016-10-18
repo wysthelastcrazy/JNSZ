@@ -3,11 +3,10 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <com.github.mikephil.charting.charts.PieChart
+    <com.DCHZ.TYLINCN.component.MyPieChart
         android:id="@+id/mPieChart"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginRight="40dp"></com.github.mikephil.charting.charts.PieChart>
+        android:layout_height="wrap_content"></com.DCHZ.TYLINCN.component.MyPieChart>
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/mLineChart1"
         android:layout_width="match_parent"

@@ -30,7 +30,7 @@ import java.util.ArrayList;
  * Created by yas on 2016/8/23.
  */
 public class ChartView extends LinearLayout{
-    private PieChart mPicChart; //饼图
+    private MyPieChart mPicChart; //饼图
     private LineChart mChart;
     private final int FLAG_SET_DATA=0x100;
     private Handler mHandler = new Handler() {
@@ -142,48 +142,7 @@ public class ChartView extends LinearLayout{
     }
 
     private void initPieChart() {
-        mPicChart= (PieChart) this.findViewById(R.id.mPieChart);
-        mPicChart.setHoleColorTransparent(true);
-
-        mPicChart.setHoleRadius(60f);  //半径
-        mPicChart.setTransparentCircleRadius(64f); // 半透明圈
-        //pieChart.setHoleRadius(0)  //实心圆
-
-        mPicChart.setDescription("");
-
-        // mChart.setDrawYValues(true);
-        mPicChart.setDrawCenterText(false);  //饼状图中间可以添加文字
-
-        mPicChart.setDrawHoleEnabled(false);
-
-        mPicChart.setRotationAngle(0); // 初始旋转角度
-
-        // draws the corresponding description value into the slice
-        // mChart.setDrawXValues(true);
-
-        // enable rotation of the chart by touch
-        mPicChart.setRotationEnabled(false); // 可以手动旋转
-
-        // display percentage values
-        mPicChart.setUsePercentValues(true);  //显示成百分比
-        // mChart.setUnit(" €");
-        // mChart.setDrawUnitsInChart(true);
-
-        // add a selection listener
-//      mChart.setOnChartValueSelectedListener(this);
-        // mChart.setTouchEnabled(false);
-
-//      mChart.setOnAnimationListener(this);
-
-//        mPicChart.setCenterText("Quarterly Revenue");  //饼状图中间的文字
-
-        Legend mLegend = mPicChart.getLegend();  //设置比例图
-        mLegend.setPosition(Legend.LegendPosition.RIGHT_OF_CHART_CENTER);  //最右边显示
-//      mLegend.setForm(LegendForm.LINE);  //设置比例图的形状，默认是方形
-        mLegend.setXEntrySpace(7f);
-        mLegend.setYEntrySpace(5f);
-
-        mPicChart.animateXY(1000, 1000);  //设置动画
+        mPicChart= (MyPieChart) this.findViewById(R.id.mPieChart);
     }
 
     public void setData(VThirdItemEntity item){
@@ -191,12 +150,12 @@ public class ChartView extends LinearLayout{
         if (type==VThirdItemEntity.TYPE_HeTong){
             String yusuan=item.mEntity.NianDuHeTongYuSuan;
             String shiji=item.mEntity.NianDuHeTongShiJi;
-            mPicChart.setData(getPieData(yusuan,shiji));
+            mPicChart.setData(Double.valueOf(yusuan),Double.valueOf(shiji));
             mPicChart.invalidate();
         }else if (type==VThirdItemEntity.TYPE_SHOUKUAN){
             String yusuan=item.shouKuanEntity.NianDuShouKuanYuSuan;
             String shiji=item.shouKuanEntity.NianDuShouKuanShiJi;
-            mPicChart.setData(getPieData(yusuan, shiji));
+            mPicChart.setData(Double.valueOf(yusuan),Double.valueOf(shiji));
             mPicChart.invalidate();
         }
     }
@@ -246,52 +205,4 @@ public class ChartView extends LinearLayout{
         set1.setValueTextSize(0);
         return new LineData(xVals, set1);
     }
-    /**
-     *
-     */
-    private PieData getPieData(String yusuan,String shiji) {
-        ArrayList<String> xValues = new ArrayList<String>();  //xVals用来表示每个饼块上的内容
-        xValues.add("未完成："+(Float.valueOf(yusuan)-Float.valueOf(shiji))+"万元");
-//        xValues.add("");
-        xValues.add("已完成："+shiji+"万元");
-//        for (int i = 0; i < count; i++) {
-//            xValues.add("Quarterly" + (i + 1));  //饼块上显示成Quarterly1, Quarterly2, Quarterly3, Quarterly4
-//        }
-
-        ArrayList<Entry> yValues = new ArrayList<Entry>();  //yVals用来表示封装每个饼块的实际数据
-
-        // 饼图数据
-        /**
-         * 将一个饼形图分成四部分， 四部分的数值比例为14:14:34:38
-         * 所以 14代表的百分比就是14%
-         */
-        float quarterly1 = Float.valueOf(shiji);
-        float quarterly2 = Float.valueOf(yusuan)-quarterly1;
-        yValues.add(new Entry(quarterly2, 0));
-        yValues.add(new Entry(quarterly1, 1));
-
-
-        //y轴的集合
-        PieDataSet pieDataSet = new PieDataSet(yValues, ""/*显示在比例图上*/);
-        pieDataSet.setSliceSpace(0f); //设置个饼状图之间的距离
-
-        ArrayList<Integer> colors = new ArrayList<Integer>();
-
-        // 饼图颜色
-        colors.add(Color.rgb(205, 205, 205));
-        colors.add(Color.rgb(114, 188, 223));
-        colors.add(Color.rgb(255, 123, 124));
-        colors.add(Color.rgb(57, 135, 200));
-
-        pieDataSet.setColors(colors);
-
-        DisplayMetrics metrics = getResources().getDisplayMetrics();
-        float px = 5 * (metrics.densityDpi / 160f);
-        pieDataSet.setSelectionShift(px); // 选中态多出的长度
-
-        PieData pieData = new PieData(xValues, pieDataSet);
-
-        return pieData;
-    }
-
 }
