@@ -15,6 +15,7 @@ import com.DCHZ.TYLINCN.activity.base.BaseNormalActivity;
 import com.DCHZ.TYLINCN.adapter.BanLiYiJianAdapter;
 import com.DCHZ.TYLINCN.commen.Common;
 import com.DCHZ.TYLINCN.commen.EventCommon;
+import com.DCHZ.TYLINCN.component.DetailShenPiYiJianTitleView;
 import com.DCHZ.TYLINCN.component.HeaderDetailView;
 import com.DCHZ.TYLINCN.component.JZADScoreTextView;
 import com.DCHZ.TYLINCN.component.ListBottomView;
@@ -370,9 +371,9 @@ public class GuDingZiChangDetail extends BaseNormalActivity {
                 mList.add(mInfo.get(i).ZiChanJinE);
                 mList.add(mInfo.get(i).ZiChanShuoMing);
                 topView.setData(entity.LCID, mList);
-                if(i==mInfo.size()-1){
-                    topView.showBottom();
-                }
+//                if(i==mInfo.size()-1){
+//                    topView.showBottom();
+//                }
                 layout.addView(topView);
             }
 
@@ -385,6 +386,8 @@ public class GuDingZiChangDetail extends BaseNormalActivity {
                     layout.addView(openView);
                 }
             }
+            DetailShenPiYiJianTitleView view=new DetailShenPiYiJianTitleView(GuDingZiChangDetail.this);
+            layout.addView(view);
         }
         return layout;
     }

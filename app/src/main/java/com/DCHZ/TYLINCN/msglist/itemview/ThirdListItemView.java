@@ -28,6 +28,9 @@ public class ThirdListItemView extends BaseItemView<VThirdItemEntity> {
 	public void setMsg(VThirdItemEntity t) {
 		// TODO Auto-generated method stub
 		mEntity = t;
+		if (pos==0){
+			relat_Layout.setBackgroundResource(R.color.thirdList_first_bg);
+		}
 		if(t.type==VThirdItemEntity.TYPE_HeTong){
 			text_item1.setText(t.mEntity.BMName);
 	

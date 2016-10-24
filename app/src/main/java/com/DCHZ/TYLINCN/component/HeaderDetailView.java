@@ -9,6 +9,7 @@ import com.DCHZ.TYLINCN.listener.IHeaderClickListener;
 import com.common.util.DateUtil;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -243,6 +244,7 @@ public class HeaderDetailView extends RelativeLayout implements OnClickListener{
 			text_item2_key.setText("申请部门：");
 			text_item3_key.setText("申请日期：");
 			text_item4_key.setText("购置部门：");
+			text_item4_value.setTextColor(getResources().getColor(R.color.common_black));
 		}else if(Common.DIZHIYIHAOPIN.equals(str)){
 			text_title.setText("低值易耗品购置申请");
 
@@ -250,6 +252,7 @@ public class HeaderDetailView extends RelativeLayout implements OnClickListener{
 			text_item2_key.setText("申请部门：");
 			text_item3_key.setText("申请日期：");
 			text_item4_key.setText("购置部门：");
+			text_item4_value.setTextColor(getResources().getColor(R.color.common_black));
 		}else if(Common.TOUBIAOFEIYONG.equals(str)){
 			text_title.setText("投标费用审批");
 

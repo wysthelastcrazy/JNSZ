@@ -48,9 +48,9 @@ public class BaoBiaoListTopView extends RelativeLayout implements OnClickListene
 	public void setClickListener(IBaoBiaoClickListener mListener){
 		this.mListener=mListener;
 	}
-	public void setInfo(String info){
-		text_info.setText(info);
-	}
+//	public void setInfo(String info){
+//		text_info.setText(info);
+//	}
 	@Override
 	public void onClick(View view) {
 		if(mListener!=null){

@@ -20,6 +20,7 @@ import com.DCHZ.TYLINCN.activity.base.BaseNormalActivity;
 import com.DCHZ.TYLINCN.adapter.BanLiYiJianAdapter;
 import com.DCHZ.TYLINCN.commen.Common;
 import com.DCHZ.TYLINCN.commen.EventCommon;
+import com.DCHZ.TYLINCN.component.DetailShenPiYiJianTitleView;
 import com.DCHZ.TYLINCN.component.HeaderDetailView;
 import com.DCHZ.TYLINCN.component.JZADScoreTextView;
 import com.DCHZ.TYLINCN.component.ListBottomView;
@@ -331,11 +332,13 @@ public class QingJiaDetailActivity extends BaseNormalActivity{
 				mList.add(bxInfo.get(i).QJKaiShiRiQi.split(" ")[0]+"至"+bxInfo.get(i).QJJieShuRIQi.split(" ")[0]);
 				mList.add(bxInfo.get(i).QJXiangMuQingKuang);
 				topView.setData(entity.LCID, mList);
-				if(i==bxInfo.size()-1){
-					topView.showBottom();
-				}
+//				if(i==bxInfo.size()-1){
+//					topView.showBottom();
+//				}
 				layout.addView(topView);
 			}
+			DetailShenPiYiJianTitleView view=new DetailShenPiYiJianTitleView(QingJiaDetailActivity.this);
+			layout.addView(view);
 		}
 		return layout;
 	}

@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.DCHZ.TYLINCN.R;
 import com.DCHZ.TYLINCN.entity.PYueDuHeTongItemEntiity;
@@ -32,6 +33,8 @@ import java.util.ArrayList;
 public class ChartView extends LinearLayout{
     private MyPieChart mPicChart; //饼图
     private LineChart mChart;
+    private TextView txtTitle;
+    private TextView txtInfo;
     private final int FLAG_SET_DATA=0x100;
     public static final int TYPE_HETONG=1;
     public static final int TYPE_SHOUKUAN=2;
@@ -80,6 +83,9 @@ public class ChartView extends LinearLayout{
         li.inflate(R.layout.chart_view, this, true);
         initPieChart();
         initLineChart();
+
+        txtTitle= (TextView) this.findViewById(R.id.text_title);
+        txtInfo= (TextView) this.findViewById(R.id.text_info);
     }
 
     private void initLineChart() {
@@ -125,8 +131,8 @@ public class ChartView extends LinearLayout{
         Legend l = mChart.getLegend();
         l.setForm(Legend.LegendForm.LINE);  //设置图最下面显示的类型
         l.setTextSize(15);
-        l.setTextColor(Color.rgb(173, 218, 250));
-        l.setFormSize(30f);
+        l.setTextColor(Color.parseColor("#555555"));
+        l.setFormSize(150f);
 
         // 设置Y轴右边不显示数字
         mChart.getAxisRight().setEnabled(false);
@@ -147,21 +153,27 @@ public class ChartView extends LinearLayout{
         mPicChart= (MyPieChart) this.findViewById(R.id.mPieChart);
     }
 
-    public void setData(VThirdItemEntity item){
+    public void setData(VThirdItemEntity item,String year){
         int type=item.type;
+        String[] strs=year.split("-");
+//		topView.setInfo(strs[0]+"合同信息查询");
         if (type==VThirdItemEntity.TYPE_HeTong){
             String yusuan=item.mEntity.NianDuHeTongYuSuan;
             String shiji=item.mEntity.NianDuHeTongShiJi;
-            mPicChart.setData(Double.valueOf(yusuan),Double.valueOf(shiji));
+            mPicChart.setData(Double.valueOf(yusuan), Double.valueOf(shiji));
             mPicChart.invalidate();
+            txtTitle.setText(strs[0]+"年总体合同情况");
+            txtInfo.setText(strs[0]+"各部门完成情况");
         }else if (type==VThirdItemEntity.TYPE_SHOUKUAN){
             String yusuan=item.shouKuanEntity.NianDuShouKuanYuSuan;
             String shiji=item.shouKuanEntity.NianDuShouKuanShiJi;
             mPicChart.setData(Double.valueOf(yusuan),Double.valueOf(shiji));
             mPicChart.invalidate();
+            txtTitle.setText(strs[0]+"年总体收款情况");
+            txtInfo.setText(strs[0]+"各部门完成情况");
         }
     }
-    public void setData(final ArrayList<PYueDuHeTongItemEntiity> srcList, final int type){
+    public void setData(final ArrayList<PYueDuHeTongItemEntiity> srcList, final int type,String year){
         MyLog.debug("dd","[setData] .............");
         if (srcList!=null&&srcList.size()>0) {
             new Thread(new Runnable() {

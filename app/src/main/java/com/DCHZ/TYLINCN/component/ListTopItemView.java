@@ -160,9 +160,9 @@ public class ListTopItemView extends LinearLayout{
 		lines=new View[]{line01,line02,line03,line04,line05,line06,line07,line08,line09,line10,line11,line12,line13,line14,line15};
 	}
 	
-	public void showBottom(){
-		item_top.setVisibility(View.VISIBLE);
-	}
+//	public void showBottom(){
+//		item_top.setVisibility(View.VISIBLE);
+//	}
 	public void setData(String type,List<String> strs){
 		if(strs!=null&&strs.size()>0){
 			for(int i=0;i<strs.size();i++){

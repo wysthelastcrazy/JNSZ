@@ -19,7 +19,7 @@
             android:layout_marginLeft="12.5dp"
             android:layout_weight="1"
             android:textSize="15sp"
-            android:textColor="@color/header_item_textColor"
+            android:textColor="@color/order_detail_yiji_name_color"
             android:text="name" />
 
         <TextView

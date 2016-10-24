@@ -152,9 +152,6 @@ public class FirstActivity extends BaseNormalActivity
 	// mMsgpage的监听事件，包括下拉刷新和点击加载更多
 	private IRefreshListener mRefreshListener = new IRefreshListener() {
 		@Override
-		public void bottomClick(int state) {
-		}
-
 		public void reachListViewBottom() {
 			if (hasNext) {
 				if (mType == TYPE_DAIBAN) {

@@ -19,6 +19,7 @@ import com.DCHZ.TYLINCN.activity.base.BaseNormalActivity;
 import com.DCHZ.TYLINCN.adapter.BanLiYiJianAdapter;
 import com.DCHZ.TYLINCN.commen.Common;
 import com.DCHZ.TYLINCN.commen.EventCommon;
+import com.DCHZ.TYLINCN.component.DetailShenPiYiJianTitleView;
 import com.DCHZ.TYLINCN.component.HeaderDetailView;
 import com.DCHZ.TYLINCN.component.JZADScoreTextView;
 import com.DCHZ.TYLINCN.component.ListBottomView;
@@ -312,11 +313,13 @@ public class XiangMuDetailActivity extends BaseNormalActivity{
 				mList.add(bxInfo.get(i).WangChengRiQi.split(" ")[0]);
 				mList.add(bxInfo.get(i).ChengDanBuMen);
 				topView.setData(entity.LCID, mList);
-				if(i==bxInfo.size()-1){
-					topView.showBottom();
-				}
+//				if(i==bxInfo.size()-1){
+//					topView.showBottom();
+//				}
 				layout.addView(topView);
 			}
+			DetailShenPiYiJianTitleView view=new DetailShenPiYiJianTitleView(XiangMuDetailActivity.this);
+			layout.addView(view);
 		}
 		return layout;
 	}

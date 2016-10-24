@@ -69,8 +69,8 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 		int seq1=ProtocalManager.getInstance().getYueDuHeTongInfo(year);
 		mReqList.add(seq1);
 		showLoading();
-		String[] strs=year.split("-");
-		topView.setInfo(strs[0]+"合同信息查询");
+//		String[] strs=year.split("-");
+//		topView.setInfo(strs[0]+"合同信息查询");
 		
 		LeaderRole=SharePreLoginUtil.loadLoginInfo().LeaderRole;
 		IsBMLeader=SharePreLoginUtil.loadLoginInfo().IsBMLeader;
@@ -246,11 +246,11 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 	protected void handleMsg(Message msg) {
 		// TODO Auto-generated method stub
 		String[] strs=year.split("-");
-		if(mType==TYPE_HETONG){
-			topView.setInfo(strs[0]+"合同信息查询");
-		}else{
-			topView.setInfo(strs[0]+"收款信息查询");
-		}
+//		if(mType==TYPE_HETONG){
+//			topView.setInfo(strs[0]+"合同信息查询");
+//		}else{
+//			topView.setInfo(strs[0]+"收款信息查询");
+//		}
 		int what=msg.what;
 		switch (what) {
 		case FLAG_SET_HETONG:
@@ -270,7 +270,7 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 					 mList=ParseUtil.getThirdList(rsp.mEntity.JiDuHeTongInfo);
 				}
 				VThirdItemEntity item=mList.get(mList.size()-1);
-				mChartView.setData(item);
+				mChartView.setData(item,year);
 //				showToast("mList:"+rsp.mEntity.JiDuShouKuanInfo.size());
 				 if(mAdapter==null){
 					mAdapter=new ThirdListAdapter(mList);
@@ -301,7 +301,7 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 					 mList=ParseUtil.getThirdList1(rsp1.mEntity.JiDuShouKuanInfo);
 				}
 				VThirdItemEntity item=mList.get(mList.size()-1);
-				mChartView.setData(item);
+				mChartView.setData(item,year);
 				 if(mAdapter==null){
 						mAdapter=new ThirdListAdapter(mList);
 						mAdapter.setType(BaseListAdapter.ADAPTER_TYPE_NO_BOTTOM);
@@ -320,7 +320,7 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 				RspYueDuHeTongInfoEntity rsp2= (RspYueDuHeTongInfoEntity) msg.obj;
 				if (rsp2!=null&&rsp2.mEntity!=null){
 					MyLog.debug(TAG,"[handleMsg]  rsp");
-					mChartView.setData(rsp2.mEntity.YueDuHeTongInfo,ChartView.TYPE_HETONG);
+					mChartView.setData(rsp2.mEntity.YueDuHeTongInfo,ChartView.TYPE_HETONG,year);
 				}
 				break;
 			case FLAG_SET_YUEDUSHOUKUAN:
@@ -328,7 +328,7 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 				RspYueDuShouKuanInfoEntity rsp3= (RspYueDuShouKuanInfoEntity) msg.obj;
 				if (rsp3!=null&&rsp3.mEntity!=null){
 					MyLog.debug(TAG,"[handleMsg]  rsp");
-					mChartView.setData(rsp3.mEntity.YueDuShouKuanInfo,ChartView.TYPE_SHOUKUAN);
+					mChartView.setData(rsp3.mEntity.YueDuShouKuanInfo,ChartView.TYPE_SHOUKUAN,year);
 				}
 				break;
 		default:

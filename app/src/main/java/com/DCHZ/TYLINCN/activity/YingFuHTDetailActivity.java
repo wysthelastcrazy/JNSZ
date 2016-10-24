@@ -23,6 +23,7 @@ import com.DCHZ.TYLINCN.activity.base.BaseNormalActivity;
 import com.DCHZ.TYLINCN.adapter.BanLiYiJianAdapter;
 import com.DCHZ.TYLINCN.commen.Common;
 import com.DCHZ.TYLINCN.commen.EventCommon;
+import com.DCHZ.TYLINCN.component.DetailShenPiYiJianTitleView;
 import com.DCHZ.TYLINCN.component.HeaderDetailView;
 import com.DCHZ.TYLINCN.component.JZADScoreTextView;
 import com.DCHZ.TYLINCN.component.ListBottomView;
@@ -363,9 +364,9 @@ public class YingFuHTDetailActivity extends BaseNormalActivity{
 				mList.add(bxInfo.get(i).JieSuanFangShi);
 				mList.add(bxInfo.get(i).GongZuoNeiRong);
 				topView.setData(entity.LCID, mList);
-				if(i==bxInfo.size()-1){
-					topView.showBottom();
-				}
+//				if(i==bxInfo.size()-1){
+//					topView.showBottom();
+//				}
 				layout.addView(topView);
 			}
 			
@@ -378,6 +379,8 @@ public class YingFuHTDetailActivity extends BaseNormalActivity{
 					layout.addView(openView);
 				}
 			}
+			DetailShenPiYiJianTitleView view=new DetailShenPiYiJianTitleView(YingFuHTDetailActivity.this);
+			layout.addView(view);
 		}
 		return layout;
 	}

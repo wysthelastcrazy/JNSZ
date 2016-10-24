@@ -41,8 +41,8 @@ public class SearchXiangMuDetailActivity extends BaseNormalActivity implements V
         keyList.add("项目名称");
         keyList.add("项目编号");
         keyList.add("客户名称");
-        keyList.add("主导部门");
-        keyList.add("项目经理");
+        keyList.add("承担部门");
+        keyList.add("项目负责人");
         keyList.add("立项日期");
         keyList.add("配合部门");
         if (mEntity!=null){

@@ -46,6 +46,7 @@ public class MyPieChart extends RelativeLayout {
             String str=df.format(d)+"%";
             txtProportion.setText(str);
         }
-        txtNumber.setText("已完成 "+"\n"+real+" 万元");
+        java.text.DecimalFormat df2 = new java.text.DecimalFormat("0");
+        txtNumber.setText("已完成 "+"\n"+df2.format(real)+" 万元");
     }
 }
