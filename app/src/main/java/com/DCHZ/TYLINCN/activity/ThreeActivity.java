@@ -320,7 +320,7 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 				RspYueDuHeTongInfoEntity rsp2= (RspYueDuHeTongInfoEntity) msg.obj;
 				if (rsp2!=null&&rsp2.mEntity!=null){
 					MyLog.debug(TAG,"[handleMsg]  rsp");
-					mChartView.setData(rsp2.mEntity.YueDuHeTongInfo);
+					mChartView.setData(rsp2.mEntity.YueDuHeTongInfo,ChartView.TYPE_HETONG);
 				}
 				break;
 			case FLAG_SET_YUEDUSHOUKUAN:
@@ -328,7 +328,7 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 				RspYueDuShouKuanInfoEntity rsp3= (RspYueDuShouKuanInfoEntity) msg.obj;
 				if (rsp3!=null&&rsp3.mEntity!=null){
 					MyLog.debug(TAG,"[handleMsg]  rsp");
-					mChartView.setData(rsp3.mEntity.YueDuShouKuanInfo);
+					mChartView.setData(rsp3.mEntity.YueDuShouKuanInfo,ChartView.TYPE_SHOUKUAN);
 				}
 				break;
 		default:

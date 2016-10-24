@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import android.text.TextUtils;
 
 import com.DCHZ.TYLINCN.commen.Global;
+import com.DCHZ.TYLINCN.component.ChartView;
 import com.DCHZ.TYLINCN.entity.PDetailHTInfoEntity;
 import com.DCHZ.TYLINCN.entity.PDetailTJInfoInfoEntity;
 import com.DCHZ.TYLINCN.entity.PJiDuHeTongItemEntity;
@@ -203,7 +204,7 @@ public class ParseUtil {
 	 * @param srcList
 	 * @return
 	 */
-	public static String[] getYueduTeHongList(final ArrayList<PYueDuHeTongItemEntiity> srcList) {
+	public static String[] getYueduTeHongList(final ArrayList<PYueDuHeTongItemEntiity> srcList,int type) {
 		if (srcList != null) {
 			MyLog.debug("dd", "[getYueduTeHongList]  srcList:" + srcList.size());
 		}
@@ -215,7 +216,12 @@ public class ParseUtil {
 						for (int j = 0; j < entity.YueDuInfo.size(); j++) {
 							PYueDuInfoItemEntity infoItem = entity.YueDuInfo.get(j);
 							String yue = infoItem.Yue;
-							int jine = infoItem.HeTongJinE;
+							int jine = 0;
+							if (type== ChartView.TYPE_HETONG){
+								 jine = infoItem.HeTongJinE;
+							}else if(type==ChartView.TYPE_SHOUKUAN){
+								 jine = infoItem.ShouKuanJinE;
+							}
 							if ("1".equals(yue)) {
 								yiYue += jine;
 							} else if ("2".equals(yue)) {

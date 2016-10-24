@@ -9,11 +9,14 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
+import com.DCHZ.TYLINCN.util.MyLog;
+
 /**
  * Created by aaa
  * Date  15-4-8
  */
 public class ArcChartView extends View {
+
     private Paint arcPaint;
     //弧线的尺寸
     private RectF arcRect;
@@ -46,7 +49,6 @@ public class ArcChartView extends View {
         // arcPaint.setStyle(Paint.Style.STROKE);
         //反锯齿
         arcPaint.setAntiAlias(true);
-        arcRect = new RectF(10, 10, 210, 210);
     }
 
     @Override
@@ -68,7 +70,12 @@ public class ArcChartView extends View {
 //        //画蓝色上半部分的圆
 //        arcPaint.setColor(Color.parseColor("#FF0E6AB8"));
 //        canvas.drawArc(arcRect, 180, 180, true, arcPaint);
-
+        int width=getWidth();
+        int height=getHeight();
+        int padingLeft=getPaddingLeft();
+        int padingTop=getPaddingTop();
+        MyLog.debug("ddd","[onDraw]  width:"+width+"  height:"+height+"  padingLeft:"+padingLeft+"  padingTop:"+padingTop);
+        arcRect = new RectF(padingLeft, padingTop, width, height);
         if (real>=total){
             if (real==0){
                 arcPaint.setColor(Color.parseColor("#FBC300"));

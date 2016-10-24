@@ -8,4 +8,5 @@ import java.io.Serializable;
 public class PYueDuInfoItemEntity implements Serializable{
     public String Yue;
     public int HeTongJinE;
+    public int ShouKuanJinE;
 }

@@ -33,6 +33,8 @@ public class ChartView extends LinearLayout{
     private MyPieChart mPicChart; //饼图
     private LineChart mChart;
     private final int FLAG_SET_DATA=0x100;
+    public static final int TYPE_HETONG=1;
+    public static final int TYPE_SHOUKUAN=2;
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -159,7 +161,7 @@ public class ChartView extends LinearLayout{
             mPicChart.invalidate();
         }
     }
-    public void setData(final ArrayList<PYueDuHeTongItemEntiity> srcList){
+    public void setData(final ArrayList<PYueDuHeTongItemEntiity> srcList, final int type){
         MyLog.debug("dd","[setData] .............");
         if (srcList!=null&&srcList.size()>0) {
             new Thread(new Runnable() {
@@ -167,7 +169,7 @@ public class ChartView extends LinearLayout{
                 public void run() {
                     MyLog.debug("dd","[setData] step01");
 //                    mHandler.sendEmptyMessage(0);
-                    String[] strArr=ParseUtil.getYueduTeHongList(srcList);
+                    String[] strArr=ParseUtil.getYueduTeHongList(srcList,type);
                     MyLog.debug("dd","[setData] step02");
                     Message msg =new Message();
                     msg.obj = strArr;//可以是基本类型，可以是对象，可以是List、map等；
@@ -191,6 +193,7 @@ public class ChartView extends LinearLayout{
         ArrayList<Entry> yVals = new ArrayList<Entry>();
         for (int i = 0; i < yy.length; i++) {
             yVals.add(new Entry(Float.parseFloat(yy[i]), i));
+            MyLog.debug("dd","[getLineData]  i:"+yy[i]);
         }
 
         LineDataSet set1 = new LineDataSet(yVals, "每月收款");
