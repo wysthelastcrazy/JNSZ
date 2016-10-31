@@ -10,7 +10,7 @@
         android:layout_marginTop="12.5dp"
         android:layout_gravity="center_horizontal"
         android:textSize="16sp"
-        android:textColor="#000000"
+        android:textColor="#555555"
         android:text="2014合同信息查勋"
         />
     <com.DCHZ.TYLINCN.component.MyPieChart
@@ -29,7 +29,12 @@
         android:layout_marginTop="12.5dp"
         android:layout_gravity="center_horizontal"
         android:textSize="14sp"
-        android:textColor="#000000"
+        android:textColor="#555555"
         android:text="2014合同信息查勋"
         />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/common_grey"
+        android:layout_marginTop="6dp"></View>
 </LinearLayout>

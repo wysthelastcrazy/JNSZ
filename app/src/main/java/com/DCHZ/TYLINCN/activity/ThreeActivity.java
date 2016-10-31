@@ -194,6 +194,7 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 			mReqList.add(seq1);
 			showLoading();
 			mType=TYPE_HETONG;
+			mChartView.setType(mType);
 		}else if(view==this.textView_shouKuan){
 			textView_shouKuan.setEnabled(false);
 			textView_heTong.setEnabled(true);
@@ -203,6 +204,7 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 			mReqList.add(seq1);
 			showLoading();
 			mType=TYPE_SHOUKUAN;
+			mChartView.setType(mType);
 		}
 	}
 	@Override
@@ -269,15 +271,20 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 				}else{
 					 mList=ParseUtil.getThirdList(rsp.mEntity.JiDuHeTongInfo);
 				}
-				VThirdItemEntity item=mList.get(mList.size()-1);
-				mChartView.setData(item,year);
+				if (mList!=null&&mList.size()>1) {
+					VThirdItemEntity item = mList.get(mList.size() - 1);
+					mChartView.setData(item, year);
 //				showToast("mList:"+rsp.mEntity.JiDuShouKuanInfo.size());
-				 if(mAdapter==null){
-					mAdapter=new ThirdListAdapter(mList);
-					mAdapter.setType(BaseListAdapter.ADAPTER_TYPE_NO_BOTTOM);
-					mMsgPage.setListAdapter(mAdapter);
+					if (mAdapter == null) {
+						mAdapter = new ThirdListAdapter(mList);
+						mAdapter.setType(BaseListAdapter.ADAPTER_TYPE_NO_BOTTOM);
+						mMsgPage.setListAdapter(mAdapter);
+					} else {
+						mAdapter.reSetList(mList);
+					}
 				}else{
-					mAdapter.reSetList(mList);
+					mMsgPage.setEmpty(ListViewEmptyView.TYPE_ENROLL);
+					hasBottom=true;
 				}
 			}else{
 				showToast("网络异常");
@@ -300,19 +307,25 @@ public class ThreeActivity extends BaseNormalActivity implements OnClickListener
 				}else{
 					 mList=ParseUtil.getThirdList1(rsp1.mEntity.JiDuShouKuanInfo);
 				}
-				VThirdItemEntity item=mList.get(mList.size()-1);
-				mChartView.setData(item,year);
-				 if(mAdapter==null){
-						mAdapter=new ThirdListAdapter(mList);
+				if (mList!=null&&mList.size()>1) {
+					VThirdItemEntity item = mList.get(mList.size() - 1);
+					mChartView.setData(item, year);
+					if (mAdapter == null) {
+						mAdapter = new ThirdListAdapter(mList);
 						mAdapter.setType(BaseListAdapter.ADAPTER_TYPE_NO_BOTTOM);
 						mMsgPage.setListAdapter(mAdapter);
 						mMsgPage.setEmpty(ListViewEmptyView.TYPE_ENROLL);
-					}else{
+					} else {
 						mAdapter.reSetList(mList);
 					}
-				}else{
-					showToast("网络异常");
+				}else {
+					mMsgPage.setEmpty(ListViewEmptyView.TYPE_ENROLL);
+					hasBottom=true;
 				}
+			}else{
+				showToast("网络异常");
+			}
+
 //			mMsgPage.completeRefresh(rsp1.isSucc);
 			break;
 			case FLAG_SETYUEDUHETONG:

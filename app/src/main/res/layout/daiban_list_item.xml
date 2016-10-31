@@ -14,13 +14,13 @@
 	    android:layout_centerVertical="true"
 	    android:visibility="gone"
 	    android:alpha="0.8"/>
-    <LinearLayout 
+    <RelativeLayout
         android:id="@+id/layout_daiban"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12.5dp"
         android:layout_marginBottom="12.5dp"
-        android:orientation="horizontal">
+        >
         <TextView 
             android:id="@+id/text_daibanList_name"
             android:layout_width="wrap_content"
@@ -31,23 +31,24 @@
             android:text="刘雪山"/>
         <TextView 
             android:id="@+id/text_daibanList_type"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="100dp"
             android:textColor="#000000"
+            android:maxEms="8"
+            android:ellipsize="end"
             android:text="费用报销单"/>
         <TextView 
             android:id="@+id/text_daibanList_moeny"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
-            android:layout_marginLeft="12.5dp"
+            android:layout_alignParentRight="true"
             android:textSize="16sp"
             android:textColor="#3B54AB"
             android:text="¥ 92690.98"/>
-    </LinearLayout>
+    </RelativeLayout>
 	<TextView 
 	    android:id="@+id/text_daibanList_time"
 	    android:layout_width="wrap_content"

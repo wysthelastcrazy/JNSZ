@@ -37,12 +37,13 @@ public class FirstActivity extends BaseNormalActivity
 	private List<Integer> mReqList = new ArrayList<Integer>();
 	private MsgPage mMsgPage;
 	private DaiBanListAdapter mAdapterDaiBan;
-			 private YiBanListAdapter mAdapterYiban;
+	private YiBanListAdapter mAdapterYiban;
 	private int pageIndexLeft = 1;
 	private int pageIndexRight=1;
 //	private String YHID = "7A42F2C8-6F6B-4EA4-AB66-D81098A68380";
 	private String YHID = "";
-	private boolean hasNext = true;
+	private boolean hasNextLeft = true;
+	private boolean hasNextRight=true;
 //	private TextView textView_daiBan;
 	private HeaderSelectView mHeader;
 	private int mType = TYPE_DAIBAN;
@@ -153,20 +154,23 @@ public class FirstActivity extends BaseNormalActivity
 	private IRefreshListener mRefreshListener = new IRefreshListener() {
 		@Override
 		public void reachListViewBottom() {
-			if (hasNext) {
-				if (mType == TYPE_DAIBAN) {
+			if (mType == TYPE_DAIBAN) {
+				if (hasNextLeft) {
 					int seq = ProtocalManager.getInstance().getDaiBanList(YHID,
-							nextPage(),strWhereDaiBan);
+							nextPage(), strWhereDaiBan);
 					mReqList.add(seq);
-				} else if (mType == TYPE_YIBAN) {
-					int page=nextPage();
-					int seq = ProtocalManager.getInstance().getYiBanList(YHID,
-							page,strWhereYiBan);
-					mReqList.add(seq);
+				}else{
+					showToast("没有更多数据");
 				}
-			} else {
-				String str = "没有更多数据了！";
-				showToast(str);
+			} else if (mType == TYPE_YIBAN) {
+				if (hasNextRight) {
+					int page = nextPage();
+					int seq = ProtocalManager.getInstance().getYiBanList(YHID,
+							page, strWhereYiBan);
+					mReqList.add(seq);
+				}else{
+					showToast("没有更多数据");
+				}
 			}
 		};
 
@@ -243,7 +247,7 @@ public class FirstActivity extends BaseNormalActivity
 					}
 				}
 				if (rsp.mEntity.daiBan.size() < MConfiger.PAGE_SIZE) {
-					hasNext = false;
+					hasNextLeft = false;
 				}
 			} else {
 				String str = "网络异常！";
@@ -269,7 +273,7 @@ public class FirstActivity extends BaseNormalActivity
 
 					}
 					if (rsp1.mEntity.daiBan.size() < MConfiger.PAGE_SIZE) {
-						hasNext = false;
+						hasNextRight = false;
 					}
 				} else {
 					String str = "网络异常！";
@@ -299,9 +303,11 @@ public class FirstActivity extends BaseNormalActivity
 	private int refreshPage() {
 		if (mType==TYPE_DAIBAN){
 			pageIndexLeft=1;
+			hasNextLeft=true;
 			return pageIndexLeft;
 		}else if (mType==TYPE_YIBAN){
 			pageIndexRight=1;
+			hasNextRight=true;
 			return pageIndexRight;
 		}
 		return 1;

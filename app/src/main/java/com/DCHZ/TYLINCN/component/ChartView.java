@@ -35,6 +35,7 @@ public class ChartView extends LinearLayout{
     private LineChart mChart;
     private TextView txtTitle;
     private TextView txtInfo;
+    private int mType;
     private final int FLAG_SET_DATA=0x100;
     public static final int TYPE_HETONG=1;
     public static final int TYPE_SHOUKUAN=2;
@@ -155,6 +156,7 @@ public class ChartView extends LinearLayout{
 
     public void setData(VThirdItemEntity item,String year){
         int type=item.type;
+        mType=type;
         String[] strs=year.split("-");
 //		topView.setInfo(strs[0]+"合同信息查询");
         if (type==VThirdItemEntity.TYPE_HeTong){
@@ -162,15 +164,15 @@ public class ChartView extends LinearLayout{
             String shiji=item.mEntity.NianDuHeTongShiJi;
             mPicChart.setData(Double.valueOf(yusuan), Double.valueOf(shiji));
             mPicChart.invalidate();
-            txtTitle.setText(strs[0]+"年总体合同情况");
-            txtInfo.setText(strs[0]+"各部门完成情况");
+            txtTitle.setText(strs[0]+"年合同总体情况");
+            txtInfo.setText(strs[0]+"年各部门完成情况");
         }else if (type==VThirdItemEntity.TYPE_SHOUKUAN){
             String yusuan=item.shouKuanEntity.NianDuShouKuanYuSuan;
             String shiji=item.shouKuanEntity.NianDuShouKuanShiJi;
             mPicChart.setData(Double.valueOf(yusuan),Double.valueOf(shiji));
             mPicChart.invalidate();
-            txtTitle.setText(strs[0]+"年总体收款情况");
-            txtInfo.setText(strs[0]+"各部门完成情况");
+            txtTitle.setText(strs[0]+"年收款总体情况");
+            txtInfo.setText(strs[0]+"年各部门完成情况");
         }
     }
     public void setData(final ArrayList<PYueDuHeTongItemEntiity> srcList, final int type,String year){
@@ -192,7 +194,9 @@ public class ChartView extends LinearLayout{
             }).start();
         }
     }
-
+    public void setType(int type){
+        mType=type;
+    }
     private LineData getLineData(String[] yList) {
         String[] xx = {"1", "2", "3", "4", "5", "6", "7", "8", "9","10","11","12"};
 //        String[] yy = {"20", "80", "10", "60", "30", "70", "55", "22", "40"};
@@ -207,8 +211,13 @@ public class ChartView extends LinearLayout{
             yVals.add(new Entry(Float.parseFloat(yy[i]), i));
             MyLog.debug("dd","[getLineData]  i:"+yy[i]);
         }
-
-        LineDataSet set1 = new LineDataSet(yVals, "每月收款");
+        String str="每月收款";
+        if (mType==VThirdItemEntity.TYPE_HeTong){
+            str="每月合同";
+        }else if (mType==VThirdItemEntity.TYPE_SHOUKUAN){
+            str="每月收款";
+        }
+        LineDataSet set1 = new LineDataSet(yVals, str);
         set1.setDrawCubic(true);  //设置曲线为圆滑的线
         set1.setCubicIntensity(0.2f);
         set1.setDrawFilled(false);  //设置包括的范围区域填充颜色

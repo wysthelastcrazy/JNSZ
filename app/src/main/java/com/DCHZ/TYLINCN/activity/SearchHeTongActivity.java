@@ -67,7 +67,6 @@ public class SearchHeTongActivity extends BaseNormalActivity implements View.OnC
             }
         });
         this.mMsgPage.setRefreshListener(mRefreshListener);
-        this.mMsgPage.setEmpty(ListViewEmptyView.TYPE_COMMENT);
 
         mSearchView= (HeaderSearchView) this.findViewById(R.id.header_search);
         mSearchView.setHint("合同名称/签订部门");

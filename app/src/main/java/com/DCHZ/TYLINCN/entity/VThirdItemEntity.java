@@ -9,4 +9,5 @@ public class VThirdItemEntity implements Serializable{
 	public PJiDuHeTongItemEntity mEntity;
 	public PJiDuShouKuanItemEntity shouKuanEntity;
 	public int type;
+	public boolean isTop;
 }

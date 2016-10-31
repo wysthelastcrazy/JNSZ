@@ -28,9 +28,6 @@ public class ThirdListItemView extends BaseItemView<VThirdItemEntity> {
 	public void setMsg(VThirdItemEntity t) {
 		// TODO Auto-generated method stub
 		mEntity = t;
-		if (pos==0){
-			relat_Layout.setBackgroundResource(R.color.thirdList_first_bg);
-		}
 		if(t.type==VThirdItemEntity.TYPE_HeTong){
 			text_item1.setText(t.mEntity.BMName);
 	
@@ -55,6 +52,8 @@ public class ThirdListItemView extends BaseItemView<VThirdItemEntity> {
 					|| "分院小计".equals(t.mEntity.BMName)
 					|| "公司小计".equals(t.mEntity.BMName)) {
 				relat_Layout.setBackgroundResource(R.color.thirdList_bg);
+			}else if ("部门".equals(t.mEntity.BMName)){
+				relat_Layout.setBackgroundResource(R.color.thirdList_first_bg);
 			}
 		}else{
 			text_item1.setText(t.shouKuanEntity.BMName);
@@ -80,6 +79,8 @@ public class ThirdListItemView extends BaseItemView<VThirdItemEntity> {
 					|| "分院小计".equals(t.shouKuanEntity.BMName)
 					|| "公司小计".equals(t.shouKuanEntity.BMName)) {
 				relat_Layout.setBackgroundResource(R.color.thirdList_bg);
+			}else if ("部门".equals(t.shouKuanEntity.BMName)){
+				relat_Layout.setBackgroundResource(R.color.thirdList_first_bg);
 			}
 		}
 	}
