@@ -16,4 +16,5 @@ public class PHeTongSearchItemEntity implements Serializable{
     public String HTQianDingRiQi;
     public String LeiJiShouKuan;
     public String WeiShouKuan;
+    public String HTKuMingCheng;
 }

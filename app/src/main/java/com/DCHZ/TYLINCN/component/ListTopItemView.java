@@ -198,7 +198,7 @@ public class ListTopItemView extends LinearLayout{
 			text_item3_key.setText("费用日期");
 			text_item4_key.setText("归属项目号");
 			text_item5_key.setText("归属项目名称");
-			text_item6_key.setText("项目主导部门");
+			text_item6_key.setText("项目归属部门");
 			text_item7_key.setText("金额（元）");
 			text_item8_key.setText("费用描述");
 		}else if(Common.FENBAO.equals(type)){

@@ -88,6 +88,7 @@ public class SearchHeTongDetailActivity extends BaseNormalActivity implements Vi
         keyList.add("合同金额");
         keyList.add("签订部门");
         keyList.add("签订日期");
+        keyList.add("客户名称");
         keyList.add("已收款");
         keyList.add("未收款");
         if (mEntity!=null){
@@ -96,6 +97,7 @@ public class SearchHeTongDetailActivity extends BaseNormalActivity implements Vi
                 valList.add(mEntity.HTJinE);
                 valList.add(mEntity.HTQianDingBuMen);
                 valList.add(mEntity.HTQianDingRiQi.split(" ")[0]);
+                 valList.add(mEntity.HTKuMingCheng.replace(",","/n/n"));
                 valList.add(mEntity.LeiJiShouKuan);
                 valList.add(mEntity.WeiShouKuan);
                 if(mEntity.FuJian!=null&&mEntity.FuJian.size()>0){
