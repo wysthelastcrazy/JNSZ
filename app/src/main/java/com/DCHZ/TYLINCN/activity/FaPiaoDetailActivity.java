@@ -289,6 +289,9 @@ public class FaPiaoDetailActivity extends BaseNormalActivity{
 				mList=ParseUtil.getJieShouRen(rsp.mEntity.htInfo);
 			}
 			MyLog.debug(TAG, "[onActivityResult]  mList:"+mList.size());
+			mBLUserName="";
+			mBLUserID="";
+			bottomView.setname(mBLUserName);
 //			showToast(TJtype);
 		}
 		if(requestCode==GET_JIESHOUREN){

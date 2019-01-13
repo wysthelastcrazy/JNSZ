@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 15
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 21
+    buildToolsVersion '26.0.0'
 
     defaultConfig {
         applicationId "com.DCHZ.TYLINCN"
@@ -24,4 +24,5 @@ dependencies {
     compile files('libs/GetuiExt-2.0.3.jar')
     compile files('libs/GetuiSDK2.7.0.0.jar')
     compile files('libs/httpmime-4.1.1.jar')
+    compile files('libs/mpandroidchartlibrary-2-1-6.jar')
 }

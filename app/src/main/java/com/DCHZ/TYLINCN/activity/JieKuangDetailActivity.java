@@ -310,7 +310,10 @@ public class JieKuangDetailActivity extends BaseNormalActivity{
 				mList=ParseUtil.getJieShouRen(rsp.mEntity.htInfo);
 			}
 			MyLog.debug(TAG, "[onActivityResult]  mList:"+mList.size());
-			showToast(TJtype);
+			mBLUserName="";
+			mBLUserID="";
+			mBottomView.setname(mBLUserName);
+//			showToast(TJtype);
 		}
 		if(requestCode==GET_JIESHOUREN){
 			mBLUserName=data.getStringExtra("name");

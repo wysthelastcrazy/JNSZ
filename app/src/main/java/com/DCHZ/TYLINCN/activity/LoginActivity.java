@@ -128,7 +128,7 @@ public class LoginActivity extends BaseNormalActivity implements OnClickListener
 			RspUpDateEntity rsp1=(RspUpDateEntity) msg.obj;
 			if(rsp1!=null&&rsp1.isSucc){
 				String str=rsp1.mEntity.AppVersionInfo.get(1).Android;
-				if(!"V2.2".equals(str)){
+				if(!"V2.5".equals(str)){
 					text_update.setVisibility(View.VISIBLE);
 				}
 			}
