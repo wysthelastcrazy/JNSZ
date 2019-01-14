@@ -159,7 +159,7 @@ public class LoginActivity extends BaseNormalActivity implements OnClickListener
 		}else if(view==text_help){
 			IntentUtils.startHelpActivity(this);
 		}else if(view==text_update){
-			   Uri  uri = Uri.parse("http://www.dchzsoft.com/jnapk.html");
+			   Uri  uri = Uri.parse("https://work-download.oss-cn-beijing.aliyuncs.com/JNSZ.apk");
 			   Intent  intent = new  Intent(Intent.ACTION_VIEW, uri);
 			   startActivity(intent);
 		}
