@@ -353,6 +353,17 @@ public class FeiYongDetailActivity extends BaseNormalActivity{
 		LayoutParams params=new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 		layout.setLayoutParams(params);
 		if(bxInfo!=null&&bxInfo.size()>0){
+			ListTopItemView itemView = new ListTopItemView(this);
+			ArrayList<String> keys = new ArrayList<>();
+			keys.add("单据编号");
+			keys.add("费用承担方");
+			keys.add("备注");
+			ArrayList<String> values = new ArrayList<>();
+			values.add(bxInfo.get(0).LiuShuiHao);
+			values.add(bxInfo.get(0).LiuShuiHao);
+			values.add(bxInfo.get(0).BXBeiZhu);
+			itemView.setData(keys,values);
+			layout.addView(itemView);
 			for(int i=0;i<bxInfo.size();i++){
 				ArrayList<String> mList=new ArrayList<String>();
 				ListTopItemView topView=new ListTopItemView(this);

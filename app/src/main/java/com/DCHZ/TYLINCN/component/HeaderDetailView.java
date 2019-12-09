@@ -143,7 +143,7 @@ public class HeaderDetailView extends RelativeLayout implements OnClickListener{
 			text_title.setText("费用报销单");
 			
 			text_item1_key.setText("报 销 人：");
-			text_item2_key.setText("报销部门：");
+			text_item2_key.setText("费用部门：");
 			text_item3_key.setText("报销时间：");
 			text_item4_key.setText("报销金额：");
 		//请假申请
