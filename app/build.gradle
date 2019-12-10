@@ -8,12 +8,35 @@ android {
         minSdkVersion 14
         targetSdkVersion 19
     }
+    signingConfigs {
 
+        release {
+            File strFile = new File("DCHZ.keystore")
+            storeFile file(strFile)
+            storePassword "anbaolong"
+            keyAlias "dchz.keystore"
+            keyPassword "anbaolong"
+            v2SigningEnabled false
+        }
+
+        debug {
+
+
+        }
+
+    }
     buildTypes {
         release {
             minifyEnabled false
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
     }
 }
 
