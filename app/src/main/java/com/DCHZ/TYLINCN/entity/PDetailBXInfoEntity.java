@@ -33,7 +33,8 @@ public class PDetailBXInfoEntity implements Serializable{
 	public String LiuShuiHao;
 	public String xuhao;
 
-	public  String BXBeiZhu;
+	public String BXBeiZhu;
+	public String BXFeiYongChengDanFang;
 	public ArrayList<PFuJianEntity> FuJian;
 	
 }

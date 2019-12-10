@@ -3,9 +3,6 @@
     package="com.DCHZ.TYLINCN"
     android:versionCode="15"
     android:versionName="2.5" >
-    <uses-sdk
-        android:minSdkVersion="14"
-        android:targetSdkVersion="19" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />

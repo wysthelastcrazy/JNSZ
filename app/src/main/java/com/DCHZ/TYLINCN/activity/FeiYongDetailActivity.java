@@ -360,7 +360,7 @@ public class FeiYongDetailActivity extends BaseNormalActivity{
 			keys.add("备注");
 			ArrayList<String> values = new ArrayList<>();
 			values.add(bxInfo.get(0).LiuShuiHao);
-			values.add(bxInfo.get(0).LiuShuiHao);
+			values.add(bxInfo.get(0).BXFeiYongChengDanFang);
 			values.add(bxInfo.get(0).BXBeiZhu);
 			itemView.setData(keys,values);
 			layout.addView(itemView);
